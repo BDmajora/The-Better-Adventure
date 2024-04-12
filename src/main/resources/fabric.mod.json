@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "backport",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "bta_backport",
+  "description": "This mod aims to backport future mc version blocks, items, entities, biomes, and features.",
   "authors": [
-    "Turnip Labs"
+    "BDmajora"
   ],
   "contact": {
     "homepage": "",
@@ -19,25 +19,34 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+			"bdmajora.backport.backport"
     ],
+		"client": [
+			"bdmajora.backport.backportmodclient"
+		],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"bdmajora.backport.backport"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"bdmajora.backport.backport"
 		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+			"bdmajora.backport.backport"
+		],
+		"terrain-api": [
+			"bdmajora.backport.TerrainAPIPlugin"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+      "backport.mixins.json"
   ],
 
   "depends": {
-		"minecraft": "7.1",
-    "fabricloader": ">=0.15.5"
+		"minecraft": "~7.1",
+		"fabricloader": ">=0.13.3",
+		"halplibe": ">=3.4.14",
+		"dragonfly": ">=1.4.4-7.1",
+		"terrain-api": ">=1.4.4-7.1"
   },
   "suggests": {
   }
