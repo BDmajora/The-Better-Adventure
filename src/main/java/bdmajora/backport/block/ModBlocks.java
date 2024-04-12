@@ -2877,6 +2877,11 @@ public class ModBlocks {
 			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "stonecutter.json"), new bdmajora.backport.block.metastates.StoneCutterMetaState(), true))
 		.build(new bdmajora.backport.block.dragonfly.BlockStoneCutter("stonecutter", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/stonecutter.json")));
 
+	public static final Block grindstone = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/grindstone.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "grindstone.json"), new bdmajora.backport.block.metastates.GrindStoneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGrindStone("grindstone", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/grindstone.json")));
+
 
 	public static void register() {
 	}
