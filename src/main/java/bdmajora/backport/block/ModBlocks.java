@@ -2872,6 +2872,14 @@ public class ModBlocks {
 			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "smoker.json"), new bdmajora.backport.block.metastates.SmokerMetaState(), true))
 		.build(new bdmajora.backport.block.dragonfly.BlockSmoker("smoker", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/smoker.json")));
 
+	public static final Block stonecutter = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/stonecutter.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "stonecutter.json"), new bdmajora.backport.block.metastates.StoneCutterMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockStoneCutter("stonecutter", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/stonecutter.json")));
+
+
 	public static void register() {
 	}
+
+
 }

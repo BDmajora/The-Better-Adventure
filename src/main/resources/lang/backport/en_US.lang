@@ -418,6 +418,7 @@ tile.backport.barrel.name=Barrel
 tile.backport.loom.name=Loom
 tile.backport.fletchingTable.name=Fletching Table
 tile.backport.smithingTable.name=Smithing Table
+tile.backport.stonecutter.name=Stonecutter
 
 ###Ice
 tile.backport.blueIce.name=Blue Ice
