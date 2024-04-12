@@ -1,10 +1,8 @@
-package bdmajora.backport.item;
+package bdmajora.backport.item.Food;
 
-import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemFoodStackable;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class ItemFoodGlowBerries extends ItemFoodStackable {

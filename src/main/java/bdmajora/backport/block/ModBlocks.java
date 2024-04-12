@@ -2,6 +2,7 @@ package bdmajora.backport.block;
 
 import bdmajora.backport.UtilIdRegistrar;
 import bdmajora.backport.backport;
+import bdmajora.backport.block.Crops.*;
 import bdmajora.backport.block.Door.*;
 import bdmajora.backport.block.Flowers.Lilac;
 import bdmajora.backport.block.Flowers.Peony;
@@ -2882,6 +2883,45 @@ public class ModBlocks {
 			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "grindstone.json"), new bdmajora.backport.block.metastates.GrindStoneMetaState(), true))
 		.build(new bdmajora.backport.block.dragonfly.BlockGrindStone("grindstone", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/grindstone.json")));
 
+	public static final Block cropsBeetRoot = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(6))
+		.build(new BlockCropsBeetRoot("crops.BeetRoot", UtilIdRegistrar.nextIdBlock())
+		.withDisabledStats()
+			.withDisabledNeighborNotifyOnMetadataChange()
+			.withLitInteriorSurface(true));
+
+	public static final Block cropsCarrot = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(6))
+		.build(new BlockCropsCarrot("crops.Carrot", UtilIdRegistrar.nextIdBlock()))
+		.withDisabledStats()
+		.withDisabledNeighborNotifyOnMetadataChange()
+		.withLitInteriorSurface(true);
+
+	public static final Block cropsPotato = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(6))
+		.build(new BlockCropsPotato("crops.potato", UtilIdRegistrar.nextIdBlock())
+			.withDisabledStats()
+			.withDisabledNeighborNotifyOnMetadataChange()
+			.withLitInteriorSurface(true));
+
+	public static final Block cropsTorchFlower = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(1))
+		.build(new BlockCropsTorchFlower("crops.TorchFlower", UtilIdRegistrar.nextIdBlock())
+			.withDisabledStats()
+			.withDisabledNeighborNotifyOnMetadataChange()
+			.withLitInteriorSurface(true));
+
+	public static final Block blockWatermelon = new BlockBuilder(backport.MOD_ID)
+		.setSideTextures("melonSide.png")
+		.setTopBottomTexture("melonTop.png")
+		.build(new BlockWatermelon("block.melon",  UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block cropsWatermelon = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelRenderBlocks(32))
+		.build(new BlockCropsWatermelon("crops.watermelon", UtilIdRegistrar.nextIdBlock())
+			.withDisabledStats()
+			.withDisabledNeighborNotifyOnMetadataChange()
+			.withLitInteriorSurface(true));
 
 	public static void register() {
 	}

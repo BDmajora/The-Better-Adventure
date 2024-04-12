@@ -24,7 +24,8 @@
     "client": [
       "client.GuiTooltipMixin",
       "client.PlayerControllerMixin",
-      "client.TileEntityRenderDispatcherAccessor"
+      "client.TileEntityRenderDispatcherAccessor",
+      "ItemDyeMixin"
     ],
     "injectors": {
         "defaultRequire": 1

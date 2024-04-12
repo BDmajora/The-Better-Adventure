@@ -424,6 +424,28 @@ tile.backport.grindstone.name=Grindstone
 ###Ice
 tile.backport.blueIce.name=Blue Ice
 
+###Crops
+tile.backport.crops.BeetRoot.name=Beetroot
+tile.backport.crops.Carrot.name=Carrot
+tile.backport.crops.potato.name=Potato
+tile.backport.crops.TorchFlower.name=Torchflower
+tile.backport.crops.TorchFlower.name=Torchflower
+tile.backport.block.melon.name=Melon
+tile.backport.crops.watermelon.name=Watermelon
+
+###Food
+item.backport.item.foodBeetRoot.name=Beetroot
+item.backport.food.Carrot.name=Carrot
+item.backport.food.potato.raw.name=Potato raw
+item.backport.food.potato.baked.name=Potato baked
+item.backport.food.TorchFlower.name=Torchflower
+item.backport.food.watermelon.slice.name=Watermelon Slice
+
+###Seeds
+item.backport.seeds.BeetRoot.name=Beetroot seeds
+item.backport.seeds.TorchFlower.name=Torchflower seeds
+item.backport.seeds.watermelon.name=Watermelon seeds
+
 ###Doors
 item.backport.item.crimsonDoor.name=Crimson Door
 item.backport.item.warpedDoor.name=Warped Door
