@@ -1,0 +1,455 @@
+###blocks
+
+###blackstone
+tile.backport.blackStone.name=Black Stone
+tile.backport.chiseledPolishedBlackstone.name=Chiseled Polished Blackstone
+tile.backport.crackedPolishedBlackstoneBricks.name=Cracked Polished Blackstone Bricks
+tile.backport.gildedBlackstone.name=Gilded Blackstone
+tile.backport.polishedBlackstoneBricks.name=Polished Blackstone Bricks
+tile.backport.polishedBlackstone.name=Polished Blackstone
+
+#stone
+tile.backport.crackedStoneBricks.name=Cracked Stone Bricks
+tile.backport.chiseledStoneBricks.name=Chiseled Stone Bricks
+tile.backport.diorite.name=Diorite
+tile.backport.polishedDiorite.name=Polished Diorite
+tile.backport.andesite.name=Andesite
+tile.backport.polishedAndesite.name=Polished Andesite
+tile.backport.lodestone.name=Lodestone
+tile.backport.calcite.name=Calcite
+tile.backport.dripstoneBlock.name=Dripstone Block
+tile.backport.chiseledtuffBricks.name=Chiseled Tuff Bricks
+tile.backport.chiseledTuff.name=Chiseled Tuff
+tile.backport.polishedTuff.name=Polished Tuff
+tile.backport.tuffBricks.name=Tuff Bricks
+tile.backport.tuff.name=Tuff
+
+###quartz
+tile.backport.quartzBricks.name=Quartz Bricks
+
+###mushroom
+tile.backport.mushroomStem.name=Mushroom Stem
+
+###end blocks
+tile.backport.endStone.name=End Stone
+tile.backport.endStoneBricks.name=End Stone Bricks
+tile.backport.purpurBlock.name=Purpur Block
+tile.backport.purpurPillar.name=Purpur Pillar
+
+####mycelium
+tile.backport.mycelium.name=Mycelium
+
+###nether
+tile.backport.chiseledNetherBricks.name=Chiseled Nether Bricks
+tile.backport.crackedNetherBricks.name=Cracked Nether Bricks
+tile.backport.netherBricks.name=Nether Bricks
+tile.backport.netherGoldOre.name=Nether Gold Ore
+tile.backport.netherQuartzOre.name=Nether Quartz Ore
+tile.backport.redNetherBricks.name=Red Nether Bricks
+tile.backport.netherWartBlock.name=Nether Wart Block
+tile.backport.warpedWartBlock.name=Warped Wart Block
+tile.backport.nylium.name=Nylium
+tile.backport.warpedNylium.name=Warped Nylium
+tile.backport.crimson_fungus.name=Crimson Fungus
+tile.backport.warped_fungus.name=Warped Fungus
+tile.backport.crimson_stem.name=Crimson Stem
+tile.backport.warped_stem.name=Warped Stem
+tile.backport.crimson_planks.name=Crimson Planks
+tile.backport.warped_planks.name=Warped Planks
+tile.backport.shroomlight.name=Shroom light
+tile.backport.cryingObsidian.name=Crying Obsidian
+tile.backport.netherSprouts.name=Nether Sprouts
+tile.backport.soulSoil.name=Soul Soil
+tile.backport.ancientDebris.name=Ancient Debris
+tile.backport.magma.name=Magma
+tile.backport.soulTorch.name=Soul Torch
+tile.backport.weepingVinesPlant.name=Weeping Vines Plant
+tile.backport.weepingVines.name=Weeping Vines
+tile.backport.twistingVinesPlant.name=Twisting Vines Plant
+tile.backport.twistingVines.name=Twisting Vines
+
+### emerald ore
+tile.backport.emeraldOre.name=Emerald Ore
+tile.backport.deepslateEmeraldOre.name=Deepslate Emerald Ore
+tile.backport.emeraldBlock.name=Emerald Block
+
+###farming
+tile.backport.hayBlock.name=Hay Block
+
+###overworld
+tile.backport.coarseDirt.name=Coarse Dirt
+tile.backport.boneBlock.name=Bone Block
+tile.backport.target.name=Target
+tile.backport.rootedDirt.name=Rooted Dirt
+tile.backport.muddyMangroveRoot.name=Muddy Mangrove Root
+tile.backport.mud.name=Mud
+tile.backport.mudBricks.name=Mud Bricks
+tile.backport.packedMud.name=Packed Mud
+tile.backport.granite.name=Granite
+tile.backport.vines.name=Vines
+tile.backport.caveVines.name=Cave Vines
+tile.backport.caveVinesPlant.name=Cave Vines Plant
+tile.backport.caveVinesLit.name=Cave Vines Lit
+tile.backport.caveVinesPlantLit.name=Cave Vines Plant Lit
+tile.backport.vine.name=Vines
+
+###caves and cliffs
+tile.backport.amethystBlock.name=Amethyst Block
+tile.backport.reinforcedDeepslate.name=Reinforced Deepslate
+tile.backport.basalt.name=Basalt
+tile.backport.smoothBasalt.name=Smooth Basalt
+tile.backport.mossBlock.name=Moss Block
+
+###deepslate
+tile.backport.deepslate.name=Deepslate
+tile.backport.chiseledDeepslate.name=Chiseled Deepslate
+tile.backport.cobbledDeepslate.name=Cobbled Deepslate
+tile.backport.crackedDeepslateBricks.name=Cracked Deepslate Bricks
+tile.backport.crackedDeepslateTiles.name=Cracked Deepslate Tiles
+tile.backport.deepslateBricks.name=Deepslate Bricks
+tile.backport.deepslateCoalOre.name=Deepslate Coal Ore
+tile.backport.deepslateDiamondOre.name=Deepslate Diamond Ore
+tile.backport.deepslateIronOre.name=Deepslate Iron Ore
+tile.backport.deepslateLapisOre.name=Deepslate Lapis Ore
+tile.backport.deepslateRedstoneOre.name=Deepslate Redstone Ore
+tile.backport.polishedDeepslate.name=Polished Deepslate
+
+###Warden blocks
+tile.backport.sculk.name.Sculk
+
+###copper
+tile.backport.copperBlock.name=Copper Block
+tile.backport.chiseledCopper.name=Chiseled Copper
+tile.backport.copperOre.name=Copper Ore
+tile.backport.deepslateCopperOre.name=Deepslate CopperOre
+tile.backport.exposedChiseledCopper.name=Exposed Chiseled Copper
+tile.backport.exposedCopper.name=Exposed Copper
+tile.backport.exposedCutCopper.name=Exposed Cut Copper
+tile.backport.oxidizedChiseledCopper.name=Oxidized Chiseled Copper
+tile.backport.oxidizedCopper.name=Oxidized Copper
+tile.backport.oxidizedCutCopper.name=Oxidized Cut Copper
+tile.backport.rawCopperBlock.name=Raw Copper Block
+tile.backport.weatheredChiseledCopper.name=Weathered Chiseled Copper
+tile.backport.weatheredCopper.name=Weathered Copper
+tile.backport.weatheredCutCopper.name=Weathered Cut Copper
+tile.backport.weatheredCutCopper.name=Weathered Cut Copper
+tile.backport.cutCopper.name=Cut Copper
+
+###frog light
+tile.backport.ochrefroglight.name=Ochre Frog light
+tile.backport.pearlescentfroglight.name=Pearlescent Frog light
+tile.backport.verdantfroglight.name=Verdant Frog light
+
+###sea blocks
+tile.backport.seaLantern.name=Sea Lantern
+
+###ore
+tile.backport.rawIronBlock.name=Raw Iron Block
+tile.backport.rawGoldBlock.name=Raw Gold Block
+
+###bamboo
+tile.backport.bambooBlock.name=Bamboo Block
+tile.backport.bambooMosaic.name=Bamboo Mosaic
+tile.backport.bambooPlanks.name=Bamboo Planks
+tile.backport.strippedBambooBlock.name=Stripped Bamboo Block
+
+###terracotta
+tile.backport.blackTerracotta.name=Black Terracotta
+tile.backport.blueTerracotta.name=Blue Terracotta
+tile.backport.brownTerracotta.name=Brown Terracotta
+tile.backport.cyanTerracotta.name=Cyan Terracotta
+tile.backport.grayTerracotta.name=Gray Terracotta
+tile.backport.greenTerracotta.name=Green Terracotta
+tile.backport.lightBlueTerracotta.name=Light Blue Terracotta
+tile.backport.lightGrayTerracotta.name=Light Gray Terracotta
+tile.backport.limeTerracotta.name=Lime Terracotta
+tile.backport.magentaTerracotta.name=Magenta Terracotta
+tile.backport.orangeTerracotta.name=Orange Terracotta
+tile.backport.pinkTerracotta.name=Pink Terracotta
+tile.backport.purpleTerracotta.name=Purple Terracotta
+tile.backport.redTerracotta.name=Red Terracotta
+tile.backport.terracotta.name=Terracotta
+tile.backport.whiteTerracotta.name=White Terracotta
+tile.backport.yellowTerracotta.name=Yellow Terracotta
+
+
+###glazed terracotta
+tile.backport.blackGlazedTerracotta.name=Black Glazed Terracotta
+tile.backport.blueGlazedTerracotta.name=Blue Glazed Terracotta
+tile.backport.brownGlazedTerracotta.name=Brown Glazed Terracotta
+tile.backport.cyanGlazedTerracotta.name=Cyan Glazed Terracotta
+tile.backport.grayGlazedTerracotta.name=Gray Glazed Terracotta
+tile.backport.greenGlazedTerracotta.name=Green Glazed Terracotta
+tile.backport.lightBlueGlazedTerracotta.name=Light Blue Glazed Terracotta
+tile.backport.lightGrayGlazedTerracotta.name=Light Gray Glazed Terracotta
+tile.backport.limeGlazedTerracotta.name=Lime Glazed Terracotta
+tile.backport.magentaGlazedTerracotta.name=Magenta Glazed Terracotta
+tile.backport.orangeGlazedTerracotta.name=Orange Glazed Terracotta
+tile.backport.pinkGlazedTerracotta.name=Pink Glazed Terracotta
+tile.backport.purpleGlazedTerracotta.name=Purple Glazed Terracotta
+tile.backport.redGlazedTerracotta.name=Red Glazed Terracotta
+tile.backport.whiteGlazedTerracotta.name=White Glazed Terracotta
+tile.backport.yellowGlazedTerracotta.name=Yellow Glazed Terracotta
+
+## Birch
+tile.backport.birchPlank.name=Birch Plank
+
+### Acacia
+tile.backport.acaciaLog.name=Acacia Log
+tile.backport.acaciaPlanks.name=Acacia Planks
+tile.backport.acaciaLeaves.name=Acacia Leaves
+
+### Dark oak
+tile.backport.darkOakLog.name=Dark Oak Log
+tile.backport.darkOakPlanks.name=Dark Oak Planks
+
+### Jungle
+tile.backport.jungleLog.name=Jungle Log
+tile.backport.junglePlanks.name=Jungle Planks
+
+### Mangrove
+tile.backport.mangroveLog.name=Mangrove Log
+tile.backport.mangrovePlanks.name=Mangrove Planks
+
+### Spruce
+tile.backport.spruceLog.name=Spruce Log
+tile.backport.sprucePlanks.name=Spruce Planks
+
+###cherry
+tile.backport.cherryPlanks.name=Cherry Planks
+
+###concrete powder
+tile.backport.blackConcretePowder.name=Black Concrete Powder
+tile.backport.blueConcretePowder.name=Blue Concrete Powder
+tile.backport.brownConcretePowder.name=Brown Concrete Powder
+tile.backport.cyanConcretePowder.name=Cyan Concrete Powder
+tile.backport.grayConcretePowder.name=Gray Concrete Powder
+tile.backport.greenConcretePowder.name=Green Concrete Powder
+tile.backport.lightBlueConcretePowder.name=Light Blue Concrete Powder
+tile.backport.lightGrayConcretePowder.name=Light Gray Concrete Powder
+tile.backport.limeConcretePowder.name=Lime Concrete Powder
+tile.backport.magentaConcretePowder.name=Magenta Concrete Powder
+tile.backport.orangeConcretePowder.name=Orange Concrete Powder
+tile.backport.pinkConcretePowder.name=Pink Concrete Powder
+tile.backport.purpleConcretePowder.name=Purple Concrete Powder
+tile.backport.redConcretePowder.name=Red Concrete Powder
+tile.backport.whiteConcretePowder.name=White Concrete Powder
+tile.backport.yellowConcretePowder.name=Yellow Concrete Powder
+
+###concrete
+tile.backport.blackConcrete.name=Black Concrete
+tile.backport.blueConcrete.name=Blue Concrete
+tile.backport.brownConcrete.name=Brown Concrete
+tile.backport.cyanConcrete.name=Cyan Concrete
+tile.backport.grayConcrete.name=Gray Concrete
+tile.backport.greenConcrete.name=Green Concrete
+tile.backport.lightBlueConcrete.name=Light Blue Concrete
+tile.backport.lightGrayConcrete.name=Light Gray Concrete
+tile.backport.limeConcrete.name=Lime Concrete
+tile.backport.magentaConcrete.name=Magenta Concrete
+tile.backport.orangeConcrete.name=Orange Concrete
+tile.backport.pinkConcrete.name=Pink Concrete
+tile.backport.purpleConcrete.name=Purple Concrete
+tile.backport.redConcrete.name=Red Concrete
+tile.backport.whiteConcrete.name=White Concrete
+tile.backport.yellowConcrete.name=Yellow Concrete
+
+###Trap Doors
+tile.backport.acaciaTrapDoor.name=Acacia TrapDoor
+tile.backport.bambooTrapDoor.name=Bamboo TrapDoor
+tile.backport.cherryTrapDoor.name=Cherry TrapDoor
+tile.backport.birchTrapDoor.name=Birch TrapDoor
+tile.backport.copperTrapDoor.name=Copper TrapDoor
+tile.backport.crimsonTrapDoor.name=Crimson TrapDoor
+tile.backport.darkOakTrapDoor.name=Dark Oak TrapDoor
+tile.backport.exposedCopperTrapDoor.name=Exposed Copper TrapDoor
+tile.backport.jungleTrapDoor.name=Jungle TrapDoor
+tile.backport.mangroveTrapDoor.name=Mangrove TrapDoor
+tile.backport.oxidizedCopperTrapDoor.name=Oxidized Copper TrapDoor
+tile.backport.spruceTrapDoor.name=Spruce TrapDoor
+tile.backport.warpedTrapDoor.name=Warped TrapDoor
+tile.backport.weatheredCopperTrapDoor.name=Weathered Copper TrapDoor
+
+###bee's
+tile.backport.beeNest.name=Bee Nest
+tile.backport.beeNestHoney.name=Bee Nest Honey
+tile.backport.beeHive.name=Bee Hive
+tile.backport.beeHiveHoney.name=Bee Hive Honey
+tile.backport.honeyBlock.name=Honey Block
+tile.backport.honeyCombBlock.name=Honeycomb Block
+
+###craftor
+tile.backport.crafter.name=Crafter
+tile.backport.crafterTriggered.name=Crafter Triggered
+tile.backport.crafterCrafting.name=Crafter Crafting
+
+###weird blocks
+tile.backport.jigsaw.name=Jigsaw
+
+###aquatic
+tile.backport.prismarineBricks.name=Prismarine Bricks
+
+###flowers
+tile.backport.azureBluet.name=Azure Bluet
+tile.backport.cornflower.name=Cornflower
+tile.backport.lilyOfTheValley.name=Lily Of The Valley
+tile.backport.lilac.name=Lilac
+tile.backport.orangeTulip.name=Orange Tulip
+tile.backport.oxeyeDaisy.name=Oxeye Daisy
+tile.backport.pinkTulip.name=Pink Tulip
+tile.backport.redTulip.name=Red Tulip
+tile.backport.whiteTulip.name=White Tulip
+tile.backport.witherRose.name=Wither Rose
+item.backport.item.lilac.name=Lilac
+item.backport.item.peony.name=Peony
+item.backport.item.roseBush.name=Rose Bush
+item.backport.item.sunflower.name=Sunflower
+
+###glass
+tile.backport.blackStainedGlass.name=Black Stained Glass
+tile.backport.blueStainedGlass.name=Blue Stained Glass
+tile.backport.brownStainedGlass.name=Brown Stained Glass
+tile.backport.cyanStainedGlass.name=Cyan Stained Glass
+tile.backport.grayStainedGlass.name=Gray Stained Glass
+tile.backport.greenStainedGlass.name=Green Stained Glass
+tile.backport.lightBlueStainedGlass.name=Light Blue Stained Glass
+tile.backport.lightGrayStainedGlass.name=Light Gray Stained Glass
+tile.backport.limeStainedGlass.name=Lime Stained Glass
+tile.backport.magentaStainedGlass.name=Magenta Stained Glass
+tile.backport.orangeStainedGlass.name=Orange Stained Glass
+tile.backport.pinkStainedGlass.name=Pink Stained Glass
+tile.backport.redStainedGlass.name=Red Stained Glass
+tile.backport.tintedGlass.name=Tinted Glass
+tile.backport.yellowStainedGlass.name=Yellow Stained Glass
+tile.backport.purpleStainedGlass.name=Purple Stained Glass
+
+###test
+tile.backport.testblock.name=Test Block 1
+tile.backport.testblock2.name=Test Block 2
+tile.backport.testblock3.name=Test Block 3
+tile.backport.testblock4.name=Test Block 4
+tile.backport.stairs.dirt.name=Test Block 5
+
+###Dragonfly complex blocks
+tile.backport.exampleDragon.name=Dragon Egg
+tile.backport.exampleBeacon.name=Beacon
+tile.backport.exampleStool.name=Stool
+tile.backport.exampleCauldron.name=Cauldron
+tile.backport.exampleBrewingStand.name=Brewing Stand
+tile.backport.exampleFence.name=Birch Fence
+tile.backport.exampleBookshelf.name=Bookshelf
+
+###BDMajora Dragonflyblocks
+tile.backport.anvil.name=Anvil
+tile.backport.lantern.name=Lantern
+tile.backport.soulLantern.name=Soul Lantern
+tile.backport.lectern.name=Lectern
+tile.backport.campfire.name=Campfire
+tile.backport.soulfire.name=Soulfire
+tile.backport.campfireoff.name=Campfire off
+tile.backport.endPortalFrameFilled.name=End Portal Frame Filled
+tile.backport.endPortalFrame.name=End Portal Frame
+tile.backport.endRod.name=End Rod
+tile.backport.sculkCatalyst.name=Sculk Catalyst
+tile.backport.sculkSensor.name=Sculk Sensor
+tile.backport.sculkShrieker.name=Sculk Shrieker
+tile.backport.sculkVein.name=Sculk Vein
+tile.backport.calibratedSculkSensor.name=Calibrated Sculk Sensor
+tile.backport.composter.name=Composter
+tile.backport.hopper.name=Hopper
+tile.backport.scaffolding.name=Scaffolding
+tile.backport.amethystCluster.name=Amethyst Cluster
+tile.backport.azalea.name=Azalea
+tile.backport.floweringAzalea.name=Flowering Azalea
+tile.backport.floweringAzalea.name=Flowering Azalea
+tile.backport.azaleaLeaves.name=Azalea Leaves
+tile.backport.floweringAzaleaLeaves.name=Flowering Azalea Leaves
+tile.backport.bigDripleaf.name=Big Drip leaf
+tile.backport.bigDripleaf.name=Big Drip leaf
+tile.backport.buddingAmethyst.name=Budding Amethyst
+tile.backport.bell.name=Bell
+tile.backport.cartographyTable.name=Cartography Table
+tile.backport.chain.name=Chain
+
+###dragonfly carpet
+tile.backport.blackCarpet.name=Black Carpet
+tile.backport.blueCarpet.name=Blue Carpet
+tile.backport.brownCarpet.name=Brown Carpet
+tile.backport.cyanCarpet.name=Cyan Carpet
+tile.backport.grayCarpet.name=Gray Carpet
+tile.backport.greenCarpet.name=Green Carpet
+tile.backport.lightBlueCarpet.name=Light Blue Carpet
+tile.backport.lightGrayCarpet.name=Light Gray Carpet
+tile.backport.limeCarpet.name=Lime Carpet
+tile.backport.magentaCarpet.name=Magenta Carpet
+tile.backport.mossCarpet.name=Moss Carpet
+tile.backport.orangeCarpet.name=Orange Carpet
+tile.backport.pinkCarpet.name=Pink Carpet
+tile.backport.purpleCarpet.name=Purple Carpet
+tile.backport.redCarpet.name=Red Carpet
+tile.backport.whiteCarpet.name=White Carpet
+tile.backport.yellowCarpet.name=Yellow Carpet
+
+###dragonfly glass
+tile.backport.blackStainedGlassPane.name=Black Stained Glass Pane
+
+###Shulker boxes
+tile.backport.blackShulkerBox.name=Black Shulker Box
+tile.backport.blueShulkerBox.name=Blue Shulker Box
+tile.backport.brownShulkerBox.name=Brown Shulker Box
+tile.backport.cyanShulkerBox.name=Cyan Shulker Box
+tile.backport.grayShulkerBox.name=Gray Shulker Box
+tile.backport.greenShulkerBox.name=Green Shulker Box
+tile.backport.lightBlueShulkerBox.name=Light Blue Shulker Box
+tile.backport.lightGrayShulkerBox.name=Light Gray Shulker Box
+tile.backport.limeShulkerBox.name=Lime Shulker Box
+tile.backport.magentaShulkerBox.name=Magenta Shulker Box
+tile.backport.orangeShulkerBox.name=Orange Shulker Box
+tile.backport.pinkShulkerBox.name=Pink Shulker Box
+tile.backport.purpleShulkerBox.name=Purple Shulker Box
+tile.backport.redShulkerBox.name=Red Shulker Box
+tile.backport.whiteShulkerBox.name=Shulker Box
+tile.backport.yellowShulkerBox.name=Yellow Shulker Box
+
+###Gui blocks
+tile.backport.enchantmentTable.name=Enchantment Table
+tile.backport.smoker.name=Smoker
+tile.backport.barrel.name=Barrel
+tile.backport.loom.name=Loom
+tile.backport.fletchingTable.name=Fletching Table
+tile.backport.smithingTable.name=Smithing Table
+
+###Ice
+tile.backport.blueIce.name=Blue Ice
+
+###Doors
+item.backport.item.crimsonDoor.name=Crimson Door
+item.backport.item.warpedDoor.name=Warped Door
+item.backport.item.acaciaDoor.name=Acacia Door
+item.backport.item.bambooDoor.name=Bamboo Door
+item.backport.item.birchDoor.name=Birch Door
+item.backport.item.cherryDoor.name=Cherry Door
+item.backport.item.copperDoor.name=Copper Door
+item.backport.item.darkOakDoor.name=Dark Oak Door
+item.backport.item.exposedCopperDoor.name=Exposed Copper Door
+item.backport.item.jungleDoor.name=Jungle Door
+item.backport.item.mangroveDoor.name=Mangrove Door
+item.backport.item.oxidizedCopperDoor.name=Oxidized Copper Door
+item.backport.item.spruceDoor.name=Spruce Door
+item.backport.item.weatheredCopperDoor.name=Weathered Copper Door
+
+###items
+item.backport.record.Disc.name=Music Disc
+item.backport.item.brick.name=Nether Brick
+item.backport.item.vine.name=Vine
+
+###Food
+item.backport.item.glowBerries.name=Glow Berries
+
+###enchantments
+enchantment.backport.haste.name = Haste
+enchantment.backport.unbreaking.name = Unbreaking
+enchantment.backport.quickswing.name = Quickswing
+enchantment.backport.flame.name = Flame
+enchantment.backport.bait.name = Bait
+

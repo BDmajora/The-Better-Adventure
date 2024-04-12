@@ -1,0 +1,6 @@
+{
+  "parent": "backport:block/pane/template_glass_pane_noside",
+  "textures": {
+    "pane": "backport:block/black_stained_glass"
+  }
+}
