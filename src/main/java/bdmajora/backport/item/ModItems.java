@@ -73,6 +73,17 @@ public class ModItems {
 
 	public static final Item foodWatermelonSlice = ItemHelper.createItem(MOD_ID, new ItemFoodWatermelonSlice("food.watermelon.slice", UtilIdRegistrar.nextIdItem(), 2, false, 64), "watermelonSlice.png");
 
+	public static final Item foodBeetRootSoup = ItemHelper.createItem(MOD_ID, new ItemFoodWithBowl("food.BeetRootSoup", UtilIdRegistrar.nextIdItem(), 10, false), "beetroot_soup.png");
+
+	public static final Item foodBeefRaw = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("food.beef.raw", UtilIdRegistrar.nextIdItem(), 2, true, 64), "beef_raw.png");
+	public static final Item foodBeefCooked = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("food.beef.cooked", UtilIdRegistrar.nextIdItem(), 8, true, 64), "beef_cooked.png");
+
+	public static final Item foodChickenRaw = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("food.chicken.raw", UtilIdRegistrar.nextIdItem(), 2, true, 64), "chicken_raw.png");
+	public static final Item foodChickenCooked = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("food.chicken.cooked", UtilIdRegistrar.nextIdItem(), 6, true, 64), "chicken_cooked.png");
+
+	public static final Item foodMuttonRaw = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("food.mutton.raw", UtilIdRegistrar.nextIdItem(), 2, true, 64), "mutton_raw.png");
+	public static final Item foodMuttonCooked = ItemHelper.createItem(MOD_ID, new ItemFoodStackable("food.mutton.cooked", UtilIdRegistrar.nextIdItem(), 5, true, 64), "mutton_cooked.png");
+
 	//seeds
 	public static final Item seedsBeetRoot = ItemHelper.createItem(MOD_ID, new ItemSeeds("seeds.BeetRoot", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsBeetRoot), "beetroot_seeds.png");
 	public static final Item seedsTorchFlower = ItemHelper.createItem(MOD_ID, new ItemSeeds("seeds.TorchFlower", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsTorchFlower), "torchflower_seeds.png");

@@ -445,6 +445,13 @@ item.backport.food.potato.raw.name=Potato raw
 item.backport.food.potato.baked.name=Potato baked
 item.backport.food.TorchFlower.name=Torchflower
 item.backport.food.watermelon.slice.name=Watermelon Slice
+item.backport.food.BeetRootSoup.name=Beetroot Soup
+item.backport.food.beef.raw.name=Beef Raw
+item.backport.food.beef.cooked.name=Beef Cooked
+item.backport.food.chicken.raw.name=Chicken raw
+item.backport.food.chicken.cooked.name=Chicken cooked
+item.backport.food.mutton.raw.name=Mutton raw
+item.backport.food.mutton.cooked.name=Mutton cooked
 
 ###Seeds
 item.backport.seeds.BeetRoot.name=Beetroot seeds

@@ -195,8 +195,7 @@ public class ModCraftingManager {
 			.setConsumeContainer(false)
 			.create("bambooTrapDoor", new ItemStack(ModBlocks.bambooTrapDoor, 3));
 
-
-			RecipeBuilder.Shaped(MOD_ID)
+		RecipeBuilder.Shaped(MOD_ID)
 				.setShape(" B ","DOD","OOO")
 				.addInput('B', Item.book)
 				.addInput('O', Block.obsidian)
@@ -207,16 +206,46 @@ public class ModCraftingManager {
 			.addInput(ModItems.foodWatermelonSlice)
 			.create("seedsWatermelon", ModItems.seedsWatermelon.getDefaultStack());
 
+		RecipeBuilder.Shaped(MOD_ID)
+			.setShape("BBB", "BBB", " W ")
+			.addInput('B', ModItems.foodBeetRoot)
+			.addInput('W', Item.bowl)
+			.setConsumeContainer(false)
+			.create("beetrootSoup", ModItems.foodBeetRootSoup.getDefaultStack());
+
 		//FurnaceRecipes:
 		RecipeBuilder.Furnace(MOD_ID)
 			.setInput(ModItems.foodPotatoRaw)
-			.create("cookBeef", (ModItems.foodPotatoBaked).getDefaultStack());
+			.create("cookPotato", (ModItems.foodPotatoBaked).getDefaultStack());
 
+		RecipeBuilder.Furnace(MOD_ID)
+			.setInput(ModItems.foodBeefRaw)
+			.create("cookBeef", (ModItems.foodBeefCooked).getDefaultStack());
+
+		RecipeBuilder.Furnace(MOD_ID)
+			.setInput(ModItems.foodChickenRaw)
+			.create("cookChicken", (ModItems.foodChickenCooked).getDefaultStack());
+
+		RecipeBuilder.Furnace(MOD_ID)
+			.setInput(ModItems.foodMuttonRaw)
+			.create("cookMutton", (ModItems.foodMuttonCooked).getDefaultStack());
 
 		//BlastFurnaceRecipes:
 		RecipeBuilder.BlastFurnace(MOD_ID)
 			.setInput(ModItems.foodPotatoRaw)
 			.create("cookBeef", (ModItems.foodPotatoBaked).getDefaultStack());
+
+		RecipeBuilder.BlastFurnace(MOD_ID)
+			.setInput(ModItems.foodBeefRaw)
+			.create("cookBeef", (ModItems.foodBeefCooked).getDefaultStack());
+
+		RecipeBuilder.BlastFurnace(MOD_ID)
+			.setInput(ModItems.foodChickenRaw)
+			.create("cookChicken", (ModItems.foodChickenCooked).getDefaultStack());
+
+		RecipeBuilder.BlastFurnace(MOD_ID)
+			.setInput(ModItems.foodMuttonRaw)
+			.create("cookMutton", (ModItems.foodMuttonCooked).getDefaultStack());
 	}
 }
 

@@ -2938,6 +2938,76 @@ public class ModBlocks {
 			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
 		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
 
+	public static final Block brownStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block cyanStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block grayStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block greenStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block lightBlueStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block lightGrayStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block limeStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block magentaStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block orangeStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block pinkStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block purpleStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block redStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block whiteStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block yellowStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
 
 	public static void register() {
 	}
