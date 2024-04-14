@@ -1,5 +1,5 @@
 {
-  "parent": "backport:block/pane/template_glass_pane_post",
+  "parent": "backport:block/template_glass_pane_post",
   "textures": {
     "edge": "backport:block/black_stained_glass_pane_top",
     "pane": "backport:block/black_stained_glass"

@@ -433,6 +433,11 @@ tile.backport.crops.TorchFlower.name=Torchflower
 tile.backport.block.melon.name=Melon
 tile.backport.crops.watermelon.name=Watermelon
 
+###Glass panes
+tile.backport.glassPane.name=Glass Pane
+tile.backport.blackStainedGlassPane.name=Black Stained Glass Pane
+tile.backport.blueStainedGlassPane.name=Blue Stained Glass Pane
+
 ###Food
 item.backport.item.foodBeetRoot.name=Beetroot
 item.backport.food.Carrot.name=Carrot

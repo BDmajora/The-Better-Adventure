@@ -2923,6 +2923,22 @@ public class ModBlocks {
 			.withDisabledNeighborNotifyOnMetadataChange()
 			.withLitInteriorSurface(true));
 
+	public static final Block glassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("glassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block blackStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/black_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/black_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blackStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block blueStainedGlassPane = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pane/blue_stained_glass_pane_post.json"),
+			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "panes/blue_stained_glass_pane.json"), new bdmajora.backport.block.metastates.GlassPaneMetaState(), true))
+		.build(new bdmajora.backport.block.dragonfly.BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock()));
+
+
 	public static void register() {
 	}
 
