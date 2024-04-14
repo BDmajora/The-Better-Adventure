@@ -64,6 +64,7 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 	public void beforeGameStart() {
 		ModBlocks.register();
 		ModItems.register();
+		new foodstack().initializeItems();
 		ModBiomes.initializeBiomes();
 		BiomeProviderNether.init();
 
