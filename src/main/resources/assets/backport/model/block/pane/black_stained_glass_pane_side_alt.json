@@ -2,6 +2,7 @@
   "parent": "backport:block/template_glass_pane_side_alt",
   "textures": {
     "edge": "backport:block/black_stained_glass_pane_top",
-    "pane": "backport:block/black_stained_glass"
+    "pane": "backport:block/black_stained_glass",
+    "particle": "backport:block/glass"
   }
 }
