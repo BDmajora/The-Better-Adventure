@@ -65,6 +65,12 @@ public class BlockGlassPane extends BlockFenceThin {
 		return 0;
 	}
 
+	@Override
+	public int getRenderBlockPass()
+	{
+		return 1;
+	}
+
 	private boolean shouldDrawColumn_do(World world, int x, int y, int z) {
 		boolean connectNorth = this.canConnectTo(world, x + Direction.NORTH.getOffsetX(), y + Direction.NORTH.getOffsetY(), z + Direction.NORTH.getOffsetZ());
 		boolean connectSouth = this.canConnectTo(world, x + Direction.SOUTH.getOffsetX(), y + Direction.SOUTH.getOffsetY(), z + Direction.SOUTH.getOffsetZ());

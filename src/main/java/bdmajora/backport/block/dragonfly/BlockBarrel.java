@@ -43,21 +43,6 @@ public class BlockBarrel extends BlockTransparent {
 	}
 
 	@Override
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
-
-	@Override
-	public boolean canPlaceOnSurface() {
-		return true;
-	}
-
-	@Override
-	public int getRenderBlockPass() {
-		return 0;
-	}
-
-	@Override
 	public void getCollidingBoundingBoxes(World world, int x, int y, int z, AABB aabb, ArrayList<AABB> aabbList) {
 		for (BlockCube cube: model.blockCubes) {
 			setBlockBounds(cube.xMin(), cube.yMin(), cube.zMin(), cube.xMax(), cube.yMax(), cube.zMax());
