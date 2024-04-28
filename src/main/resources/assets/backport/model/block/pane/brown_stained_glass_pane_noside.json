@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/template_glass_pane_noside",
+  "parent": "backport:block/template_glass_pane_noside",
   "textures": {
-    "pane": "minecraft:block/brown_stained_glass"
+    "pane": "backport:block/brown_stained_glass"
   }
 }

@@ -304,6 +304,7 @@ item.backport.item.lilac.name=Lilac
 item.backport.item.peony.name=Peony
 item.backport.item.roseBush.name=Rose Bush
 item.backport.item.sunflower.name=Sunflower
+item.backport.item.pitcherFlower.name=Pitcher Plant
 
 ###glass
 tile.backport.blackStainedGlass.name=Black Stained Glass
@@ -437,6 +438,20 @@ tile.backport.crops.watermelon.name=Watermelon
 tile.backport.glassPane.name=Glass Pane
 tile.backport.blackStainedGlassPane.name=Black Stained Glass Pane
 tile.backport.blueStainedGlassPane.name=Blue Stained Glass Pane
+tile.backport.brownStainedGlassPane.name=Brown Stained Glass Pane
+tile.backport.cyanStainedGlassPane.name=Cyan Stained Glass Pane
+tile.backport.grayStainedGlassPane.name=Gray Stained Glass Pane
+tile.backport.greenStainedGlassPane.name=Green Stained Glass Pane
+tile.backport.lightBlueStainedGlassPane.name=Light Blue Stained Glass Pane
+tile.backport.lightGrayStainedGlassPane.name=Light Gray Stained Glass Pane
+tile.backport.limeStainedGlassPane.name=Lime Stained Glass Pane
+tile.backport.magentaStainedGlassPane.name=Magenta Stained Glass Pane
+tile.backport.orangeStainedGlassPane.name=Orange Stained Glass Pane
+tile.backport.pinkStainedGlassPane.name=Pink Stained Glass Pane
+tile.backport.purpleStainedGlassPane.name=Purple Stained Glass Pane
+tile.backport.redStainedGlassPane.name=Red Stained Glass Pane
+tile.backport.whiteStainedGlassPane.name=White Stained Glass Pane
+tile.backport.yellowStainedGlassPane.name=Yellow Stained Glass Pane
 
 ###Food
 item.backport.item.foodBeetRoot.name=Beetroot
@@ -457,6 +472,7 @@ item.backport.food.mutton.cooked.name=Mutton cooked
 item.backport.seeds.BeetRoot.name=Beetroot seeds
 item.backport.seeds.TorchFlower.name=Torchflower seeds
 item.backport.seeds.watermelon.name=Watermelon seeds
+item.backport.seeds.PitcherPod.name=Pitcher Pod
 
 ###Doors
 item.backport.item.crimsonDoor.name=Crimson Door

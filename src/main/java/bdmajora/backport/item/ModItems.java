@@ -6,10 +6,7 @@ import bdmajora.backport.block.ModBlocks;
 import bdmajora.backport.block.Vines.BlockVine;
 import bdmajora.backport.item.Doors.*;
 import bdmajora.backport.UtilIdRegistrar;
-import bdmajora.backport.item.Flowers.ItemLilac;
-import bdmajora.backport.item.Flowers.ItemPeony;
-import bdmajora.backport.item.Flowers.ItemRoseBush;
-import bdmajora.backport.item.Flowers.ItemSunFlower;
+import bdmajora.backport.item.Flowers.*;
 import bdmajora.backport.item.Food.*;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemFoodStackable;
@@ -88,6 +85,7 @@ public class ModItems {
 	public static final Item seedsBeetRoot = ItemHelper.createItem(MOD_ID, new ItemSeeds("seeds.BeetRoot", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsBeetRoot), "beetroot_seeds.png");
 	public static final Item seedsTorchFlower = ItemHelper.createItem(MOD_ID, new ItemSeeds("seeds.TorchFlower", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsTorchFlower), "torchflower_seeds.png");
 	public static final Item seedsWatermelon = ItemHelper.createItem(MOD_ID, new ItemSeeds("seeds.watermelon", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsWatermelon), "seeds_watermelon.png");
+	public static final Item seedsPitcherPod = ItemHelper.createItem(MOD_ID, new ItemSeeds("seeds.PitcherPod", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsBeetRoot), "pitcher_pod.png");
 
 
 	//plants
@@ -101,6 +99,8 @@ public class ModItems {
 	public static final Item roseBush = ItemHelper.createItem(MOD_ID, new ItemRoseBush("item.roseBush", UtilIdRegistrar.nextIdItem()), "rose_bush_top.png");
 
 	public static final Item sunflower = ItemHelper.createItem(MOD_ID, new ItemSunFlower("item.sunflower", UtilIdRegistrar.nextIdItem()), "sunflower_top.png");
+
+	public static final Item pitcherFlower = ItemHelper.createItem(MOD_ID, new ItemPitcher("item.pitcherFlower", UtilIdRegistrar.nextIdItem()), "pitcher_plant.png");
 
 
 	public static void register() {
