@@ -1,5 +1,6 @@
 package bdmajora.backport.block.dragonfly;
 
+import bdmajora.backport.block.ModBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFenceThin;
 import net.minecraft.core.block.entity.TileEntity;
