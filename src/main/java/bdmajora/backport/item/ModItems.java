@@ -103,6 +103,10 @@ public class ModItems {
 	public static final Item pitcherFlower = ItemHelper.createItem(MOD_ID, new ItemPitcher("item.pitcherFlower", UtilIdRegistrar.nextIdItem()), "pitcher_plant.png");
 
 
+	//Banners
+
+	public static final Item banner = (new ItemBanner("banner", UtilIdRegistrar.nextIdItem()).setIconCoord(11, 8).setFull3D());
+
 	public static void register() {
 	}
 }

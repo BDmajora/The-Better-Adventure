@@ -1,15 +1,16 @@
 package bdmajora.backport.item;
 
+import bdmajora.backport.block.ModBlocks;
 import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.entity.TileEntityFlag;
-import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import bdmajora.backport.block.entity.TileEntityBanner;
+import bdmajora.backport.entity.EntityBannerEdit;
 
 public class ItemBanner extends Item {
 	public ItemBanner(String name, int id) {
@@ -18,24 +19,25 @@ public class ItemBanner extends Item {
 	}
 
 	public String getLanguageKey(ItemStack itemstack) {
-		return !this.hasFlagBeenDrawnOn(itemstack) && !this.doesFlagContainDyes(itemstack) ? super.getLanguageKey(itemstack) : this.getKey() + ".modified";
+		return !this.hasBannerBeenDrawnOn(itemstack) && !this.doesBannerContainDyes(itemstack) ? super.getLanguageKey(itemstack) : this.getKey() + ".modified";
 	}
 
-	public boolean onItemUse(ItemStack stack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
-		TileEntityFlag tileentityflag;
-		CompoundTag flagData;
-		if (world.getBlockId(blockX, blockY, blockZ) == Block.flag.id && !entityplayer.isSneaking()) {
-			tileentityflag = (TileEntityFlag)world.getBlockTileEntity(blockX, blockY, blockZ);
-			if (tileentityflag != null) {
-				flagData = stack.getData().getCompoundOrDefault("FlagData", new CompoundTag());
-				if (this.hasFlagBeenDrawnOn(stack) && this.doesFlagContainDyes(stack)) {
-					entityplayer.addChatMessage("flag.overwrite");
+	public boolean onItemUse(ItemStack stack, EntityBannerEdit entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+		TileEntityBanner tileentitybanner;
+		CompoundTag BannerData;
+		if (world.getBlockId(blockX, blockY, blockZ) == ModBlocks.banner.id && !entityplayer.isSneaking()) {
+			tileentitybanner = (TileEntityBanner)world.getBlockTileEntity(blockX, blockY, blockZ);
+			if (tileentitybanner != null) {
+				BannerData = stack.getData().getCompoundOrDefault("BannerData", new CompoundTag());
+				if (this.hasBannerBeenDrawnOn(stack) && this.doesBannerContainDyes(stack)) {
+					entityplayer.addChatMessage("Banner.overwrite");
 					return false;
 				}
 
-				tileentityflag.copyFlagNBT(flagData);
-				stack.getData().putCompound("FlagData", flagData);
-				entityplayer.addChatMessage("flag.copied");
+				tileentitybanner.copyBannerNBT(BannerData);
+				BannerData.putString("Owner", entityplayer.username);
+				stack.getData().putCompound("BannerData", BannerData);
+				entityplayer.addChatMessage("Banner.copied");
 				return true;
 			}
 		}
@@ -55,18 +57,18 @@ public class ItemBanner extends Item {
 				if (!Block.signPostPlanksOak.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
 					return false;
 				} else {
-					world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), Block.flag, EnumBlockSoundEffectType.PLACE);
-					world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, Block.flag.id, 0);
+					world.playBlockSoundEffect(entityplayer, (double)((float)blockX + 0.5F), (double)((float)blockY + 0.5F), (double)((float)blockZ + 0.5F), ModBlocks.banner, EnumBlockSoundEffectType.PLACE);
+					world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, ModBlocks.banner.id, 0);
 					stack.consumeItem(entityplayer);
-					tileentityflag = (TileEntityFlag)world.getBlockTileEntity(blockX, blockY, blockZ);
-					if (tileentityflag != null) {
-						flagData = stack.getData().getCompoundOrDefault("FlagData", (CompoundTag)null);
-						if (flagData != null) {
-							tileentityflag.readFlagNBT(flagData);
+					tileentitybanner = (TileEntityBanner)world.getBlockTileEntity(blockX, blockY, blockZ);
+					if (tileentitybanner != null) {
+						BannerData = stack.getData().getCompoundOrDefault("BannerData", (CompoundTag)null);
+						if (BannerData != null) {
+							tileentitybanner.readBannerNBT(BannerData);
 						}
 
-						if (!world.isClientSide && tileentityflag.owner.isEmpty()) {
-							entityplayer.displayGUIEditFlag(tileentityflag);
+						if (!world.isClientSide && tileentitybanner.owner.isEmpty()) {
+							entityplayer.displayGUIEditBanner(tileentitybanner);
 						}
 					}
 
@@ -78,12 +80,12 @@ public class ItemBanner extends Item {
 		}
 	}
 
-	public boolean hasFlagBeenDrawnOn(ItemStack stack) {
-		CompoundTag flagData = stack.getData().getCompound("FlagData");
-		if (flagData == null) {
+	public boolean hasBannerBeenDrawnOn(ItemStack stack) {
+		CompoundTag BannerData = stack.getData().getCompound("BannerData");
+		if (BannerData == null) {
 			return false;
 		} else {
-			byte[] colors = flagData.getByteArray("Colors");
+			byte[] colors = BannerData.getByteArray("Colors");
 			if (colors == null) {
 				return false;
 			} else {
@@ -98,12 +100,12 @@ public class ItemBanner extends Item {
 		}
 	}
 
-	public boolean doesFlagContainDyes(ItemStack stack) {
-		CompoundTag flagData = stack.getData().getCompound("FlagData");
-		if (flagData == null) {
+	public boolean doesBannerContainDyes(ItemStack stack) {
+		CompoundTag BannerData = stack.getData().getCompound("BannerData");
+		if (BannerData == null) {
 			return false;
 		} else {
-			ListTag items = flagData.getList("Items");
+			ListTag items = BannerData.getList("Items");
 			return items != null && items.tagCount() > 0;
 		}
 	}

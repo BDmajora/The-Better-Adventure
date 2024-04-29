@@ -3024,11 +3024,16 @@ public class ModBlocks {
 			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "pitcher_plant"), null, true))
 		.build(new Pitcher("pitcherPlantBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pitcher/pitcher_plant_bottom.json")));
 
-
 	public static final Block shield = new BlockBuilder(backport.MOD_ID)
 		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/shield.json")))
 		.build(new bdmajora.backport.block.dragonfly.BlockModel("shield", UtilIdRegistrar.nextIdBlock(), Material.stone, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/shield.json")));
 
+	public static final Block banner = new BlockBuilder(backport.MOD_ID)
+		.setBlockSound(BlockSounds.STONE)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.build(new BlockBanner("banner",UtilIdRegistrar.nextIdBlock(),Material.wood));
 
 	public static void register() {
 	}

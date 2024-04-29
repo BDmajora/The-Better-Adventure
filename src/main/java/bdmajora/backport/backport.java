@@ -10,16 +10,13 @@ import bdmajora.backport.item.ModItems;
 import bdmajora.backport.mixin.client.TileEntityRenderDispatcherAccessor;
 import bdmajora.backport.network.packet.PacketEnchantItem;
 import bdmajora.backport.world.biome.provider.BiomeProviderNether;
-import com.llamalad7.mixinextras.utils.MixinExtrasLogger;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
+import net.minecraft.client.render.RenderEngine;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
-import net.minecraft.core.data.registry.Registries;
-import net.minecraft.core.data.registry.recipe.RecipeNamespace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.EntityHelper;
-import turniplabs.halplibe.util.BlockCoords;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
@@ -68,11 +65,16 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 		ModBiomes.initializeBiomes();
 		BiomeProviderNether.init();
 
-		EnchantmentTableRenderer renderer = new EnchantmentTableRenderer();
-		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityEnchantmentTable.class, renderer);
-		renderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
+//		BannerRenderer bannerRenderer = new BannerRenderer();
+//		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityBanner.class, enchantmentRenderer);
+//		bannerRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
+
+		EnchantmentTableRenderer enchantmentRenderer = new EnchantmentTableRenderer();
+		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityEnchantmentTable.class, enchantmentRenderer);
+		enchantmentRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
 
 		EntityHelper.Core.createTileEntity(TileEntityEnchantmentTable.class, "EnchantmentTable");
+
 	}
 
 	@Override
