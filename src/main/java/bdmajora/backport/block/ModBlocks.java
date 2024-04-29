@@ -3025,6 +3025,10 @@ public class ModBlocks {
 		.build(new Pitcher("pitcherPlantBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/pitcher/pitcher_plant_bottom.json")));
 
 
+	public static final Block shield = new BlockBuilder(backport.MOD_ID)
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/shield.json")))
+		.build(new bdmajora.backport.block.dragonfly.BlockModel("shield", UtilIdRegistrar.nextIdBlock(), Material.stone, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/shield.json")));
+
 
 	public static void register() {
 	}

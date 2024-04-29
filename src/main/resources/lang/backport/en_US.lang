@@ -490,6 +490,9 @@ item.backport.item.oxidizedCopperDoor.name=Oxidized Copper Door
 item.backport.item.spruceDoor.name=Spruce Door
 item.backport.item.weatheredCopperDoor.name=Weathered Copper Door
 
+###Shields
+tile.backport.shield.name=Shield
+
 ###items
 item.backport.record.Disc.name=Music Disc
 item.backport.item.brick.name=Nether Brick
