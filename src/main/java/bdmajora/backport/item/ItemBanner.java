@@ -5,7 +5,6 @@ import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemFlag;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
@@ -19,9 +18,11 @@ public class ItemBanner extends ItemFlag {
 		this.setMaxStackSize(1);
 	}
 
+	@Override
 	public String getLanguageKey(ItemStack itemstack) {
 		return !this.hasBannerBeenDrawnOn(itemstack) && !this.doesBannerContainDyes(itemstack) ? super.getLanguageKey(itemstack) : this.getKey() + ".modified";
 	}
+
 
 	public boolean onItemUse(ItemStack stack, EntityBannerEdit entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
 		TileEntityBanner tileentitybanner;
@@ -81,6 +82,7 @@ public class ItemBanner extends ItemFlag {
 		}
 	}
 
+
 	public boolean hasBannerBeenDrawnOn(ItemStack stack) {
 		CompoundTag BannerData = stack.getData().getCompound("BannerData");
 		if (BannerData == null) {
@@ -100,6 +102,7 @@ public class ItemBanner extends ItemFlag {
 			}
 		}
 	}
+
 
 	public boolean doesBannerContainDyes(ItemStack stack) {
 		CompoundTag BannerData = stack.getData().getCompound("BannerData");

@@ -2,7 +2,6 @@ package bdmajora.backport.block.entity;
 
 import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;
-import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.entity.TileEntityFlag;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
@@ -14,11 +13,12 @@ import net.minecraft.core.player.inventory.IInventory;
 public class TileEntityBanner extends TileEntityFlag {
 	public final int CANVAS_WIDTH = 20;
 	public final int CANVAS_HEIGHT = 40;
-	public final byte[] BannerColors = new byte[384];
+	public final byte[] BannerColors = new byte[CANVAS_WIDTH * CANVAS_HEIGHT];
 	public ItemStack[] items = new ItemStack[3];
 	public String owner = "";
 
 	public TileEntityBanner() {
+		super();
 	}
 
 	public byte getColor(int x, int y) {
@@ -28,23 +28,23 @@ public class TileEntityBanner extends TileEntityFlag {
 			xSample = 0;
 		}
 
-		if (x >= 20) {
-			xSample = 19;
+		if (x >= CANVAS_WIDTH) {
+			xSample = CANVAS_WIDTH - 1;
 		}
 
 		if (y < 0) {
 			ySample = 0;
 		}
 
-		if (y >= 40) {
-			ySample = 39;
+		if (y >= CANVAS_HEIGHT) {
+			ySample = CANVAS_HEIGHT - 1;
 		}
 
-		int colorIndex = this.BannerColors[xSample + 20 * ySample] - 1;
+		int colorIndex = this.BannerColors[xSample + CANVAS_WIDTH * ySample] - 1;
 		if (colorIndex >= 0 && colorIndex < this.items.length) {
-			return this.items[colorIndex] != null && this.items[colorIndex].itemID == Item.dye.id ? (byte)(this.items[colorIndex].getMetadata() & 39) : 39;
+			return this.items[colorIndex] != null && this.items[colorIndex].itemID == Item.dye.id ? (byte)(this.items[colorIndex].getMetadata() & 15) : 15;
 		} else {
-			return 39;
+			return 15;
 		}
 	}
 
@@ -79,11 +79,11 @@ public class TileEntityBanner extends TileEntityFlag {
 	public void readBannerNBT(CompoundTag tag) {
 		byte[] packedColors = tag.getByteArrayOrDefault("Colors", (byte[])null);
 		if (packedColors == null) {
-			packedColors = new byte[96];
+			packedColors = new byte[CANVAS_WIDTH * CANVAS_HEIGHT / 4];
 		}
 
 		byte[] unpackedColors = this.unpackBannerColors(packedColors);
-		System.arraycopy(unpackedColors, 0, this.BannerColors, 0, 384);
+		System.arraycopy(unpackedColors, 0, this.BannerColors, 0, CANVAS_WIDTH * CANVAS_HEIGHT);
 		this.owner = tag.getStringOrDefault("Owner", "");
 		ListTag list = tag.getList("Items");
 		this.items = new ItemStack[this.getSizeInventory()];
@@ -109,9 +109,9 @@ public class TileEntityBanner extends TileEntityFlag {
 	}
 
 	private byte[] packBannerColors(byte[] unpacked) {
-		byte[] packed = new byte[96];
+		byte[] packed = new byte[CANVAS_WIDTH * CANVAS_HEIGHT / 4];
 
-		for(int i = 0; i < 96; ++i) {
+		for(int i = 0; i < CANVAS_WIDTH * CANVAS_HEIGHT / 4; ++i) {
 			packed[i] = 0;
 			packed[i] = (byte)(packed[i] | (unpacked[i * 4 + 0] & 3) << 0);
 			packed[i] = (byte)(packed[i] | (unpacked[i * 4 + 1] & 3) << 2);
@@ -123,9 +123,9 @@ public class TileEntityBanner extends TileEntityFlag {
 	}
 
 	private byte[] unpackBannerColors(byte[] packed) {
-		byte[] unpacked = new byte[384];
+		byte[] unpacked = new byte[CANVAS_WIDTH * CANVAS_HEIGHT];
 
-		for(int i = 0; i < 96; ++i) {
+		for(int i = 0; i < CANVAS_WIDTH * CANVAS_HEIGHT / 4; ++i) {
 			unpacked[i * 4 + 0] = (byte)((packed[i] & 3) >> 0);
 			unpacked[i * 4 + 1] = (byte)((packed[i] & 12) >> 2);
 			unpacked[i * 4 + 2] = (byte)((packed[i] & 48) >> 4);
