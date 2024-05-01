@@ -6,13 +6,14 @@ import com.mojang.nbt.ListTag;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemFlag;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import bdmajora.backport.block.entity.TileEntityBanner;
 import bdmajora.backport.entity.EntityBannerEdit;
 
-public class ItemBanner extends Item {
+public class ItemBanner extends ItemFlag {
 	public ItemBanner(String name, int id) {
 		super(name, id);
 		this.setMaxStackSize(1);

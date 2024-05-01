@@ -3,6 +3,7 @@ package bdmajora.backport.block.entity;
 import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;
 import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.block.entity.TileEntityFlag;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
@@ -10,9 +11,9 @@ import net.minecraft.core.net.packet.Packet;
 import net.minecraft.core.net.packet.Packet140TileEntityData;
 import net.minecraft.core.player.inventory.IInventory;
 
-public class TileEntityBanner extends TileEntity implements IInventory {
-	public final int CANVAS_WIDTH = 24;
-	public final int CANVAS_HEIGHT = 16;
+public class TileEntityBanner extends TileEntityFlag {
+	public final int CANVAS_WIDTH = 20;
+	public final int CANVAS_HEIGHT = 40;
 	public final byte[] BannerColors = new byte[384];
 	public ItemStack[] items = new ItemStack[3];
 	public String owner = "";
@@ -27,23 +28,23 @@ public class TileEntityBanner extends TileEntity implements IInventory {
 			xSample = 0;
 		}
 
-		if (x >= 24) {
-			xSample = 23;
+		if (x >= 20) {
+			xSample = 19;
 		}
 
 		if (y < 0) {
 			ySample = 0;
 		}
 
-		if (y >= 16) {
-			ySample = 15;
+		if (y >= 40) {
+			ySample = 39;
 		}
 
-		int colorIndex = this.BannerColors[xSample + 24 * ySample] - 1;
+		int colorIndex = this.BannerColors[xSample + 20 * ySample] - 1;
 		if (colorIndex >= 0 && colorIndex < this.items.length) {
-			return this.items[colorIndex] != null && this.items[colorIndex].itemID == Item.dye.id ? (byte)(this.items[colorIndex].getMetadata() & 15) : 15;
+			return this.items[colorIndex] != null && this.items[colorIndex].itemID == Item.dye.id ? (byte)(this.items[colorIndex].getMetadata() & 39) : 39;
 		} else {
-			return 15;
+			return 39;
 		}
 	}
 

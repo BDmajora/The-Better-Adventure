@@ -50,23 +50,23 @@ public abstract class EntityPlayerMPMixin extends EntityPlayer implements IEntit
 		this.craftingInventory.onContainerInit(this);
 	}
 
-	@Override
-	public void displayGUIEditBanner(TileEntityBanner banner)
-	{
-		this.getNextWindowId();
-
-		this.playerNetServerHandler.sendPacket(
-			new Packet100OpenWindow(
-				this.currentWindowId,
-				backport.config.getInt("enchantment_window_type_id"),
-				banner.getInvName(),
-				banner.getSizeInventory()
-			));
-
-		this.craftingInventory = new ContainerBanner(this.inventory, banner);
-		this.craftingInventory.windowId = this.currentWindowId;
-		this.craftingInventory.onContainerInit(this);
-	}
+//	@Override
+//	public void displayGUIEditBanner(TileEntityBanner banner)
+//	{
+//		this.getNextWindowId();
+//
+//		this.playerNetServerHandler.sendPacket(
+//			new Packet100OpenWindow(
+//				this.currentWindowId,
+//				backport.config.getInt("enchantment_window_type_id"),
+//				banner.getInvName(),
+//				banner.getSizeInventory()
+//			));
+//
+//		this.craftingInventory = new ContainerBanner(this.inventory, banner);
+//		this.craftingInventory.windowId = this.currentWindowId;
+//		this.craftingInventory.onContainerInit(this);
+//	}
 
 }
 

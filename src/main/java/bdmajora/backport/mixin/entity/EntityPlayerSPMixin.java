@@ -2,7 +2,6 @@ package bdmajora.backport.mixin.entity;
 
 import bdmajora.backport.block.entity.TileEntityBanner;
 import bdmajora.backport.block.entity.TileEntityEnchantmentTable;
-import bdmajora.backport.gui.GuiEditBanner;
 import bdmajora.backport.gui.GuiEnchantmentTable;
 import bdmajora.backport.interfaces.mixins.IEntityPlayer;
 import net.minecraft.client.Minecraft;
@@ -26,10 +25,9 @@ public class EntityPlayerSPMixin implements IEntityPlayer
 	}
 
 	@Override
-	public void displayGUIEditBanner(TileEntityBanner banner)
-	{
-		EntityPlayer player = this.mc.thePlayer;
-		mc.displayGuiScreen(new GuiEditBanner(player, banner));
+	public void displayGUIEditBanner(TileEntityBanner banner) {
+
 	}
+
 
 }
