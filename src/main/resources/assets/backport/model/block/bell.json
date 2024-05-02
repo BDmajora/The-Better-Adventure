@@ -1,8 +1,0 @@
-{
-  "parent": "backport:block/template_lantern",
-  "textures": {
-    "bell_bottom": "backport:block/bell_bottom",
-    "bell_side": "backport:block/bell_side",
-    "bell_top": "backport:block/bell_top"
-  }
-}
