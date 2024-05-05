@@ -21,4 +21,10 @@ public class BellModel extends ModelBase {
 		bell.render(scale);
 		fixture.render(scale);
 	}
+
+	public void renderBell(float rotateAngleX, float rotateAngleZ) {
+		bell.rotateAngleX = rotateAngleX;
+		bell.rotateAngleZ = rotateAngleZ;
+		bell.render(0.0625f);
+	}
 }
