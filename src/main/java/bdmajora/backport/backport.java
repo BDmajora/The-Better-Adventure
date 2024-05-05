@@ -67,20 +67,18 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 		ModBiomes.initializeBiomes();
 		BiomeProviderNether.init();
 
-//		BannerRenderer bannerRenderer = new BannerRenderer();
-//		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityBanner.class, enchantmentRenderer);
-//		bannerRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
-
 		BellRenderer bellRenderer = new BellRenderer();
 		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityBell.class, bellRenderer);
 		bellRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
 
+
+		// Keep the EnchantmentTableRenderer setup
 		EnchantmentTableRenderer enchantmentRenderer = new EnchantmentTableRenderer();
 		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityEnchantmentTable.class, enchantmentRenderer);
 		enchantmentRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
 
-		EntityHelper.Core.createTileEntity(TileEntityEnchantmentTable.class, "EnchantmentTable");
 
+		// Add the BellRenderer setup
 
 	}
 
