@@ -2762,9 +2762,9 @@ public class ModBlocks {
 		.build(new Block("blueIce",UtilIdRegistrar.nextIdBlock(),Material.ice));
 
 	public static final Block bell = new BlockBuilder(backport.MOD_ID)
-		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "item/bell.json"),
+		.setBlockModel(new BlockModelDragonFly(ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/bell_floor.json"),
 			ModelHelper.getOrCreateBlockState(backport.MOD_ID, "bell.json"), new bdmajora.backport.block.metastates.BellMetaState(), true))
-		.build(new bdmajora.backport.block.dragonfly.BlockBell("bell", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "item/bell.json")));
+		.build(new bdmajora.backport.block.dragonfly.BlockBell("bell", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/bell_floor.json")));
 
 
 	public static final Block blackCarpet = new BlockBuilder(backport.MOD_ID)
