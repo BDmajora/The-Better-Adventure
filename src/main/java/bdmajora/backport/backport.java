@@ -2,7 +2,9 @@ package bdmajora.backport;
 
 import bdmajora.backport.biome.ModBiomes;
 import bdmajora.backport.block.ModBlocks;
+import bdmajora.backport.block.client.BellRenderer;
 import bdmajora.backport.block.client.EnchantmentTableRenderer;
+import bdmajora.backport.block.entity.TileEntityBell;
 import bdmajora.backport.block.entity.TileEntityEnchantmentTable;
 import bdmajora.backport.crafting.ModCraftingManager;
 import bdmajora.backport.item.ModItems;
@@ -69,11 +71,16 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 //		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityBanner.class, enchantmentRenderer);
 //		bannerRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
 
+		BellRenderer bellRenderer = new BellRenderer();
+		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityBell.class, bellRenderer);
+		bellRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
+
 		EnchantmentTableRenderer enchantmentRenderer = new EnchantmentTableRenderer();
 		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityEnchantmentTable.class, enchantmentRenderer);
 		enchantmentRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
 
 		EntityHelper.Core.createTileEntity(TileEntityEnchantmentTable.class, "EnchantmentTable");
+
 
 	}
 
