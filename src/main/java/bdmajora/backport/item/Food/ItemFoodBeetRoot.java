@@ -3,13 +3,13 @@ package bdmajora.backport.item.Food;
 import bdmajora.backport.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.item.ItemFoodStackable;
+import net.minecraft.core.item.ItemFood;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
-public class ItemFoodBeetRoot extends ItemFoodStackable {
+public class ItemFoodBeetRoot extends ItemFood {
 	private Block cropsBlock;
 
 	public ItemFoodBeetRoot(String name, int id, int healAmount, boolean favouriteWolfFood, int maxStackSize, Block cropsBlock) {
@@ -19,7 +19,7 @@ public class ItemFoodBeetRoot extends ItemFoodStackable {
 
 	@Override
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
-		super.onItemUse(itemstack, entityplayer, world, blockX, blockY, blockY, side, xPlaced, yPlaced);
+		super.asItem();
 		if (!world.canPlaceInsideBlock(blockX, blockY, blockZ)) {
 			blockX += side.getOffsetX();
 			blockY += side.getOffsetY();

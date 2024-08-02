@@ -2,7 +2,6 @@ package bdmajora.backport;
 
 import bdmajora.backport.biome.ModBiomes;
 import bdmajora.backport.block.ModBlocks;
-import bdmajora.backport.block.client.BellRenderer;
 import bdmajora.backport.block.client.EnchantmentTableRenderer;
 import bdmajora.backport.block.entity.TileEntityBell;
 import bdmajora.backport.block.entity.TileEntityEnchantmentTable;
@@ -16,6 +15,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 import net.minecraft.client.render.RenderEngine;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
+import net.minecraft.client.render.tessellator.Tessellator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.EntityHelper;
@@ -67,13 +67,13 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 		ModBiomes.initializeBiomes();
 		BiomeProviderNether.init();
 
-		BellRenderer bellRenderer = new BellRenderer();
-		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityBell.class, bellRenderer);
-		bellRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
-
-
 		// Keep the EnchantmentTableRenderer setup
-		EnchantmentTableRenderer enchantmentRenderer = new EnchantmentTableRenderer();
+		EnchantmentTableRenderer enchantmentRenderer = new EnchantmentTableRenderer() {
+			@Override
+			public void doRender(Tessellator tessellator, TileEntityEnchantmentTable tileEntity, double d, double e, double f, float g) {
+
+			}
+		};
 		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityEnchantmentTable.class, enchantmentRenderer);
 		enchantmentRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
 

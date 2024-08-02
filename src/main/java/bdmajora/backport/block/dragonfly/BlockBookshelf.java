@@ -58,7 +58,7 @@ public class BlockBookshelf extends Block {
 			dropBook(world, x, y, z);
 		}
 	}
-	@Override
+
 	public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
 		if (world.isClientSide) {
 			return true;

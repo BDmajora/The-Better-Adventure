@@ -5,14 +5,14 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
-import useless.dragonfly.model.block.processed.BlockCube;
+import org.useless.dragonfly.model.block.processed.BlockCube;
 
 import java.util.ArrayList;
 
 public class BlockModel extends BlockTransparent {
-	public useless.dragonfly.model.block.processed.BlockModel model;
-	public BlockModel(String key, int id, Material material, useless.dragonfly.model.block.processed.BlockModel model) {
-		super(key, id, material, true);
+	public org.useless.dragonfly.model.block.processed.ModernBlockModel model;
+	public BlockModel(String key, int id, Material material, org.useless.dragonfly.model.block.processed.ModernBlockModel model) {
+		super(key, id, material);
 		this.model = model;
 	}
 	public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
@@ -48,5 +48,9 @@ public class BlockModel extends BlockTransparent {
 			super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
 		}
 		this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+	}
+
+	public BlockCube[] getBlockCubes() {
+		return new BlockCube[0];
 	}
 }

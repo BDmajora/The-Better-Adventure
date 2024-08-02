@@ -7,16 +7,16 @@ import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
-import useless.dragonfly.model.block.processed.BlockCube;
-import useless.dragonfly.model.block.processed.BlockModel;
+import org.useless.dragonfly.model.block.processed.BlockCube;
+import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 
 import java.util.ArrayList;
 
 public class BlockGrindStone extends BlockTransparent {
-	public useless.dragonfly.model.block.processed.BlockModel model;
+	public org.useless.dragonfly.model.block.processed.ModernBlockModel model;
 
-	public BlockGrindStone(String key, int id, Material material, BlockModel model) {
-		super(key, id, material, true);
+	public BlockGrindStone(String key, int id, Material material, ModernBlockModel model) {
+		super(key, id, material);
 		this.model = model;
 	}
 

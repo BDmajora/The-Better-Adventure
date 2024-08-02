@@ -7,8 +7,11 @@ import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
+import net.minecraft.core.util.helper.Direction;
+import net.minecraft.core.util.helper.Side;
 
 public class Peony extends Block {
 
@@ -43,8 +46,9 @@ public class Peony extends Block {
 		return 0.0F; // Makes the block break instantly
 	}
 
-	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta, EntityPlayer player) {
-		super.onBlockDestroyedByPlayer(world, x, y, z, meta, player, ModItems.peony);
+	@Override
+	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
+		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);
 		if (world.getBlock(x, y + 1, z) == ModBlocks.peonyTop) {
 			world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
 		} else if (world.getBlock(x, y - 1, z) == ModBlocks.peonyBottom) {

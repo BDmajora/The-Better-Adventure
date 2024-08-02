@@ -7,21 +7,29 @@ import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.ItemFoodStackable;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import turniplabs.halplibe.helper.TextureHelper;
+import net.minecraft.client.render.stitcher.TextureRegistry;
+import net.minecraft.client.render.LightmapHelper;
+import net.minecraft.client.render.block.color.BlockColorDispatcher;
+import net.minecraft.client.render.block.model.BlockModelStandard;
+import net.minecraft.client.render.stitcher.IconCoordinate;
+import net.minecraft.client.render.stitcher.TextureRegistry;
+import net.minecraft.client.render.tessellator.Tessellator;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.util.helper.MathHelper;
+import net.minecraft.core.util.helper.Side;
 
 import java.util.Random;
 
 import static bdmajora.backport.backport.MOD_ID;
 
 public class BlockCropsTorchFlower extends BlockFlower {
-	public final int[] growthStageTextures = new int[]{
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "torchflower_crop_stage0.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "torchflower_crop_stage1.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "torchflower_crop_stage2.png"),
+	public final IconCoordinate[] growthStageTextures = new IconCoordinate []{
+		TextureRegistry.getTexture(MOD_ID + "torchflower_crop_stage0.png"),
+		TextureRegistry.getTexture(MOD_ID + "torchflower_crop_stage1.png"),
+		TextureRegistry.getTexture(MOD_ID + "torchflower_crop_stage2.png"),
 	};
 
 	public BlockCropsTorchFlower(String key, int id) {
@@ -87,13 +95,13 @@ public class BlockCropsTorchFlower extends BlockFlower {
 		return growthRate;
 	}
 
-	@Override
-	public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-		if (data < 0 || data >= growthStageTextures.length) {
-			data = growthStageTextures.length - 1;
-		}
-		return this.growthStageTextures[data];
-	}
+//	@Override
+//	public int getBlockTextureFromSideAndMetadata(Side side, int data) {
+//		if (data < 0 || data >= growthStageTextures.length) {
+//			data = growthStageTextures.length - 1;
+//		}
+//		return this.growthStageTextures[data];
+//	}
 
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

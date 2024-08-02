@@ -10,18 +10,27 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import turniplabs.halplibe.helper.TextureHelper;
+import net.minecraft.client.render.stitcher.TextureRegistry;
+import net.minecraft.client.render.LightmapHelper;
+import net.minecraft.client.render.block.color.BlockColorDispatcher;
+import net.minecraft.client.render.block.model.BlockModelStandard;
+import net.minecraft.client.render.stitcher.IconCoordinate;
+import net.minecraft.client.render.stitcher.TextureRegistry;
+import net.minecraft.client.render.tessellator.Tessellator;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.util.helper.MathHelper;
+import net.minecraft.core.util.helper.Side;
 
 import java.util.Random;
 
 import static bdmajora.backport.backport.MOD_ID;
 
 public class BlockCropsPotato extends BlockFlower {
-	public final int[] growthStageTextures = new int[]{
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "potato_growing_01.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "potato_growing_02.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "potato_growing_03.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "potato_growing_04.png")
+	public final IconCoordinate[] growthStageTextures = new IconCoordinate []{
+		TextureRegistry.getTexture(MOD_ID + "potato_growing_01.png"),
+		TextureRegistry.getTexture(MOD_ID + "potato_growing_02.png"),
+		TextureRegistry.getTexture(MOD_ID + "potato_growing_03.png"),
+		TextureRegistry.getTexture(MOD_ID + "potato_growing_04.png")
 	};
 
 	public BlockCropsPotato(String key, int id) {
@@ -87,13 +96,13 @@ public class BlockCropsPotato extends BlockFlower {
 		return growthRate;
 	}
 
-	@Override
-	public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-		if (data < 0 || data > 3) {
-			data = 3;
-		}
-		return this.growthStageTextures[data];
-	}
+//	@Override
+//	public int getBlockTextureFromSideAndMetadata(Side side, int data) {
+//		if (data < 0 || data > 3) {
+//			data = 3;
+//		}
+//		return this.growthStageTextures[data];
+//	}
 
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

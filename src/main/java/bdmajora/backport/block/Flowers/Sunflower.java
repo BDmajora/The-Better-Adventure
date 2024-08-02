@@ -8,21 +8,22 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import useless.dragonfly.model.block.processed.BlockCube;
-import useless.dragonfly.model.block.processed.BlockModel;
+import org.useless.dragonfly.model.block.processed.BlockCube;
+import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 import net.minecraft.core.util.phys.AABB;
 
 import java.util.ArrayList;
 
 public class Sunflower extends Block {
 
-	public BlockModel model;
+	public ModernBlockModel model;
 
-	public Sunflower(String name, int id, Material material, BlockModel model) {
+	public Sunflower(String name, int id, Material material, ModernBlockModel model) {
 		super(name, id, material);
 		this.model = model;
 	}
@@ -53,8 +54,9 @@ public class Sunflower extends Block {
 		return 0.0F; // Makes the block break instantly
 	}
 
-	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta, EntityPlayer player) {
-		super.onBlockDestroyedByPlayer(world, x, y, z, meta, player, ModItems.sunflower);
+	@Override
+	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
+		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);
 		if (world.getBlock(x, y + 1, z) == ModBlocks.sunflowerTop) {
 			world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
 		} else if (world.getBlock(x, y - 1, z) == ModBlocks.sunflowerBottom) {

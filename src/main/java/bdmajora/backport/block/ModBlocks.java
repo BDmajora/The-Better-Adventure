@@ -14,7 +14,8 @@ import bdmajora.backport.block.Vines.BlockVine;
 import bdmajora.backport.block.Vines.BlockVines;
 import bdmajora.backport.block.dragonfly.BlockBookshelf;
 import net.minecraft.client.render.block.color.BlockColorWater;
-import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
+
+import net.minecraft.client.render.block.model.*;
 import net.minecraft.core.sound.BlockSound;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockAxisAligned;
@@ -24,8 +25,8 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.sound.BlockSounds;
 import turniplabs.halplibe.helper.BlockBuilder;
-import useless.dragonfly.helper.ModelHelper;
-import useless.dragonfly.model.block.BlockModelDragonFly;
+import org.useless.dragonfly.helper.ModelHelper;
+import org.useless.dragonfly.model.block.BlockModelDragonFly;
 
 public class ModBlocks {
 
@@ -204,7 +205,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.DEFAULT)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("hay_block_top.png")
+		.setTopBottomTextures("hay_block_top.png")
 		.setSideTextures("hay_block_side.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new Block("hayBlock",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -260,7 +261,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.DEFAULT)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("purpur_pillar_top.png")
+		.setTopBottomTextures("purpur_pillar_top.png")
 		.setSideTextures("purpur_pillar.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("purpurPillar",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -285,7 +286,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.DEFAULT)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("bone_block_top.png")
+		.setTopBottomTextures("bone_block_top.png")
 		.setSideTextures("bone_block_side.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("boneBlock",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -294,7 +295,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("crimson_nylium.png")
+		.setTopBottomTextures("crimson_nylium.png")
 		.setSideTextures("crimson_nylium_side.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE, ModBlockTags.GROWS_NETHER_PLANTS)
 		.build(new Block("nylium",UtilIdRegistrar.nextIdBlock(),Material.dirt));
@@ -303,7 +304,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("warped_nylium.png")
+		.setTopBottomTextures("warped_nylium.png")
 		.setSideTextures("warped_nylium_side.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE, ModBlockTags.GROWS_NETHER_PLANTS)
 		.build(new Block("warpedNylium", UtilIdRegistrar.nextIdBlock(), Material.dirt));
@@ -312,53 +313,58 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("crimson_fungus.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockSaplingCrimsonFungus("crimson_fungus", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_plant));
+
 	public static final Block warpedFungus = new BlockBuilder(backport.MOD_ID)
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("warped_fungus.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockSaplingWarpedFungus("warped_fungus", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_plant));
+
 	public static final Block crimsonStem = new BlockBuilder(backport.MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(new BlockModelRenderBlocks(27))
+		.setBlockModel(BlockModelLantern::new)
 		.setSideTextures("crimson_stem.png")
-		.setTopBottomTexture("crimson_stem_top.png")
-		.setTopBottomTexture("crimson_stem_top.png")
+		.setTopBottomTextures("crimson_stem_top.png")
+		.setTopBottomTextures("crimson_stem_top.png")
 		.addTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockAxisAligned("crimson_stem", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_log));
+
 	public static final Block warpedStem = new BlockBuilder(backport.MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(new BlockModelRenderBlocks(27))
+		.setBlockModel(BlockModelLantern::new)
 		.setSideTextures("warped_stem.png")
-		.setTopBottomTexture("warped_stem_top.png")
+		.setTopBottomTextures("warped_stem_top.png")
 		.addTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockAxisAligned("warped_stem", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_log));
+
 	public static final Block crimsonPlanks = new BlockBuilder(backport.MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setSideTextures("crimson_planks.png")
-		.setTopBottomTexture("crimson_planks.png")
-		.setTopBottomTexture("crimson_planks.png")
+		.setTopBottomTextures("crimson_planks.png")
+		.setTopBottomTextures("crimson_planks.png")
 		.addTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
 		.build(new Block("crimson_planks", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_log));
+
 	public static final Block warpedPlanks = new BlockBuilder(backport.MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setSideTextures("warped_planks.png")
-		.setTopBottomTexture("warped_planks.png")
-		.setTopBottomTexture("warped_planks.png")
+		.setTopBottomTextures("warped_planks.png")
+		.setTopBottomTextures("warped_planks.png")
 		.addTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
 		.build(new Block("warped_planks", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_log));
 
@@ -368,8 +374,8 @@ public class ModBlocks {
 		.setResistance(1.0f)
 		.setLuminance(15)
 		.setSideTextures("shroomlight.png")
-		.setTopBottomTexture("shroomlight.png")
-		.setTopBottomTexture("shroomlight.png")
+		.setTopBottomTextures("shroomlight.png")
+		.setTopBottomTextures("shroomlight.png")
 		.addTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
 		.build(new Block("shroomlight", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_log));
 
@@ -385,7 +391,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.STONE)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("lodestone_top.png")
+		.setTopBottomTextures("lodestone_top.png")
 		.setSideTextures("lodestone_side.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("lodestone",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -394,7 +400,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("nether_sprouts.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockSaplingWarpedFungus("netherSprouts", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_plant));
@@ -419,7 +425,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("target_top.png")
+		.setTopBottomTextures("target_top.png")
 		.setSideTextures("target_side.png")
 		.setTags(BlockTags.MINEABLE_BY_SHOVEL)
 		.build(new Block("target",UtilIdRegistrar.nextIdBlock(),Material.wood));
@@ -428,7 +434,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.STONE)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("ancient_debris_top.png")
+		.setTopBottomTextures("ancient_debris_top.png")
 		.setSideTextures("ancient_debris_side.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("ancientDebris",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -622,7 +628,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.STONE)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("chiseled_tuff_bricks_top.png")
+		.setTopBottomTextures("chiseled_tuff_bricks_top.png")
 		.setSideTextures("chiseled_tuff_bricks.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("chiseledtuffBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -631,7 +637,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.STONE)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("chiseled_tuff_top.png")
+		.setTopBottomTextures("chiseled_tuff_top.png")
 		.setSideTextures("chiseled_tuff.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("chiseledTuff",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -665,7 +671,7 @@ public class ModBlocks {
 		.setHardness(0.5f)
 		.setResistance(1.0f)
 		.setLuminance(15)
-		.setTopBottomTexture("ochre_froglight_top.png")
+		.setTopBottomTextures("ochre_froglight_top.png")
 		.setSideTextures("ochre_froglight_side.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("ochrefroglight",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -675,7 +681,7 @@ public class ModBlocks {
 		.setHardness(0.5f)
 		.setResistance(1.0f)
 		.setLuminance(15)
-		.setTopBottomTexture("pearlescent_froglight_top.png")
+		.setTopBottomTextures("pearlescent_froglight_top.png")
 		.setSideTextures("pearlescent_froglight_side.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("pearlescentfroglight",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -685,7 +691,7 @@ public class ModBlocks {
 		.setHardness(0.5f)
 		.setResistance(1.0f)
 		.setLuminance(15)
-		.setTopBottomTexture("verdant_froglight_top.png")
+		.setTopBottomTextures("verdant_froglight_top.png")
 		.setSideTextures("verdant_froglight_side.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("verdantfroglight",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -694,7 +700,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(new BlockModelRenderBlocks(27))
+		.setBlockModel(BlockModelLantern::new)
 		.setLuminance(15)
 		.setTextures("sea_lantern.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
@@ -712,7 +718,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("muddy_mangrove_roots_top.png")
+		.setTopBottomTextures("muddy_mangrove_roots_top.png")
 		.setSideTextures("muddy_mangrove_roots_side.png")
 		.setTags(BlockTags.MINEABLE_BY_SHOVEL)
 		.build(new Block("muddyMangroveRoot",UtilIdRegistrar.nextIdBlock(),Material.dirt));
@@ -747,7 +753,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(new BlockModelRenderBlocks(27))
+		.setBlockModel(BlockModelLantern::new)
 		.setTextures("sculk.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("sculk",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -756,7 +762,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("bamboo_block_top.png")
+		.setTopBottomTextures("bamboo_block_top.png")
 		.setSideTextures("bamboo_block.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new Block("bambooBlock",UtilIdRegistrar.nextIdBlock(),Material.wood));
@@ -781,7 +787,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(1.0f)
 		.setResistance(1.0f)
-		.setTopBottomTexture("stripped_bamboo_block_top.png")
+		.setTopBottomTextures("stripped_bamboo_block_top.png")
 		.setSideTextures("stripped_bamboo_block.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new Block("strippedBambooBlock",UtilIdRegistrar.nextIdBlock(),Material.wood));
@@ -1046,7 +1052,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(new BlockModelRenderBlocks(27))
+		.setBlockModel(BlockModelLantern::new)
 		.setLuminance(5)
 		.setTextures("magma.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
@@ -1064,7 +1070,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.STONE)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTexture("basalt_top.png")
+		.setTopBottomTextures("basalt_top.png")
 		.setSideTextures("basalt_side.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("basalt",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -1073,7 +1079,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.STONE)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTexture("deepslate_top.png")
+		.setTopBottomTextures("deepslate_top.png")
 		.setSideTextures("deepslate.png")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("deepslate",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -1434,7 +1440,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTexture("acacia_log_top.png")
+		.setTopBottomTextures("acacia_log_top.png")
 		.setSideTextures("acacia_log.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
 		.build(new BlockAxisAligned("acaciaLog",UtilIdRegistrar.nextIdBlock(),Material.wood));
@@ -1451,7 +1457,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTexture("dark_oak_log_top.png")
+		.setTopBottomTextures("dark_oak_log_top.png")
 		.setSideTextures("dark_oak_log.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
 		.build(new BlockAxisAligned("darkOakLog",UtilIdRegistrar.nextIdBlock(),Material.wood));
@@ -1468,7 +1474,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTexture("jungle_log_top.png")
+		.setTopBottomTextures("jungle_log_top.png")
 		.setSideTextures("jungle_log.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
 		.build(new BlockAxisAligned("jungleLog",UtilIdRegistrar.nextIdBlock(),Material.wood));
@@ -1485,7 +1491,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTexture("mangrove_log_top.png")
+		.setTopBottomTextures("mangrove_log_top.png")
 		.setSideTextures("mangrove_log.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
 		.build(new BlockAxisAligned("mangroveLog",UtilIdRegistrar.nextIdBlock(),Material.wood));
@@ -1502,7 +1508,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTexture("spruce_log_top.png")
+		.setTopBottomTextures("spruce_log_top.png")
 		.setSideTextures("spruce_log.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
 		.build(new BlockAxisAligned("spruceLog",UtilIdRegistrar.nextIdBlock(),Material.wood));
@@ -1528,7 +1534,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("crimson_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new CrimsonDoor("crimsonDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1537,7 +1543,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("crimson_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new CrimsonDoor("crimsonDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1546,7 +1552,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("warped_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new CrimsonDoor("warpedDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1555,7 +1561,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("warped_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new WarpedDoor("wardpedDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1564,7 +1570,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("acacia_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new AcaciaDoor("acaciaDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1573,7 +1579,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("acacia_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new AcaciaDoor("acaciaDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1582,7 +1588,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("bamboo_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new BambooDoor("bambooDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1591,7 +1597,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("bamboo_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new BambooDoor("bambooDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1600,7 +1606,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("birch_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new BirchDoor("birchDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1609,7 +1615,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("birch_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new BirchDoor("birchDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1618,7 +1624,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("cherry_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new CherryDoor("cherryDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1627,7 +1633,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("cherry_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new CherryDoor("cherryDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1636,7 +1642,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("copper_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new CopperDoor("copperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true));
 
@@ -1645,7 +1651,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("copper_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new CopperDoor("copperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false));
 
@@ -1654,7 +1660,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("dark_oak_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new DarkOakDoor("darkOakDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1663,7 +1669,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("dark_oak_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new DarkOakDoor("darkOakDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1672,7 +1678,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("exposed_copper_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new ExposedCopperDoor("exposedCopperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true));
 
@@ -1681,7 +1687,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("exposed_copper_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new ExposedCopperDoor("exposedCopperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false));
 
@@ -1690,7 +1696,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("jungle_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new JungleDoor("jungleDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1699,7 +1705,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("jungle_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new JungleDoor("jungleDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1708,7 +1714,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("mangrove_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new MangroveDoor("mangroveDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1717,7 +1723,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("mangrove_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new MangroveDoor("mangroveDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1726,7 +1732,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("oxidized_copper_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new OxidizedCopperDoor("oxidizedCopperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true));
 
@@ -1735,7 +1741,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("oxidized_copper_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new OxidizedCopperDoor("oxidizedCopperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false));
 
@@ -1744,7 +1750,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("spruce_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new SpruceDoor("spruceDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
 
@@ -1753,7 +1759,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("spruce_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new SpruceDoor("spruceDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
 
@@ -1762,7 +1768,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("weathered_copper_door_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new WeatheredCopperDoor("weatheredCopperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true));
 
@@ -1771,7 +1777,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures("weathered_copper_door_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(7))
+		.setBlockModel(BlockModelDoor::new)
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new WeatheredCopperDoor("weatheredCopperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false));
 
@@ -1779,9 +1785,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("acacia_trapdoor.png")
+		.setTopBottomTextures("acacia_trapdoor.png")
 		.setSideTextures("acacia_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new AcaciaTrapDoor("acaciaTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1790,9 +1796,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("bamboo_trapdoor.png")
+		.setTopBottomTextures("bamboo_trapdoor.png")
 		.setSideTextures("bamboo_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BambooTrapDoor("bambooTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1801,9 +1807,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("cherry_trapdoor.png")
+		.setTopBottomTextures("cherry_trapdoor.png")
 		.setSideTextures("cherry_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new CherryTrapDoor("cherryTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1812,9 +1818,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("copper_trapdoor.png")
+		.setTopBottomTextures("copper_trapdoor.png")
 		.setSideTextures("copper_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new CopperTrapDoor("copperTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.metal));
@@ -1823,9 +1829,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("crimson_trapdoor.png")
+		.setTopBottomTextures("crimson_trapdoor.png")
 		.setSideTextures("crimson_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new CrimsonTrapDoor("crimsonTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1834,9 +1840,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("dark_oak_trapdoor.png")
+		.setTopBottomTextures("dark_oak_trapdoor.png")
 		.setSideTextures("dark_oak_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new DarkOakTrapDoor("darkOakTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1845,9 +1851,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("exposed_copper_trapdoor.png")
+		.setTopBottomTextures("exposed_copper_trapdoor.png")
 		.setSideTextures("exposed_copper_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new ExposedCopperTrapDoor("exposedCopperTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.metal));
@@ -1856,9 +1862,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("jungle_trapdoor.png")
+		.setTopBottomTextures("jungle_trapdoor.png")
 		.setSideTextures("jungle_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new JungleTrapDoor("jungleTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1867,9 +1873,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("mangrove_trapdoor.png")
+		.setTopBottomTextures("mangrove_trapdoor.png")
 		.setSideTextures("mangrove_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new MangroveTrapDoor("mangroveTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1878,9 +1884,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("oxidized_copper_trapdoor.png")
+		.setTopBottomTextures("oxidized_copper_trapdoor.png")
 		.setSideTextures("oxidized_copper_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new OxidizedCopperTrapDoor("oxidizedCopperTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.metal));
@@ -1889,9 +1895,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("spruce_trapdoor.png")
+		.setTopBottomTextures("spruce_trapdoor.png")
 		.setSideTextures("spruce_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new SpruceTrapDoor("spruceTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1900,9 +1906,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("warped_trapdoor.png")
+		.setTopBottomTextures("warped_trapdoor.png")
 		.setSideTextures("warped_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new WarpedTrapDoor("warpedTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1911,9 +1917,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("weathered_copper_trapdoor.png")
+		.setTopBottomTextures("weathered_copper_trapdoor.png")
 		.setSideTextures("weathered_copper_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new WarpedTrapDoor("weatheredCopperTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.metal));
@@ -1922,9 +1928,9 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(5.0f)
 		.setResistance(2000.0f)
-		.setTopBottomTexture("birch_trapdoor.png")
+		.setTopBottomTextures("birch_trapdoor.png")
 		.setSideTextures("birch_trapdoor_side.png")
-		.setBlockModel(new BlockModelRenderBlocks(30))
+		.setBlockModel(BlockModelTrapDoor::new)
 		.setVisualUpdateOnMetadata()
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BirchTrapDoor("birchTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
@@ -1975,7 +1981,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTexture("beehive_end.png")
+		.setTopBottomTextures("beehive_end.png")
 		.setNorthTexture("beehive_side.png")
 		.setEastTexture("beehive_side.png")
 		.setWestTexture("beehive_side.png")
@@ -1987,7 +1993,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTexture("beehive_end.png")
+		.setTopBottomTextures("beehive_end.png")
 		.setNorthTexture("beehive_side.png")
 		.setEastTexture("beehive_side.png")
 		.setWestTexture("beehive_side.png")
@@ -2071,7 +2077,7 @@ public class ModBlocks {
 		.setResistance(1.0f)
 		.setTextures("soul_torch.png")
 		.setLuminance(15)
-		.setBlockModel((new BlockModelRenderBlocks(2)))
+		.setBlockModel(BlockModelTorch::new)
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockSoulTorch("soulTorch",UtilIdRegistrar.nextIdBlock()));
 
@@ -2095,7 +2101,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("azure_bluet.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockFlower("azureBluet", UtilIdRegistrar.nextIdBlock()));
@@ -2104,7 +2110,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("cornflower.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockFlower("cornflower", UtilIdRegistrar.nextIdBlock()));
@@ -2113,7 +2119,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("lily_of_the_valley.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockFlower("lilyOfTheValley", UtilIdRegistrar.nextIdBlock()));
@@ -2122,7 +2128,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("orange_tulip.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockFlower("orangeTulip", UtilIdRegistrar.nextIdBlock()));
@@ -2131,7 +2137,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("oxeye_daisy.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockFlower("oxeyeDaisy", UtilIdRegistrar.nextIdBlock()));
@@ -2140,7 +2146,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("pink_tulip.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockFlower("pinkTulip", UtilIdRegistrar.nextIdBlock()));
@@ -2149,7 +2155,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("red_tulip.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockFlower("redTulip", UtilIdRegistrar.nextIdBlock()));
@@ -2158,7 +2164,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("white_tulip.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockFlower("whiteTulip", UtilIdRegistrar.nextIdBlock()));
@@ -2167,7 +2173,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("wither_rose.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockFlower("witherRose", UtilIdRegistrar.nextIdBlock()));
@@ -2298,7 +2304,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("weeping_vines.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockWeepingVines("weepingVinesPlant", UtilIdRegistrar.nextIdBlock()));
@@ -2307,7 +2313,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("twisting_vines.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockTwistingVinesPlant("twistingVines", UtilIdRegistrar.nextIdBlock()));
@@ -2315,7 +2321,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("weeping_vines_plant.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockWeepingVinesPlant("weepingVinesPlant", UtilIdRegistrar.nextIdBlock()));
@@ -2323,7 +2329,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("twisting_vines_plant.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockTwistingVinesPlant("twistingVinesPlant", UtilIdRegistrar.nextIdBlock()));
@@ -2332,7 +2338,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("cave_vines.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockVines("caveVines", UtilIdRegistrar.nextIdBlock()));
@@ -2341,7 +2347,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("cave_vines_plant.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockVines("caveVinesPlant", UtilIdRegistrar.nextIdBlock()));
@@ -2350,7 +2356,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("cave_vines_lit.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.setLuminance(15)
@@ -2360,7 +2366,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.5f)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures("cave_vines_plant_lit.png")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.setLuminance(15)
@@ -2371,7 +2377,7 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.1f)
 		.setResistance(0.1f)
-		.setBlockModel(new BlockModelRenderBlocks(8))
+		.setBlockModel(BlockModelLadder::new)
 		.setTags(BlockTags.MINEABLE_BY_SHEARS,BlockTags.SHEARS_DO_SILK_TOUCH)
 		.build(new BlockVine("vine", UtilIdRegistrar.nextIdBlock()));
 
@@ -2380,7 +2386,7 @@ public class ModBlocks {
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures("lilac_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new Lilac("lilacTop", UtilIdRegistrar.nextIdBlock(), Material.plant, true));
 
@@ -2389,7 +2395,7 @@ public class ModBlocks {
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures("lilac_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new Lilac("lilacBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false));
 
@@ -2398,7 +2404,7 @@ public class ModBlocks {
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures("peony_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new Peony("peonyTop", UtilIdRegistrar.nextIdBlock(), Material.plant, true));
 
@@ -2407,7 +2413,7 @@ public class ModBlocks {
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures("peony_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new Lilac("peonyBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false));
 
@@ -2416,7 +2422,7 @@ public class ModBlocks {
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures("rose_bush_top.png")
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new Peony("roseBushTop", UtilIdRegistrar.nextIdBlock(), Material.plant, true));
 
@@ -2425,7 +2431,7 @@ public class ModBlocks {
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures("rose_bush_bottom.png")
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new Lilac("roseBushBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false));
 
@@ -2883,28 +2889,28 @@ public class ModBlocks {
 		.build(new bdmajora.backport.block.dragonfly.BlockGrindStone("grindstone", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(backport.MOD_ID, "block/grindstone.json")));
 
 	public static final Block cropsBeetRoot = new BlockBuilder(backport.MOD_ID)
-		.setBlockModel(new BlockModelRenderBlocks(6))
+		.setBlockModel(BlockModelCropsWheat::new)
 		.build(new BlockCropsBeetRoot("crops.BeetRoot", UtilIdRegistrar.nextIdBlock())
 		.withDisabledStats()
 			.withDisabledNeighborNotifyOnMetadataChange()
 			.withLitInteriorSurface(true));
 
 	public static final Block cropsCarrot = new BlockBuilder(backport.MOD_ID)
-		.setBlockModel(new BlockModelRenderBlocks(6))
+		.setBlockModel(BlockModelCropsWheat::new)
 		.build(new BlockCropsCarrot("crops.Carrot", UtilIdRegistrar.nextIdBlock()))
 		.withDisabledStats()
 		.withDisabledNeighborNotifyOnMetadataChange()
 		.withLitInteriorSurface(true);
 
 	public static final Block cropsPotato = new BlockBuilder(backport.MOD_ID)
-		.setBlockModel(new BlockModelRenderBlocks(6))
+		.setBlockModel(BlockModelCropsWheat::new)
 		.build(new BlockCropsPotato("crops.potato", UtilIdRegistrar.nextIdBlock())
 			.withDisabledStats()
 			.withDisabledNeighborNotifyOnMetadataChange()
 			.withLitInteriorSurface(true));
 
 	public static final Block cropsTorchFlower = new BlockBuilder(backport.MOD_ID)
-		.setBlockModel(new BlockModelRenderBlocks(1))
+		.setBlockModel(BlockModelCrossedSquares::new)
 		.build(new BlockCropsTorchFlower("crops.TorchFlower", UtilIdRegistrar.nextIdBlock())
 			.withDisabledStats()
 			.withDisabledNeighborNotifyOnMetadataChange()
@@ -2912,11 +2918,11 @@ public class ModBlocks {
 
 	public static final Block blockWatermelon = new BlockBuilder(backport.MOD_ID)
 		.setSideTextures("melonSide.png")
-		.setTopBottomTexture("melonTop.png")
+		.setTopBottomTextures("melonTop.png")
 		.build(new BlockWatermelon("block.melon",  UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static final Block cropsWatermelon = new BlockBuilder(backport.MOD_ID)
-		.setBlockModel(new BlockModelRenderBlocks(32))
+		.setBlockModel(BlockModelCropsPumpkin::new)
 		.build(new BlockCropsWatermelon("crops.watermelon", UtilIdRegistrar.nextIdBlock())
 			.withDisabledStats()
 			.withDisabledNeighborNotifyOnMetadataChange()

@@ -9,7 +9,7 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 public class BlockColouredGlass extends BlockGlass {
 	public BlockColouredGlass(String key, int id, Material material, boolean renderInside) {
-		super(key, id, Material.glass, false);
+		super(key, id, Material.glass);
 	}
 
 	@Override

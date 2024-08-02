@@ -2,6 +2,7 @@ package bdmajora.backport.block.client;
 
 import bdmajora.backport.backport;
 import bdmajora.backport.block.entity.TileEntityEnchantmentTable;
+import net.minecraft.client.render.tessellator.Tessellator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
@@ -15,7 +16,7 @@ import org.lwjgl.opengl.GL11;
 
 public class EnchantmentTableRenderer extends TileEntityRenderer<TileEntityEnchantmentTable> {
 	private static final BookModel model = new BookModel();
-	private static final String texturePath = "assets/" + backport.MOD_ID + "/book/enchanting_table_book.png";
+	private static final String texturePath = "assets/" + backport.MOD_ID + "/book/book.png";
 	private final EntityItem entityItem = new EntityItem(null);
 	private final ItemEntityRenderer renderer = new ItemEntityRenderer();
 
@@ -24,7 +25,7 @@ public class EnchantmentTableRenderer extends TileEntityRenderer<TileEntityEncha
 	}
 
 	@Override
-	public void doRender(TileEntityEnchantmentTable tileEntity, double x, double y, double z, float partialTicks) {
+	public void doRender(Tessellator tessellator, TileEntityEnchantmentTable tileEntity, double x, double y, double z, float partialTicks) {
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float)x + 0.5F, (float)y + 0.75F, (float)z + 0.5F);
 		float t = tileEntity.ticks + partialTicks;
@@ -63,7 +64,7 @@ public class EnchantmentTableRenderer extends TileEntityRenderer<TileEntityEncha
 		}
 		entityItem.item = new ItemStack(stack.itemID, 1, stack.getMetadata(), stack.getData());
 		entityItem.entityBrightness = tileEntity.worldObj.getLightBrightness(tileEntity.x, tileEntity.y, tileEntity.z);
-		renderer.doRender(entityItem, 0D, -0.3D, 0D, 0F, 0F);
+		renderer.doRender(tessellator, entityItem, 0D, -0.3D, 0D, 0F, 0F);
 		GL11.glPopMatrix();
 	}
 }

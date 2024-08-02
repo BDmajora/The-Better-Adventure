@@ -12,30 +12,39 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
-import turniplabs.halplibe.helper.TextureHelper;
+import net.minecraft.client.render.stitcher.TextureRegistry;
+import net.minecraft.client.render.LightmapHelper;
+import net.minecraft.client.render.block.color.BlockColorDispatcher;
+import net.minecraft.client.render.block.model.BlockModelStandard;
+import net.minecraft.client.render.stitcher.IconCoordinate;
+import net.minecraft.client.render.stitcher.TextureRegistry;
+import net.minecraft.client.render.tessellator.Tessellator;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.util.helper.MathHelper;
+import net.minecraft.core.util.helper.Side;
 
 import java.util.Random;
 
 import static bdmajora.backport.backport.MOD_ID;
 
 public class BlockCropsWatermelon extends BlockFlower {
-	public static final int[] GROWTH_STAGE_TEXTURES_TOP = new int[]{
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "watermelon_growing_top_01.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "watermelon_growing_top_02.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "watermelon_growing_top_03.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "watermelon_growing_top_04.png")
+	public final IconCoordinate[] GROWTH_STAGE_TEXTURES_TOP = new IconCoordinate []{
+		TextureRegistry.getTexture(MOD_ID + "watermelon_growing_top_01.png"),
+		TextureRegistry.getTexture(MOD_ID + "watermelon_growing_top_02.png"),
+		TextureRegistry.getTexture(MOD_ID + "watermelon_growing_top_03.png"),
+		TextureRegistry.getTexture(MOD_ID + "watermelon_growing_top_04.png")
 	};
-	public static final int[] GROWTH_STAGE_TEXTURES_SIDE = new int[]{
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "watermelon_growing_side_01.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "watermelon_growing_side_02.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "watermelon_growing_side_03.png"),
-		TextureHelper.getOrCreateBlockTextureIndex(MOD_ID, "watermelon_growing_side_04.png")
+	public final IconCoordinate[] GROWTH_STAGE_TEXTURES_SIDE = new IconCoordinate []{
+		TextureRegistry.getTexture(MOD_ID + "watermelon_growing_side_01.png"),
+		TextureRegistry.getTexture(MOD_ID + "watermelon_growing_side_02.png"),
+		TextureRegistry.getTexture(MOD_ID + "watermelon_growing_side_03.png"),
+		TextureRegistry.getTexture(MOD_ID + "watermelon_growing_side_04.png")
 	};
 	public BlockCropsWatermelon(String key, int id) {
 		super(key, id);
 	}
 
-	@Override
+
 	public void setBlockBoundsBasedOnState(World world, int x, int y, int z) {
 		int meta = world.getBlockMetadata(x, y, z);
 		float onePix = 0.0625f;
@@ -115,23 +124,23 @@ public class BlockCropsWatermelon extends BlockFlower {
 		return growthRate;
 	}
 
-	@Override
-	public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-		if (data < 1 || data > 4) {
-			data = 1;
-		}
-		if (side == Side.TOP || side == Side.BOTTOM) {
-			return GROWTH_STAGE_TEXTURES_TOP[data - 1];
-		}
-		return GROWTH_STAGE_TEXTURES_SIDE[data - 1];
-	}
+//	@Override
+//	public int getBlockTextureFromSideAndMetadata(Side side, int data) {
+//		if (data < 1 || data > 4) {
+//			data = 1;
+//		}
+//		if (side == Side.TOP || side == Side.BOTTOM) {
+//			return GROWTH_STAGE_TEXTURES_TOP[data - 1];
+//		}
+//		return GROWTH_STAGE_TEXTURES_SIDE[data - 1];
+//	}
 
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 		return new ItemStack[]{new ItemStack(ModItems.seedsWatermelon, 1)};
 	}
 
-	@Override
+
 	public AABB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
 		this.setBlockBoundsBasedOnState(world, x, y, z);
 		int meta = world.getBlockMetadata(x, y, z);

@@ -31,7 +31,7 @@ public abstract class EntityBobberMixin extends Entity
 
 		EntityBobber thisBobber = (EntityBobber) (Object) this;
 
-		ItemStack stack = thisBobber.angler.getCurrentEquippedItem();
+		ItemStack stack = thisBobber.player.getCurrentEquippedItem();
 		int baitLevel = EnchantmentUtils.getLevel(stack, Enchantments.bait);
 
 		int rate = catchRate - (baitLevel * 100);

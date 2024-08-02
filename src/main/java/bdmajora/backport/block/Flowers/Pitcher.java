@@ -8,21 +8,22 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import useless.dragonfly.model.block.processed.BlockCube;
-import useless.dragonfly.model.block.processed.BlockModel;
+import org.useless.dragonfly.model.block.processed.BlockCube;
+import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 import net.minecraft.core.util.phys.AABB;
 
 import java.util.ArrayList;
 
 public class Pitcher extends Block {
 
-	public BlockModel model;
+	public ModernBlockModel model;
 
-	public Pitcher(String name, int id, Material material, BlockModel model) {
+	public Pitcher(String name, int id, Material material, ModernBlockModel model) {
 		super(name, id, material);
 		this.model = model;
 	}
@@ -35,7 +36,7 @@ public class Pitcher extends Block {
 	@Override
 	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
 		Block blockBelow = world.getBlock(x, y - 1, z);
-		return blockBelow == ModBlocks.pitcherPlantBottom|| super.canPlaceBlockAt(world, x, y, z);
+		return blockBelow == ModBlocks.pitcherPlantBottom || super.canPlaceBlockAt(world, x, y, z);
 	}
 
 	@Override
@@ -53,8 +54,9 @@ public class Pitcher extends Block {
 		return 0.0F; // Makes the block break instantly
 	}
 
-	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta, EntityPlayer player) {
-		super.onBlockDestroyedByPlayer(world, x, y, z, meta, player, ModItems.pitcherFlower);
+	@Override
+	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
+		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);
 		if (world.getBlock(x, y + 1, z) == ModBlocks.pitcherPlantTop) {
 			world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
 		} else if (world.getBlock(x, y - 1, z) == ModBlocks.pitcherPlantBottom) {
@@ -64,7 +66,7 @@ public class Pitcher extends Block {
 
 	@Override
 	public void getCollidingBoundingBoxes(World world, int x, int y, int z, AABB aabb, ArrayList<AABB> aabbList) {
-		for (BlockCube cube: model.blockCubes) {
+		for (BlockCube cube : model.blockCubes) {
 			setBlockBounds(cube.xMin(), cube.yMin(), cube.zMin(), cube.xMax(), cube.yMax(), cube.zMax());
 			super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
 		}

@@ -4,7 +4,7 @@ import bdmajora.backport.block.entity.TileEntityBanner;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.world.World;
 
-public class EntityBannerEdit extends EntityPlayer {
+public abstract class EntityBannerEdit extends EntityPlayer {
 	public EntityBannerEdit(World world) {
 		super(world);
 	}
@@ -17,4 +17,7 @@ public class EntityBannerEdit extends EntityPlayer {
 	public void displayGUIEditBanner(TileEntityBanner tileEntityBanner) {
 	}
 
+	public void addChatMessage(String s) {
+
+	}
 }

@@ -10,7 +10,7 @@ public class ItemDebugStick extends Item {
 	public ItemDebugStick(String name, int id) {
 		super(name,id);
 	}
-	@Override
+
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
 		int meta = world.getBlockMetadata(blockX, blockY, blockZ);
 		int id = world.getBlockId(blockX, blockY, blockZ);

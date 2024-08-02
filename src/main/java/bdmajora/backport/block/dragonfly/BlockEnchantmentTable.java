@@ -1,30 +1,23 @@
 package bdmajora.backport.block.dragonfly;
 
-import bdmajora.backport.backport;
 import bdmajora.backport.block.entity.TileEntityEnchantmentTable;
-import bdmajora.backport.gui.GuiEnchantmentTable;
 import bdmajora.backport.interfaces.mixins.IEntityPlayer;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.player.EntityPlayerSP;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockTileEntity;
 import net.minecraft.core.block.entity.TileEntity;
-import net.minecraft.core.block.entity.TileEntityFurnace;
-import net.minecraft.core.block.entity.TileEntityTrommel;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
-import net.minecraft.server.entity.player.EntityPlayerMP;
-import useless.dragonfly.model.block.processed.BlockCube;
-import useless.dragonfly.model.block.processed.BlockModel;
+import org.useless.dragonfly.model.block.processed.BlockCube;
+import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 
 import java.util.ArrayList;
 
 public class BlockEnchantmentTable extends BlockTileEntity
 {
-	public useless.dragonfly.model.block.processed.BlockModel model;
-	public BlockEnchantmentTable(String key, int id, Material material, BlockModel model)
+	public org.useless.dragonfly.model.block.processed.ModernBlockModel model;
+	public BlockEnchantmentTable(String key, int id, Material material, ModernBlockModel model)
 	{
 		super(key, id, material);
 		setBlockBounds(0, 0, 0, 1, 12f / 16, 1);
@@ -38,7 +31,7 @@ public class BlockEnchantmentTable extends BlockTileEntity
 	}
 
 	@Override
-	public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player)
+	public boolean onBlockRightClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xPlaced, double yPlaced)
 	{
 		if (world.isClientSide) return true;
 
@@ -79,5 +72,3 @@ public class BlockEnchantmentTable extends BlockTileEntity
 		this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
 	}
 }
-
-

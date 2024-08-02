@@ -1,25 +1,21 @@
 package bdmajora.backport.block.dragonfly;
 
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockTransparent;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.EntityLiving;
-import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
-import useless.dragonfly.model.block.processed.BlockCube;
-import useless.dragonfly.model.block.processed.BlockModel;
+import org.useless.dragonfly.model.block.processed.BlockCube;
+import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 
 import java.util.ArrayList;
 
 public class BlockChain extends BlockTransparent {
-	public useless.dragonfly.model.block.processed.BlockModel model;
+	public org.useless.dragonfly.model.block.processed.ModernBlockModel model;
 
-	public BlockChain(String key, int id, Material material, BlockModel model) {
-		super(key, id, material, true);
+	public BlockChain(String key, int id, Material material, ModernBlockModel model) {
+		super(key, id, material);
 		this.model = model;
 	}
 
