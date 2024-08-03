@@ -12,11 +12,21 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class ItemAcaciaDoor extends Item {
+	private String texture;
 
-		public ItemAcaciaDoor(String name, int id) {
-			super(name, id);
-			this.maxStackSize = 64;
-		}
+	public ItemAcaciaDoor(String name, int id, String texture) {
+		super(name, id);
+		this.texture = texture;
+		this.maxStackSize = 64;
+	}
+
+	public String getTexture() {
+		return texture;
+	}
+
+	public void setTexture(String texture) {
+		this.texture = texture;
+	}
 
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
 		if (!world.canPlaceInsideBlock(blockX, blockY, blockZ)) {

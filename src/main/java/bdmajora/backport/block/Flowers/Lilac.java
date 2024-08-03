@@ -22,10 +22,10 @@ public class Lilac extends Block {
 
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-		if (world.getBlock(x, y, z) == ModBlocks.sunflowerTop) {
+		if (world.getBlock(x, y, z) == ModBlocks.lilacTop) {
 			return new ItemStack[]{}; // Returns nothing if the top block is broken
 		}
-		return new ItemStack[]{new ItemStack(ModItems.sunflower)};
+		return new ItemStack[]{new ItemStack(ModItems.lilac)};
 	}
 
 	@Override
@@ -51,9 +51,9 @@ public class Lilac extends Block {
 
 	@Override
 	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
-		if (world.getBlock(x, y + 1, z) == ModBlocks.sunflowerTop) {
+		if (world.getBlock(x, y + 1, z) == ModBlocks.lilacTop) {
 			world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
-		} else if (world.getBlock(x, y - 1, z) == ModBlocks.sunflowerBottom) {
+		} else if (world.getBlock(x, y - 1, z) == ModBlocks.lilacBottom) {
 			world.setBlockWithNotify(x, y - 1, z, 0); // Destroys the bottom half
 		}
 		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);

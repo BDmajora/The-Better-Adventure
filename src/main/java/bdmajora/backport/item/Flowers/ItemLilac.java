@@ -12,10 +12,20 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class ItemLilac extends Item {
+	private String texture;
 
-	public ItemLilac(String name, int id) {
+	public ItemLilac(String name, int id, String texture) {
 		super(name, id);
 		this.maxStackSize = 64;
+		this.texture = texture;
+	}
+
+	public String getTexture() {
+		return texture;
+	}
+
+	public void setTexture(String texture) {
+		this.texture = texture;
 	}
 
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
@@ -46,6 +56,4 @@ public class ItemLilac extends Item {
 			return true;
 		}
 	}
-
-
 }

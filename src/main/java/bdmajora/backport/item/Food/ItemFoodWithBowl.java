@@ -7,15 +7,22 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
 public class ItemFoodWithBowl extends ItemFood {
-	public ItemFoodWithBowl(String name, int id, int healAmount, boolean favouriteWolfMeat) {
-		super(name, id, healAmount, favouriteWolfMeat);
+	private final String texture;
+
+	public ItemFoodWithBowl(String name, int id, int healAmount, int ticksPerHeal, boolean favouriteWolfFood, int maxStackSize, String texture) {
+		super(name, id, healAmount, ticksPerHeal, favouriteWolfFood, maxStackSize);
+		this.texture = texture;
 	}
 
-	@Override
+	public String getTexture() {
+		return texture;
+	}
+
+
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer) {
-		if (entityplayer.getHealth() < 20){
+		if (entityplayer.getHealth() < entityplayer.getMaxHealth()) {
 			entityplayer.inventory.insertItem(new ItemStack(Item.bowl, 1), false);
 		}
-		return super.onItemRightClick(itemstack, world, entityplayer);
+		return super.onUseItem(itemstack, world, entityplayer);
 	}
 }

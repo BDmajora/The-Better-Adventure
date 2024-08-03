@@ -13,9 +13,20 @@ import net.minecraft.core.world.World;
 
 public class ItemRoseBush extends Item {
 
-	public ItemRoseBush(String name, int id) {
+	private String texture;
+
+	public ItemRoseBush(String name, int id, String texture) {
 		super(name, id);
 		this.maxStackSize = 64;
+		this.texture = texture;
+	}
+
+	public String getTexture() {
+		return texture;
+	}
+
+	public void setTexture(String texture) {
+		this.texture = texture;
 	}
 
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
@@ -24,7 +35,6 @@ public class ItemRoseBush extends Item {
 			blockY += side.getOffsetY();
 			blockZ += side.getOffsetZ();
 		}
-
 
 		Block peonyBlockBottom = ModBlocks.roseBushBottom;
 		Block peonyBlockTop = ModBlocks.roseBushTop;
@@ -46,6 +56,4 @@ public class ItemRoseBush extends Item {
 			return true;
 		}
 	}
-
-
 }

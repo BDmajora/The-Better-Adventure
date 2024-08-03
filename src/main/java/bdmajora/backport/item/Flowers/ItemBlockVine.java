@@ -1,4 +1,4 @@
-package bdmajora.backport.item;
+package bdmajora.backport.item.Flowers;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -11,18 +11,26 @@ import bdmajora.backport.block.Vines.BlockVine;
 import bdmajora.backport.block.ModBlocks;
 
 public class ItemBlockVine extends ItemBlock {
+	private final String name;
 	private BlockVine blockVine;
-	private String name;
-	private int id;
+	private String texture;
 
-	public ItemBlockVine(String name, int id, BlockVine block) {
+	public ItemBlockVine(String name, int id, BlockVine block, String texture) {
 		super(block);
 		this.name = name;
 		this.id = id;
 		this.blockVine = block;
+		this.texture = texture;
 		this.maxStackSize = 64;
 	}
 
+	public String getTexture() {
+		return texture;
+	}
+
+	public void setTexture(String texture) {
+		this.texture = texture;
+	}
 
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, Side side, double xPlaced, double yPlaced) {
 		Side sideForPlacement;

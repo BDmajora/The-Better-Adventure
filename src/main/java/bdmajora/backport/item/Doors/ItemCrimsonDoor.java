@@ -13,9 +13,20 @@ import net.minecraft.core.world.World;
 
 public class ItemCrimsonDoor extends Item {
 
-	public ItemCrimsonDoor(String name, int id) {
+	public ItemCrimsonDoor(String name, int id, String texture) {
 		super(name, id);
+		this.texture = texture;
 		this.maxStackSize = 64;
+	}
+
+	private String texture;
+
+	public String getTexture() {
+		return texture;
+	}
+
+	public void setTexture(String texture) {
+		this.texture = texture;
 	}
 
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {

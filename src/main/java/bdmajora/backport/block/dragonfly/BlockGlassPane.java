@@ -12,10 +12,30 @@ import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
+import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 
 public class BlockGlassPane extends BlockFenceThin {
+	private final String glassPane;
+	private final int id;
+	private final Material glass;
+	private final ModernBlockModel model;
+
+	// Constructor using default material and no model
 	public BlockGlassPane(String key, int id) {
 		super(key, id, Material.glass);
+		this.glassPane = key;
+		this.id = id;
+		this.glass = Material.glass;
+		this.model = null; // No model provided
+	}
+
+	// Constructor using all parameters including a model
+	public BlockGlassPane(String glassPane, int id, Material glass, ModernBlockModel model) {
+		super(glassPane, id, glass);
+		this.glassPane = glassPane;
+		this.id = id;
+		this.glass = glass;
+		this.model = model;
 	}
 
 	@Override
@@ -100,26 +120,6 @@ public class BlockGlassPane extends BlockFenceThin {
 		}
 		return new ItemStack[]{};
 	}
-
-//	@Override
-//	public int getTextureIndex() {
-//		return 0;
-//	}
-//
-//	@Override
-//	public int getTextureIndexAtTop() {
-//		return 0;
-//	}
-//
-//	@Override
-//	public int getTextureIndexAtBottom() {
-//		return 0;
-//	}
-//
-//	@Override
-//	public int getColumnTextureIndex() {
-//		return 0;
-//	}
 
 	@Override
 	public int getRenderBlockPass() {

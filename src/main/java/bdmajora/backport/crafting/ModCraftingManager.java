@@ -195,12 +195,12 @@ public class ModCraftingManager {
 			.setConsumeContainer(false)
 			.create("bambooTrapDoor", new ItemStack(ModBlocks.bambooTrapDoor, 3));
 
-		RecipeBuilder.Shaped(MOD_ID)
-				.setShape(" B ","DOD","OOO")
-				.addInput('B', Item.book)
-				.addInput('O', Block.obsidian)
-				.addInput('D', Item.diamond)
-				.create("enchantment_table", new ItemStack(ModBlocks.enchantmentTable, 1));
+//		RecipeBuilder.Shaped(MOD_ID)
+//				.setShape(" B ","DOD","OOO")
+//				.addInput('B', Item.book)
+//				.addInput('O', Block.obsidian)
+//				.addInput('D', Item.diamond)
+//				.create("enchantment_table", new ItemStack(ModBlocks.enchantmentTable, 1));
 
 		RecipeBuilder.Shapeless(MOD_ID)
 			.addInput(ModItems.foodWatermelonSlice)

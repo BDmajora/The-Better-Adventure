@@ -9,9 +9,10 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 
 public class BlockBookshelf extends Block {
-	public BlockBookshelf(String key, int id, Material material) {
+	public BlockBookshelf(String key, int id, Material material, ModernBlockModel orCreateBlockModel) {
 		super(key, id, material);
 	}
 	@Override
