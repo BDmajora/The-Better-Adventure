@@ -9,7 +9,7 @@
       "SurfaceGeneratorNetherMixin",
       "WorldTypeNetherMixin",
       "entity.EntityItemMixin",
-      "entity.ItemDyeMixin",
+
       "entity.EntityLivingMixin",
       "entity.EntityBobberMixin",
       "entity.EntityPlayerMixin",
@@ -24,8 +24,8 @@
     "client": [
       "client.GuiTooltipMixin",
       "client.PlayerControllerMixin",
-      "client.TileEntityRenderDispatcherAccessor",
-      "ItemDyeMixin"
+      "client.TileEntityRenderDispatcherAccessor"
+
     ],
     "injectors": {
         "defaultRequire": 1

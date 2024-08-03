@@ -8,34 +8,32 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import net.minecraft.client.render.stitcher.TextureRegistry;
-import net.minecraft.client.render.LightmapHelper;
-import net.minecraft.client.render.block.color.BlockColorDispatcher;
-import net.minecraft.client.render.block.model.BlockModelStandard;
 import net.minecraft.client.render.stitcher.IconCoordinate;
 import net.minecraft.client.render.stitcher.TextureRegistry;
-import net.minecraft.client.render.tessellator.Tessellator;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.util.helper.MathHelper;
-import net.minecraft.core.util.helper.Side;
 
 import java.util.Random;
 
 import static bdmajora.backport.backport.MOD_ID;
 
 public class BlockCropsBeetRoot extends BlockFlower {
-	public final IconCoordinate[] growthStageTextures = new IconCoordinate []{
-		TextureRegistry.getTexture(MOD_ID + "beetroots_stage0.png"),
-		TextureRegistry.getTexture(MOD_ID + "beetroots_stage1.png"),
-		TextureRegistry.getTexture(MOD_ID + "beetroots_stage2.png"),
-		TextureRegistry.getTexture(MOD_ID + "beetroots_stage3.png")
-	};
+	private IconCoordinate[] growthStageTextures;
 
 	public BlockCropsBeetRoot(String key, int id) {
 		super(key, id);
 		this.setTicking(true);
 		float f = 0.5f;
 		this.setBlockBounds(0.5f - f, 0.0f, 0.5f - f, 0.5f + f, 0.25f, 0.5f + f);
+	}
+
+	private void initializeTextures() {
+		if (this.growthStageTextures == null) {
+			this.growthStageTextures = new IconCoordinate[]{
+				TextureRegistry.getTexture(MOD_ID + "beetroots_stage0.png"),
+				TextureRegistry.getTexture(MOD_ID + "beetroots_stage1.png"),
+				TextureRegistry.getTexture(MOD_ID + "beetroots_stage2.png"),
+				TextureRegistry.getTexture(MOD_ID + "beetroots_stage3.png")
+			};
+		}
 	}
 
 	@Override
@@ -48,14 +46,14 @@ public class BlockCropsBeetRoot extends BlockFlower {
 		super.updateTick(world, x, y, z, rand);
 		if (world.getBlockLightValue(x, y + 1, z) >= 9) {
 			int l = world.getBlockMetadata(x, y, z);
-			if (l < 4 && rand.nextInt((int)(100.0f / this.getGrowthRate(world, x, y, z))) == 0) {
+			if (l < 4 && rand.nextInt((int) (100.0f / this.getGrowthRate(world, x, y, z))) == 0) {
 				world.setBlockMetadataWithNotify(x, y, z, ++l);
 			}
 		}
 	}
 
 	public void fertilize(World world, int i, int j, int k) {
-		world.setBlockMetadataWithNotify(i, j, k, 3);
+		world.setBlockMetadataWithNotify(i, j, k, 4);
 	}
 
 	private float getGrowthRate(World world, int x, int y, int z) {
@@ -96,16 +94,9 @@ public class BlockCropsBeetRoot extends BlockFlower {
 		return growthRate;
 	}
 
-//	@Override
-//	public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-//		if (data < 0 || data > 4) {
-//			data = 4;
-//		}
-//		return this.growthStageTextures[data];
-//	}
-
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+		initializeTextures();
 		if (meta < 3) {
 			return new ItemStack[]{new ItemStack(ModItems.seedsBeetRoot, 1)};
 		} else {
