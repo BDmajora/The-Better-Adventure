@@ -14,16 +14,16 @@ import static bdmajora.backport.backport.MOD_ID;
 
 public class BlockModelCropsWatermelon<T extends Block> extends BlockModelStandard<T> {
 	public final IconCoordinate[] GROWTH_STAGE_TEXTURES_TOP = new IconCoordinate[]{
-		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_top_01.png"),
-		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_top_02.png"),
-		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_top_03.png"),
-		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_top_04.png")
+		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_top_01"),
+		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_top_02"),
+		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_top_03"),
+		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_top_04")
 	};
 	public final IconCoordinate[] GROWTH_STAGE_TEXTURES_SIDE = new IconCoordinate[]{
-		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_side_01.png"),
-		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_side_02.png"),
-		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_side_03.png"),
-		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_side_04.png")
+		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_side_01"),
+		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_side_02"),
+		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_side_03"),
+		TextureRegistry.getTexture(MOD_ID + ":block/watermelon_growing_side_04")
 	};
 
 	public BlockModelCropsWatermelon(T block) {
