@@ -2,43 +2,22 @@ package bdmajora.backport.block.Crops;
 
 import bdmajora.backport.item.ModItems;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockCropsWheat;
 import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import net.minecraft.client.render.stitcher.TextureRegistry;
-import net.minecraft.client.render.LightmapHelper;
-import net.minecraft.client.render.block.color.BlockColorDispatcher;
-import net.minecraft.client.render.block.model.BlockModelStandard;
-import net.minecraft.client.render.stitcher.IconCoordinate;
-import net.minecraft.client.render.stitcher.TextureRegistry;
-import net.minecraft.client.render.tessellator.Tessellator;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.util.helper.MathHelper;
-import net.minecraft.core.util.helper.Side;
-
 import java.util.Random;
 
-import static bdmajora.backport.backport.MOD_ID;
-
 public class BlockCropsPotato extends BlockFlower {
-	public final IconCoordinate[] growthStageTextures = new IconCoordinate []{
-		TextureRegistry.getTexture(MOD_ID + "potato_growing_01.png"),
-		TextureRegistry.getTexture(MOD_ID + "potato_growing_02.png"),
-		TextureRegistry.getTexture(MOD_ID + "potato_growing_03.png"),
-		TextureRegistry.getTexture(MOD_ID + "potato_growing_04.png")
-	};
-
 	public BlockCropsPotato(String key, int id) {
 		super(key, id);
 		this.setTicking(true);
 		float f = 0.5f;
 		this.setBlockBounds(0.5f - f, 0.0f, 0.5f - f, 0.5f + f, 0.25f, 0.5f + f);
 	}
+
 	@Override
 	public boolean canThisPlantGrowOnThisBlockID(int i) {
 		return i == Block.farmlandDirt.id;
@@ -46,11 +25,12 @@ public class BlockCropsPotato extends BlockFlower {
 
 	@Override
 	public void updateTick(World world, int x, int y, int z, Random rand) {
-		float f;
-		int l;
 		super.updateTick(world, x, y, z, rand);
-		if (world.getBlockLightValue(x, y + 1, z) >= 9 && (l = world.getBlockMetadata(x, y, z)) < 3 && rand.nextInt((int)(100.0f / (f = this.getGrowthRate(world, x, y, z)))) == 0) {
-			world.setBlockMetadataWithNotify(x, y, z, ++l);
+		if (world.getBlockLightValue(x, y + 1, z) >= 9) {
+			int l = world.getBlockMetadata(x, y, z);
+			if (l < 3 && rand.nextInt((int)(100.0f / this.getGrowthRate(world, x, y, z))) == 0) {
+				world.setBlockMetadataWithNotify(x, y, z, ++l);
+			}
 		}
 	}
 
@@ -96,14 +76,6 @@ public class BlockCropsPotato extends BlockFlower {
 		return growthRate;
 	}
 
-//	@Override
-//	public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-//		if (data < 0 || data > 3) {
-//			data = 3;
-//		}
-//		return this.growthStageTextures[data];
-//	}
-
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 		if (meta != 3) {
@@ -112,4 +84,3 @@ public class BlockCropsPotato extends BlockFlower {
 		return new ItemStack[]{new ItemStack(ModItems.foodPotatoRaw, world.rand.nextInt(3) + 1), new ItemStack(ModItems.foodPotatoRaw)};
 	}
 }
-

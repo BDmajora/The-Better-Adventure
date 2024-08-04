@@ -1,4 +1,4 @@
-package bdmajora.backport.block;
+package bdmajora.backport.block.Crops;
 
 import bdmajora.backport.item.ModItems;
 import net.minecraft.core.block.Block;

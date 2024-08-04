@@ -8,32 +8,14 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import net.minecraft.client.render.stitcher.IconCoordinate;
-import net.minecraft.client.render.stitcher.TextureRegistry;
-
 import java.util.Random;
 
-import static bdmajora.backport.backport.MOD_ID;
-
 public class BlockCropsBeetRoot extends BlockFlower {
-	private IconCoordinate[] growthStageTextures;
-
 	public BlockCropsBeetRoot(String key, int id) {
 		super(key, id);
 		this.setTicking(true);
 		float f = 0.5f;
 		this.setBlockBounds(0.5f - f, 0.0f, 0.5f - f, 0.5f + f, 0.25f, 0.5f + f);
-	}
-
-	private void initializeTextures() {
-		if (this.growthStageTextures == null) {
-			this.growthStageTextures = new IconCoordinate[]{
-				TextureRegistry.getTexture(MOD_ID + "beetroots_stage0.png"),
-				TextureRegistry.getTexture(MOD_ID + "beetroots_stage1.png"),
-				TextureRegistry.getTexture(MOD_ID + "beetroots_stage2.png"),
-				TextureRegistry.getTexture(MOD_ID + "beetroots_stage3.png")
-			};
-		}
 	}
 
 	@Override
@@ -96,7 +78,6 @@ public class BlockCropsBeetRoot extends BlockFlower {
 
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-		initializeTextures();
 		if (meta < 3) {
 			return new ItemStack[]{new ItemStack(ModItems.seedsBeetRoot, 1)};
 		} else {

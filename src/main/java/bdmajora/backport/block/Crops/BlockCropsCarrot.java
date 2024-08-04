@@ -8,29 +8,9 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import net.minecraft.client.render.stitcher.TextureRegistry;
-import net.minecraft.client.render.LightmapHelper;
-import net.minecraft.client.render.block.color.BlockColorDispatcher;
-import net.minecraft.client.render.block.model.BlockModelStandard;
-import net.minecraft.client.render.stitcher.IconCoordinate;
-import net.minecraft.client.render.stitcher.TextureRegistry;
-import net.minecraft.client.render.tessellator.Tessellator;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.util.helper.MathHelper;
-import net.minecraft.core.util.helper.Side;
-
 import java.util.Random;
 
-import static bdmajora.backport.backport.MOD_ID;
-
 public class BlockCropsCarrot extends BlockFlower {
-	public final IconCoordinate[] growthStageTextures = new IconCoordinate []{
-		TextureRegistry.getTexture(MOD_ID + "carrots_stage0.png"),
-			TextureRegistry.getTexture(MOD_ID + "carrots_stage1.png"),
-			TextureRegistry.getTexture(MOD_ID + "carrots_stage2.png"),
-			TextureRegistry.getTexture(MOD_ID + "carrots_stage3.png")
-	};
-
 	public BlockCropsCarrot(String key, int id) {
 		super(key, id);
 		this.setTicking(true);
@@ -96,14 +76,6 @@ public class BlockCropsCarrot extends BlockFlower {
 		return growthRate;
 	}
 
-//	@Override
-//	public int getBlockTextureFromSideAndMetadata(Side side, int data) {
-//		if (data < 0 || data > 4) {
-//			data = 4;
-//		}
-//		return this.growthStageTextures[data];
-//	}
-
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 		if (meta < 3) {
@@ -113,6 +85,4 @@ public class BlockCropsCarrot extends BlockFlower {
 			return new ItemStack[]{new ItemStack(ModItems.foodCarrot, 1), new ItemStack(ModItems.foodCarrot, carrotCount)};
 		}
 	}
-
 }
-
