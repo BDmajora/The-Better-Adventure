@@ -6,7 +6,6 @@ import bdmajora.backport.block.ModBlocks;
 import bdmajora.backport.crafting.ModCraftingManager;
 import bdmajora.backport.item.ModItems;
 //import bdmajora.backport.tile.BellTileEntity;
-import bdmajora.backport.mixin.client.TileEntityRenderDispatcherAccessor;
 import bdmajora.backport.network.packet.PacketEnchantItem;
 import bdmajora.backport.world.biome.provider.BiomeProviderNether;
 import net.fabricmc.api.ModInitializer;
