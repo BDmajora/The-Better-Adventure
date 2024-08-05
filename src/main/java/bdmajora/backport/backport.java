@@ -64,19 +64,6 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 		ModBiomes.initializeBiomes();
 		BiomeProviderNether.init();
 
-		// Keep the EnchantmentTableRenderer setup
-//		EnchantmentTableRenderer enchantmentRenderer = new EnchantmentTableRenderer() {
-//			@Override
-//			public void doRender(Tessellator tessellator, TileEntityEnchantmentTable tileEntity, double d, double e, double f, float g) {
-//
-//			}
-//		};
-//		((TileEntityRenderDispatcherAccessor) TileEntityRenderDispatcher.instance).getRenderers().put(TileEntityEnchantmentTable.class, enchantmentRenderer);
-//		enchantmentRenderer.setRenderDispatcher(TileEntityRenderDispatcher.instance);
-
-
-		// Add the BellRenderer setup
-
 	}
 
 	@Override

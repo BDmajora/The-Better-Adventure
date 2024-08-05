@@ -14,7 +14,6 @@ import bdmajora.backport.block.Vines.BlockCaveVinesLit;
 import bdmajora.backport.block.Vines.BlockVine;
 import bdmajora.backport.block.Vines.BlockVines;
 import bdmajora.backport.block.dragonfly.*;
-import bdmajora.backport.block.dragonfly.BlockModel;
 import bdmajora.backport.block.metastates.*;
 import net.minecraft.client.render.block.model.*;
 import net.minecraft.core.block.*;
@@ -452,7 +451,7 @@ public class ModBlocks {
 				.setBlockModel("backport","block/fletching_table.json")
 				.setBlockState("backport","fletching_table.json")
 				.setMetaStateInterpreter(null)
-				.build(new BlockModel("fletchingTable", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/fletching_table.json"))));
+				.build(new DragonBlockModel("fletchingTable", UtilIdRegistrar.nextIdBlock(), Material.wood)));
 
 	public static final BlockBuilder smithingTable = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -460,7 +459,7 @@ public class ModBlocks {
 				.setBlockModel("backport","block/smithing_table.json")
 				.setBlockState("backport","smithing_table.json")
 				.setMetaStateInterpreter(null)
-				.build(new BlockModel("smithingTable", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/smithing_table.json"))));
+				.build(new DragonBlockModel("smithingTable", UtilIdRegistrar.nextIdBlock(), Material.metal)));
 
 	public static final Block amethystBlock = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.METAL)
@@ -2440,82 +2439,35 @@ public class ModBlocks {
 				.setMetaStateInterpreter(null)
 				.build(new Sunflower("sunflowerTop", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/sunflower_top.json")).withTags((BlockTags.NOT_IN_CREATIVE_MENU))));
 
-	public static final BlockBuilder testBlock = new BlockBuilder(MOD_ID)
+	public static final Block modernDragonEgg = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/testblock.json")
-				.setMetaStateInterpreter(null)
-				.build(new BlockModel("testblock", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/testblock.json"))));
+				.setBlockModel("backport", "block/dragon_egg.json")
+				.build(block))
+		.build(new DragonBlockModel("exampleDragon", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
-	public static final BlockBuilder testBlock2 = new BlockBuilder(MOD_ID)
+	public static final Block modernBeacon = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/testblock2.json")
-				.setMetaStateInterpreter(null)
-				.build(new BlockModel("testblock2", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/testblock2.json"))));
+				.setBlockModel("backport", "block/beacon.json")
+				.build(block))
+		.build(new DragonBlockModel("exampleBeacon", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
-	public static final BlockBuilder testBlock3 = new BlockBuilder(MOD_ID)
+	public static final Block cauldron = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/testblock3.json")
-				.setMetaStateInterpreter(null)
-				.build(new BlockModel("testblock3", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/testblock3.json"))));
+				.setBlockModel("backport", "block/water_cauldron_full.json")
+				.build(block))
+		.build(new DragonBlockModel("exampleCauldron", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder modernDragonEgg = new BlockBuilder(MOD_ID)
+	public static final Block brewing = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/dragon_egg.json")
-				.setMetaStateInterpreter(null)
-				.build(new BlockModel("exampleDragon", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/dragon_egg.json"))));
-
-	public static final BlockBuilder modernBeacon = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/beacon.json")
-				.setMetaStateInterpreter(null)
-				.build(new BlockModel("exampleBeacon", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/beacon.json"))));
-
-	public static final BlockBuilder sideTest = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/pyramid.json")
-				.setMetaStateInterpreter(null)
-				.build(new BlockModel("testblock4", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pyramid.json"))));
-
-	public static final BlockBuilder btaStool = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/stool.json")
-				.setMetaStateInterpreter(null)
-				.build(new BlockModel("exampleStool", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/stool.json"))));
-
-	public static final BlockBuilder cauldron = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/water_cauldron_full.json")
-				.setMetaStateInterpreter(null)
-				.build(new BlockModel("exampleCauldron", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/water_cauldron_full.json"))));
-
-	public static final BlockBuilder stairs = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/stairs.json")
-				.setMetaStateInterpreter(new StairsMetaStateInterpreter())
-				.build(new BlockStairs(Block.dirt,UtilIdRegistrar.nextIdBlock())));
-
-	public static final BlockBuilder brewing = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/brewing_stand.json")
+				.setBlockModel("backport", "block/brewing/brewing_stand.json")
+				.setBlockState("backport", "brewing_stand.json")
 				.setMetaStateInterpreter(new BrewingMetaState())
-				.build(new BlockModel("exampleBrewingStand", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/brewing_stand.json"))));
-
-	public static final BlockBuilder fence = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/fence/birch_fence_inventory.json")
-				.setMetaStateInterpreter(new FenceMetaState())
-				.build(new BlockModel("exampleFence", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/fence/birch_fence_inventory.json"))));
+				.build(block))
+		.build(new DragonBlockModel("exampleBrewingStand", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
 	public static final BlockBuilder bookshelf = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -2558,89 +2510,92 @@ public class ModBlocks {
 				.setMetaStateInterpreter(new LecternMetaState())
 				.build(new BlockLecturn("lectern", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/lectern.json"))));
 
-	public static final BlockBuilder campfire = new BlockBuilder(MOD_ID)
+	public static final Block campfire = new BlockBuilder(MOD_ID)
 		.setLuminance(15)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/campfire.json")
+				.setBlockModel("backport", "block/campfire.json")
 				.setBlockState("backport", "campfire.json")
 				.setMetaStateInterpreter(new CampFireMetaState())
-				.build(new BlockModel("campfire", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/campfire.json"))));
+				.build(block))
+		.build(new DragonBlockModel("campfire", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder soulfire = new BlockBuilder(MOD_ID)
+	public static final Block soulfire = new BlockBuilder(MOD_ID)
 		.setLuminance(15)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/soul_campfire.json")
+				.setBlockModel("backport", "block/soul_campfire.json")
 				.setBlockState("backport", "soul_campfire.json")
 				.setMetaStateInterpreter(new CampFireMetaState())
-				.build(new BlockModel("soulfire", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/soul_campfire.json"))));
+				.build(block))
+		.build(new DragonBlockModel("soulfire", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder campfireoff = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/campfire_off.json")
-				.setBlockState("backport", "campfire_off.json")
-				.setMetaStateInterpreter(new CampFireMetaState())
-				.build(new BlockModel("soulfire", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/campfire_off.json"))));
-
-	public static final BlockBuilder endPortalFrameFilled = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/end_portal_frame_filled.json")
-				.setBlockState("backport", "end_portal_frame_filled.json")
-				.build(new BlockModel("endPortalFrameFilled", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/end_portal_frame_filled.json"))));
-
-	public static final BlockBuilder endPortalFrame = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/end_portal_frame.json")
-				.setBlockState("backport", "end_portal_frame.json")
-				.build(new BlockModel("endPortalFrame", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/end_portal_frame.json"))));
-
-	public static final BlockBuilder endRod = new BlockBuilder(MOD_ID)
+	public static final Block campfireoff = new BlockBuilder(MOD_ID)
 		.setLuminance(15)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/end_rod.json")
-				.setBlockState("backport", "end_rod.json")
-				.build(new BlockModel("endRod", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/end_rod.json"))));
+				.setBlockModel("backport", "block/campfire_off.json")
+				.setBlockState("backport", "campfire.json")
+				.setMetaStateInterpreter(new CampFireMetaState())
+				.build(block))
+		.build(new DragonBlockModel("campfireoff", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder sculkCatalyst = new BlockBuilder(MOD_ID)
+	public static final Block endPortalFrameFilled = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/sculk_catalyst.json")
-				.setBlockState("backport", "sculk_catalyst.json")
-				.build(new BlockModel("sculkCatalyst", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/sculk_catalyst.json"))));
+				.setBlockModel("backport", "block/end_portal_frame_filled.json")
+				.build(block))
+		.build(new DragonBlockModel("endPortalFrameFilled", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder sculkSensor = new BlockBuilder(MOD_ID)
+	public static final Block endPortalFrame = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/sculk_sensor.json")
-				.setBlockState("backport", "sculk_sensor.json")
-				.build(new BlockModel("sculkSensor", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/sculk_sensor.json"))));
+				.setBlockModel("backport", "block/end_portal_frame.json")
+				.build(block))
+		.build(new DragonBlockModel("endPortalFrame", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder sculkShrieker = new BlockBuilder(MOD_ID)
+	public static final Block endRod = new BlockBuilder(MOD_ID)
+		.setLuminance(15)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/sculk_shrieker.json")
-				.setBlockState("backport", "sculk_shrieker.json")
-				.build(new BlockModel("sculkShrieker", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/sculk_shrieker.json"))));
+				.setBlockModel("backport", "block/end_rod.json")
+				.build(block))
+		.build(new DragonBlockModel("endRod", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder sculkVein = new BlockBuilder(MOD_ID)
+	public static final Block sculkCatalyst = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/sculk_vein.json")
-				.setBlockState("backport", "sculk_vein.json")
-				.build(new BlockModel("sculkVein", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/sculk_vein.json"))));
+				.setBlockModel("backport", "block/sculk_catalyst.json")
+				.build(block))
+		.build(new DragonBlockModel("sculkCatalyst", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder calibratedSculkSensor = new BlockBuilder(MOD_ID)
+	public static final Block sculkSensor = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/calibrated_sculk_sensor.json")
-				.setBlockState("backport", "calibrated_sculk_sensor.json")
-				.build(new BlockModel("calibratedSculkSensor", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/calibrated_sculk_sensor.json"))));
+				.setBlockModel("backport", "block/sculk_sensor.json")
+				.build(block))
+		.build(new DragonBlockModel("sculkSensor", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
+	public static final Block sculkShrieker = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/sculk_shrieker.json")
+				.build(block))
+		.build(new DragonBlockModel("sculkShrieker", UtilIdRegistrar.nextIdBlock(), Material.metal));
+
+	public static final Block sculkVein = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/sculk_vein.json")
+				.build(block))
+		.build(new DragonBlockModel("sculkVein", UtilIdRegistrar.nextIdBlock(), Material.metal));
+
+	public static final Block calibratedSculkSensor = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/calibrated_sculk_sensor.json")
+				.build(block))
+		.build(new DragonBlockModel("calibratedSculkSensor", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
 	public static final Block blackShulkerBox = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
@@ -2778,75 +2733,75 @@ public class ModBlocks {
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("yellowShulkerBox",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
-	public static final BlockBuilder composter = new BlockBuilder(MOD_ID)
+	public static final Block composter = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/composter.json")
-				.setBlockState("backport", "composter.json")
-				.build(new BlockModel("composter", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/composter.json"))));
+				.setBlockModel("backport", "block/composter.json")
+				.build(block))
+		.build(new DragonBlockModel("composter", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
-	public static final BlockBuilder hopper = new BlockBuilder(MOD_ID)
+	public static final Block hopper = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/hopper.json")
-				.setBlockState("backport", "hopper.json")
-				.build(new BlockModel("hopper", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/hopper.json"))));
+				.setBlockModel("backport", "block/hopper.json")
+				.build(block))
+		.build(new DragonBlockModel("hopper", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder scaffolding = new BlockBuilder(MOD_ID)
+	public static final Block scaffolding = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/scaffolding_stable.json")
-				.setBlockState("backport", "scaffolding.json")
-				.build(new BlockModel("scaffolding", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/scaffolding_stable.json"))));
+				.setBlockModel("backport", "block/scaffolding_stable.json")
+				.build(block))
+		.build(new DragonBlockModel("scaffolding", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
-	public static final BlockBuilder amethystCluster = new BlockBuilder(MOD_ID)
+	public static final Block amethystCluster = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/amethyst_cluster.json")
-				.setBlockState("backport", "amethyst_cluster.json")
-				.build(new BlockModel("amethystCluster", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/amethyst_cluster.json"))));
+				.setBlockModel("backport", "block/amethyst_cluster.json")
+				.build(block))
+		.build(new DragonBlockModel("amethystCluster", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder azalea = new BlockBuilder(MOD_ID)
+	public static final Block azalea = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/azalea.json")
-				.setBlockState("backport", "azalea.json")
-				.build(new BlockModel("azalea", UtilIdRegistrar.nextIdBlock(), Material.leaves, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/azalea.json"))));
+				.setBlockModel("backport", "block/azalea.json")
+				.build(block))
+		.build(new DragonBlockModel("azalea", UtilIdRegistrar.nextIdBlock(), Material.leaves));
 
-	public static final BlockBuilder floweringAzalea = new BlockBuilder(MOD_ID)
+	public static final Block floweringAzalea = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/flowering_azalea.json")
-				.setBlockState("backport", "flowering_azalea.json")
-				.build(new BlockModel("floweringAzalea", UtilIdRegistrar.nextIdBlock(), Material.leaves, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/flowering_azalea.json"))));
+				.setBlockModel("backport", "block/flowering_azalea.json")
+				.build(block))
+		.build(new DragonBlockModel("floweringAzalea", UtilIdRegistrar.nextIdBlock(), Material.leaves));
 
-	public static final BlockBuilder azaleaLeaves = new BlockBuilder(MOD_ID)
+	public static final Block azaleaLeaves = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/azalea_leaves.json")
-				.setBlockState("backport", "azalea_leaves.json")
-				.build(new BlockModel("azaleaLeaves", UtilIdRegistrar.nextIdBlock(), Material.leaves, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/azalea_leaves.json"))));
+				.setBlockModel("backport", "block/azalea_leaves.json")
+				.build(block))
+		.build(new DragonBlockModel("azaleaLeaves", UtilIdRegistrar.nextIdBlock(), Material.leaves));
 
-	public static final BlockBuilder floweringAzaleaLeaves = new BlockBuilder(MOD_ID)
+	public static final Block floweringAzaleaLeaves = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/flowering_azalea_leaves.json")
-				.setBlockState("backport", "flowering_azalea_leaves.json")
-				.build(new BlockModel("floweringAzaleaLeaves", UtilIdRegistrar.nextIdBlock(), Material.leaves, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/flowering_azalea_leaves.json"))));
+				.setBlockModel("backport", "block/flowering_azalea_leaves.json")
+				.build(block))
+		.build(new DragonBlockModel("floweringAzaleaLeaves", UtilIdRegistrar.nextIdBlock(), Material.leaves));
 
-	public static final BlockBuilder bigDripleaf = new BlockBuilder(MOD_ID)
+	public static final Block bigDripleaf = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/big_dripleaf.json")
-				.setBlockState("backport", "big_dripleaf.json")
-				.build(new BlockModel("bigDripleaf", UtilIdRegistrar.nextIdBlock(), Material.leaves, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/big_dripleaf.json"))));
+				.setBlockModel("backport", "block/big_dripleaf.json")
+				.build(block))
+		.build(new DragonBlockModel("bigDripleaf", UtilIdRegistrar.nextIdBlock(), Material.leaves));
 
-	public static final BlockBuilder buddingAmethyst = new BlockBuilder(MOD_ID)
+	public static final Block buddingAmethyst = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/budding_amethyst.json")
-				.setBlockState("backport", "budding_amethyst.json")
-				.build(new BlockModel("buddingAmethyst", UtilIdRegistrar.nextIdBlock(), Material.stone, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/budding_amethyst.json"))));
+				.setBlockModel("backport", "block/budding_amethyst.json")
+				.build(block))
+		.build(new DragonBlockModel("buddingAmethyst", UtilIdRegistrar.nextIdBlock(), Material.stone));
 
 	public static final Block blueIce = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
@@ -2857,124 +2812,129 @@ public class ModBlocks {
 		.setSlipperiness(1200)
 		.build(new Block("blueIce",UtilIdRegistrar.nextIdBlock(),Material.ice));
 
-	public static final BlockBuilder blackCarpet = new BlockBuilder(MOD_ID)
+	public static final Block blackCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/black_carpet.json")
-				.setBlockState("backport", "black_carpet.json")
-				.build(new BlockModel("blackCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/black_carpet.json"))));
+				.setBlockModel("backport", "block/black_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("blackCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-	public static final BlockBuilder blueCarpet = new BlockBuilder(MOD_ID)
+	public static final Block blueCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/blue_carpet.json")
-				.setBlockState("backport", "blue_carpet.json")
-				.build(new BlockModel("blueCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/blue_carpet.json"))));
+				.setBlockModel("backport", "block/blue_carpet.json")
 
-	public static final BlockBuilder brownCarpet = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/brown_carpet.json")
-				.setBlockState("backport", "brown_carpet.json")
-				.build(new BlockModel("brownCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/brown_carpet.json"))));
+				.build(block))
+		.build(new DragonBlockModel("blueCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-	public static final BlockBuilder cyanCarpet = new BlockBuilder(MOD_ID)
+	public static final Block brownCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/cyan_carpet.json")
-				.setBlockState("backport", "cyan_carpet.json")
-				.build(new BlockModel("cyanCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/cyan_carpet.json"))));
+				.setBlockModel("backport", "block/brown_carpet.json")
 
-	public static final BlockBuilder grayCarpet = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/gray_carpet.json")
-				.setBlockState("backport", "gray_carpet.json")
-				.build(new BlockModel("grayCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/gray_carpet.json"))));
+				.build(block))
+		.build(new DragonBlockModel("brownCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-	public static final BlockBuilder greenCarpet = new BlockBuilder(MOD_ID)
+	public static final Block cyanCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/green_carpet.json")
-				.setBlockState("backport", "green_carpet.json")
-				.build(new BlockModel("greenCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/green_carpet.json"))));
+				.setBlockModel("backport", "block/cyan_carpet.json")
+
+				.build(block))
+		.build(new DragonBlockModel("cyanCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
+
+	public static final Block grayCarpet = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/gray_carpet.json")
+
+				.build(block))
+		.build(new DragonBlockModel("grayCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
+
+	public static final Block greenCarpet = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/green_carpet.json")
+
+				.build(block))
+		.build(new DragonBlockModel("greenCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
 	public static final BlockBuilder lightBlueCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport","block/light_blue_carpet.json")
-				.setBlockState("backport", "light_blue_carpet.json")
-				.build(new BlockModel("lightBlueCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/light_blue_carpet.json"))));
+
+				.build(new DragonBlockModel("lightBlueCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder lightGrayCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/light_gray_carpet.json")
-				.setBlockState("backport", "light_gray_carpet.json")
-				.build(new BlockModel("lightGrayCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/light_gray_carpet.json"))));
+				.setBlockModel("backport", "block/light_gray_carpet.json")
+
+				.build(new DragonBlockModel("lightGrayCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder limeCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/lime_carpet.json")
-				.setBlockState("backport", "lime_carpet.json")
-				.build(new BlockModel("limeCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/lime_carpet.json"))));
+				.setBlockModel("backport", "block/lime_carpet.json")
+
+				.build(new DragonBlockModel("limeCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder magentaCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/magenta_carpet.json")
-				.setBlockState("backport", "magenta_carpet.json")
-				.build(new BlockModel("magentaCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/magenta_carpet.json"))));
+				.setBlockModel("backport", "block/magenta_carpet.json")
+
+				.build(new DragonBlockModel("magentaCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder mossCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/moss_carpet.json")
-				.setBlockState("backport", "moss_carpet.json")
-				.build(new BlockModel("mossCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/moss_carpet.json"))));
+				.setBlockModel("backport", "block/moss_carpet.json")
+
+				.build(new DragonBlockModel("mossCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder orangeCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/orange_carpet.json")
-				.setBlockState("backport", "orange_carpet.json")
-				.build(new BlockModel("orangeCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/orange_carpet.json"))));
+				.setBlockModel("backport", "block/orange_carpet.json")
+
+				.build(new DragonBlockModel("orangeCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder pinkCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/pink_carpet.json")
-				.setBlockState("backport", "pink_carpet.json")
-				.build(new BlockModel("pinkCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pink_carpet.json"))));
+				.setBlockModel("backport", "block/pink_carpet.json")
+
+				.build(new DragonBlockModel("pinkCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder purpleCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/purple_carpet.json")
-				.setBlockState("backport", "purple_carpet.json")
-				.build(new BlockModel("purpleCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/purple_carpet.json"))));
+				.setBlockModel("backport", "block/purple_carpet.json")
+
+				.build(new DragonBlockModel("purpleCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder redCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/red_carpet.json")
-				.setBlockState("backport", "red_carpet.json")
-				.build(new BlockModel("redCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/red_carpet.json"))));
+				.setBlockModel("backport", "block/red_carpet.json")
+
+				.build(new DragonBlockModel("redCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder whiteCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/white_carpet.json")
-				.setBlockState("backport", "white_carpet.json")
-				.build(new BlockModel("whiteCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/white_carpet.json"))));
+				.setBlockModel("backport", "block/white_carpet.json")
+
+				.build(new DragonBlockModel("whiteCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder yellowCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/yellow_carpet.json")
-				.setBlockState("backport", "yellow_carpet.json")
-				.build(new BlockModel("yellowCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/yellow_carpet.json"))));
+				.setBlockModel("backport", "block/yellow_carpet.json")
+
+				.build(new DragonBlockModel("yellowCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
 
 	public static final BlockBuilder chain = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -3198,6 +3158,22 @@ public class ModBlocks {
 				.setBlockModel("backport","block/pitcher_plant_bottom.json")
 				.setBlockState("backport", "pitcher_plant.json")
 				.build(new Pitcher("pitcherPlantBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pitcher_plant_bottom.json"))));
+
+	public static final BlockBuilder stairs = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport","block/stairs.json")
+				.setMetaStateInterpreter(new StairsMetaStateInterpreter())
+				.build(new BlockStairs(Block.dirt,UtilIdRegistrar.nextIdBlock())));
+
+	public static final Block fence = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/birch_fence_inventory.json")
+				.setBlockState("backport", "birch_fence.json") // Assuming the block state file is named birch_fence.json
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("exampleFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static void register() {
 	}
