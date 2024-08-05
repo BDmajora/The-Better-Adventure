@@ -286,7 +286,7 @@ public class ModBlocks {
 		.setHardness(1.0f)
 		.setResistance(1.0f)
 		.setTopBottomTextures(MOD_ID + ":block/bone_block_top")
-		.setSideTextures(MOD_ID + ":block/bone_block_side ")
+		.setSideTextures(MOD_ID + ":block/bone_block_side")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("boneBlock",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
