@@ -1,7 +1,6 @@
 package bdmajora.backport.mixin.client;
 
-import bdmajora.backport.enchantment.Enchantments;
-import bdmajora.backport.utils.EnchantmentUtils;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.controller.PlayerController;
 import org.objectweb.asm.Opcodes;
@@ -20,13 +19,4 @@ public class PlayerControllerMixin
 	@Shadow
 	protected int blockHitDelay;
 
-	@Redirect(method = "continueDestroyBlock", at = @At(value = "FIELD", target = "Lnet/minecraft/client/player/controller/PlayerController;blockHitDelay:I", opcode = Opcodes.GETFIELD))
-	public int getBlockHitDelay(PlayerController instance)
-	{
-		int quickstrikeLevel = EnchantmentUtils.getLevel(mc.thePlayer.getHeldItem(), Enchantments.quickstrike);
-		if (quickstrikeLevel > 0)
-			return 0;
-
-		return this.blockHitDelay;
-	}
 }

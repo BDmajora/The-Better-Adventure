@@ -3,8 +3,6 @@ package bdmajora.backport;
 import bdmajora.backport.biome.ModBiomes;
 import bdmajora.backport.block.ModBlocks;
 //import bdmajora.backport.block.client.EnchantmentTableRenderer;
-import bdmajora.backport.block.entity.TileEntityBell;
-import bdmajora.backport.block.entity.TileEntityEnchantmentTable;
 import bdmajora.backport.crafting.ModCraftingManager;
 import bdmajora.backport.item.ModItems;
 //import bdmajora.backport.tile.BellTileEntity;

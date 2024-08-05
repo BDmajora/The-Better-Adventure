@@ -2984,13 +2984,6 @@ public class ModBlocks {
 				.setMetaStateInterpreter(new ChainMetaState())
 				.build(new BlockChain("chain", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/chain.json"))));
 
-	public static final BlockBuilder enchantmentTable = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/enchanting_table.json")
-				.setBlockState("backport", "enchanting_table.json")
-				.build(new BlockEnchantmentTable("enchantmentTable", UtilIdRegistrar.nextIdBlock(), Material.stone, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/enchanting_table.json"))));
-
 	public static final BlockBuilder smoker = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)

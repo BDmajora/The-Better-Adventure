@@ -1,8 +1,6 @@
 package bdmajora.backport.mixin.entity;
 
-import bdmajora.backport.backport;
-import bdmajora.backport.enchantment.Enchantments;
-import bdmajora.backport.utils.EnchantmentUtils;
+
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -23,13 +21,6 @@ public class EntityLivingMixin
 
 		EntityLiving thisLiving = (EntityLiving) (Object) this;
 
-//		backport.LOG.info(String.valueOf(thisLiving.heartsFlashTime));
-
-		int quickstrikeLevel = EnchantmentUtils.getLevel(player.getHeldItem(), Enchantments.quickstrike);
-		if (quickstrikeLevel <= 0) return;
-
-		if (thisLiving.heartsFlashTime == thisLiving.heartsHalvesLife)
-			thisLiving.heartsFlashTime = (int) (thisLiving.heartsHalvesLife * 0.75);
 
 	}
 }

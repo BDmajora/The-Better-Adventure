@@ -1,7 +1,7 @@
 package bdmajora.backport.mixin.net;
 
 import bdmajora.backport.backport;
-import bdmajora.backport.block.entity.TileEntityEnchantmentTable;
+
 import bdmajora.backport.interfaces.mixins.IEntityPlayer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.net.handler.NetClientHandler;
@@ -30,8 +30,6 @@ public class NetClientHandlerMixin
 		if (packet.inventoryType != backport.config.getInt("enchantment_window_type_id")) return;
 		if (!packet.windowTitle.equals(backport.ENCHANTMENT_TABLE_NAME)) return;
 
-		TileEntityEnchantmentTable tile = new TileEntityEnchantmentTable();
-		((IEntityPlayer)mc.thePlayer).displayGUIEnchantmentTable(tile);
 		this.mc.thePlayer.craftingInventory.windowId = packet.windowId;
 
 	}
