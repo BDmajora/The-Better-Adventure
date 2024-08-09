@@ -30,8 +30,8 @@ public class ModBlocks {
 
 	public static final Block blackStone = new BlockBuilder(MOD_ID)
 		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTopTexture(MOD_ID + ":block/blackstone_top")
 		.setSideTextures(MOD_ID + ":block/blackstone")
 		.setBottomTexture(MOD_ID + ":block/blackstone")
@@ -40,79 +40,78 @@ public class ModBlocks {
 
 	public static final Block chiseledPolishedBlackstone = new BlockBuilder(MOD_ID)
  		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/chiseled_polished_blackstone")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("chiseledPolishedBlackstone",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block crackedPolishedBlackstoneBricks = new BlockBuilder(MOD_ID)
  		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/cracked_polished_blackstone_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("crackedPolishedBlackstoneBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block gildedBlackstone = new BlockBuilder(MOD_ID)
 		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/gilded_blackstone")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("gildedBlackstone",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block polishedBlackstoneBricks = new BlockBuilder(MOD_ID)
  		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/polished_blackstone_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("polishedBlackstoneBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block polishedBlackstone = new BlockBuilder(MOD_ID)
  		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/polished_blackstone")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("polishedBlackstone",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block mushroomStem = new BlockBuilder(MOD_ID)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(0.5f)
+		.setResistance(0.5f)
 		.setTextures(MOD_ID + ":block/mushroom_stem")
-		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new Block("mushroomStem",UtilIdRegistrar.nextIdBlock(),Material.wood));
 
 	public static final Block crackedStoneBricks = new BlockBuilder(MOD_ID)
  		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/cracked_stone_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("crackedStoneBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block chiseledStoneBricks = new BlockBuilder(MOD_ID)
  		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/chiseled_stone_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("chiseledStoneBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block endStone = new BlockBuilder(MOD_ID)
  		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/end_stone")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("endStone",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block endStoneBricks = new BlockBuilder(MOD_ID)
  		.setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/end_stone_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("endStoneBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -123,78 +122,78 @@ public class ModBlocks {
 		.setResistance(1.0f)
 		.setTopTexture(MOD_ID + ":block/my_celium_top")
 		.setSideTextures(MOD_ID + ":block/my_celium_side")
-		.setBottomTexture(MOD_ID + ":block/dirt ")
+		.setBottomTexture(MOD_ID + ":block/dirt")
 		.setTags(BlockTags.MINEABLE_BY_SHOVEL)
 		.build(new Block("mycelium",UtilIdRegistrar.nextIdBlock(),Material.grass));
 
 	public static final Block emeraldOre = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/emerald_ore")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("emeraldOre",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block deepslateEmeraldOre = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/deepslate_emerald_ore")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("deepslateEmeraldOre",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block emeraldBlock = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.METAL)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+ .setBlockSound(BlockSounds.STONE)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/emerald_block")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("emeraldBlock",UtilIdRegistrar.nextIdBlock(),Material.metal));
 
 	public static final Block chiseledNetherBricks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/chiseled_nether_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("chiseledNetherBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block crackedNetherBricks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/cracked_nether_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("crackedNetherBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block netherBricks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/nether_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("netherBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block netherGoldOre = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/nether_gold_ore")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new BlockNetherGoldOre("netherGoldOre", UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block netherQuartzOre = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/nether_quartz_ore")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("netherQuartzOre",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block redNetherBricks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/red_nether_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("redNetherBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -205,6 +204,7 @@ public class ModBlocks {
 		.setResistance(1.0f)
 		.setTopBottomTextures(MOD_ID + ":block/hay_block_top")
 		.setSideTextures(MOD_ID + ":block/hay_block_side")
+		.setFlammability(5, 5)
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new Block("hayBlock",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
@@ -218,11 +218,12 @@ public class ModBlocks {
 
 	public static final Block diorite = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/diorite")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("diorite",UtilIdRegistrar.nextIdBlock(),Material.stone));
+
 	public static final Block polishedDiorite = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
 		.setHardness(1.0f)
@@ -233,34 +234,35 @@ public class ModBlocks {
 
 	public static final Block andesite = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/andesite")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("andesite",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block polishedAndesite = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/polished_andesite")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("polishedAndesite",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block purpurBlock = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/purpur_block")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("purpurBlock",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block purpurPillar = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.DEFAULT)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTopBottomTextures(MOD_ID + ":block/purpur_pillar_top")
 		.setSideTextures(MOD_ID + ":block/purpur_pillar")
+		.setBlockModel(BlockModelAxisAligned::new)
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("purpurPillar",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
@@ -270,7 +272,7 @@ public class ModBlocks {
 		.setResistance(1.0f)
 		.setTextures(MOD_ID + ":block/nether_wart_block")
 		.setTags(BlockTags.MINEABLE_BY_SHOVEL)
-		.build(new Block("netherWartBlock",UtilIdRegistrar.nextIdBlock(),Material.dirt));
+		.build(new BlockLog("netherWartBlock",UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block warpedWartBlock = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.GRASS)
@@ -282,8 +284,8 @@ public class ModBlocks {
 
 	public static final Block boneBlock = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.DEFAULT)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTopBottomTextures(MOD_ID + ":block/bone_block_top")
 		.setSideTextures(MOD_ID + ":block/bone_block_side")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
@@ -295,7 +297,7 @@ public class ModBlocks {
 		.setResistance(1.0f)
 		.setTopBottomTextures(MOD_ID + ":block/crimson_nylium")
 		.setSideTextures(MOD_ID + ":block/crimson_nylium_side")
-		.setTags(BlockTags.MINEABLE_BY_PICKAXE, ModBlockTags.GROWS_NETHER_PLANTS)
+		.setTags(BlockTags.MINEABLE_BY_SHOVEL, ModBlockTags.GROWS_NETHER_PLANTS)
 		.build(new Block("nylium",UtilIdRegistrar.nextIdBlock(),Material.dirt));
 
 	public static final Block warpedNylium = new BlockBuilder(MOD_ID)
@@ -304,7 +306,7 @@ public class ModBlocks {
 		.setResistance(1.0f)
 		.setTopBottomTextures(MOD_ID + ":block/warped_nylium")
 		.setSideTextures(MOD_ID + ":block/warped_nylium_side")
-		.setTags(BlockTags.MINEABLE_BY_PICKAXE, ModBlockTags.GROWS_NETHER_PLANTS)
+		.setTags(BlockTags.MINEABLE_BY_SHOVEL, ModBlockTags.GROWS_NETHER_PLANTS)
 		.build(new Block("warpedNylium", UtilIdRegistrar.nextIdBlock(), Material.dirt));
 
 	public static final Block crimsonFungus = new BlockBuilder(MOD_ID)
@@ -313,7 +315,6 @@ public class ModBlocks {
 		.setResistance(0.5f)
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures(MOD_ID + ":block/crimson_fungus")
-		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockSaplingCrimsonFungus("crimson_fungus", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_plant));
 
 	public static final Block warpedFungus = new BlockBuilder(MOD_ID)
@@ -322,14 +323,12 @@ public class ModBlocks {
 		.setResistance(0.5f)
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures(MOD_ID + ":block/warped_fungus")
-		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockSaplingWarpedFungus("warped_fungus", UtilIdRegistrar.nextIdBlock(), MaterialAccess.nether_plant));
 
 	public static final Block crimsonStem = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(BlockModelLantern::new)
 		.setSideTextures(MOD_ID + ":block/crimson_stem")
 		.setTopBottomTextures(MOD_ID + ":block/crimson_stem_top")
 		.setTopBottomTextures(MOD_ID + ":block/crimson_stem_top")
@@ -445,21 +444,19 @@ public class ModBlocks {
 						.setMetaStateInterpreter(new LoomMetaState())
 		.build(new BlockLoom("loom", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/loom.json"))));
 
-	public static final BlockBuilder fletchingTable = new BlockBuilder(MOD_ID)
+	public static final Block fletchingTable = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/fletching_table.json")
-				.setBlockState("backport","fletching_table.json")
-				.setMetaStateInterpreter(null)
-				.build(new DragonBlockModel("fletchingTable", UtilIdRegistrar.nextIdBlock(), Material.wood)));
+				.setBlockModel("backport", "block/fletching_table.json")
+				.build(block))
+		.build(new DragonBlockModel("fletchingTable", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
-	public static final BlockBuilder smithingTable = new BlockBuilder(MOD_ID)
+	public static final Block smithingTable = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/smithing_table.json")
-				.setBlockState("backport","smithing_table.json")
-				.setMetaStateInterpreter(null)
-				.build(new DragonBlockModel("smithingTable", UtilIdRegistrar.nextIdBlock(), Material.metal)));
+				.setBlockModel("backport", "block/smithing_table.json")
+				.build(block))
+		.build(new DragonBlockModel("smithingTable", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
 	public static final Block amethystBlock = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.METAL)
@@ -467,7 +464,7 @@ public class ModBlocks {
 		.setResistance(1.0f)
 		.setTextures(MOD_ID + ":block/amethyst_block")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
-		.build(new Block(MOD_ID + ":block/amethystBlock",UtilIdRegistrar.nextIdBlock(),Material.metal));
+		.build(new Block("amethystBlock",UtilIdRegistrar.nextIdBlock(),Material.metal));
 
 	public static final Block copperBlock = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.METAL)
@@ -752,7 +749,7 @@ public class ModBlocks {
 		.setBottomTexture(MOD_ID + ":block/reinforced_deepslate_bottom")
 		.setSideTextures(MOD_ID + ":block/reinforced_deepslate_side")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
-		.build(new Block(MOD_ID + ":block/reinforcedDeepslate",UtilIdRegistrar.nextIdBlock(),Material.stone));
+		.build(new Block("reinforcedDeepslate",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block sculk = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.METAL)
@@ -1524,7 +1521,7 @@ public class ModBlocks {
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/spruce_planks")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-		.build(new Block("sprucePlanks, BlockTags.FENCES_CONNECT",UtilIdRegistrar.nextIdBlock(),Material.wood));
+		.build(new Block("sprucePlanks",UtilIdRegistrar.nextIdBlock(),Material.wood));
 
 	public static final Block cherryPlanks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
@@ -2823,7 +2820,6 @@ public class ModBlocks {
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/blue_carpet.json")
-
 				.build(block))
 		.build(new DragonBlockModel("blueCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
@@ -2831,7 +2827,6 @@ public class ModBlocks {
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/brown_carpet.json")
-
 				.build(block))
 		.build(new DragonBlockModel("brownCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
@@ -2839,7 +2834,6 @@ public class ModBlocks {
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/cyan_carpet.json")
-
 				.build(block))
 		.build(new DragonBlockModel("cyanCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
@@ -2847,7 +2841,6 @@ public class ModBlocks {
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/gray_carpet.json")
-
 				.build(block))
 		.build(new DragonBlockModel("grayCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
@@ -2855,86 +2848,85 @@ public class ModBlocks {
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/green_carpet.json")
-
 				.build(block))
 		.build(new DragonBlockModel("greenCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-	public static final BlockBuilder lightBlueCarpet = new BlockBuilder(MOD_ID)
+	public static final Block lightBlueCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/light_blue_carpet.json")
+				.setBlockModel("backport", "block/light_blue_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("lightBlueCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("lightBlueCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder lightGrayCarpet = new BlockBuilder(MOD_ID)
+	public static final Block lightGrayCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/light_gray_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("lightGrayCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("lightGrayCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder limeCarpet = new BlockBuilder(MOD_ID)
+	public static final Block limeCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/lime_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("limeCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("limeCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder magentaCarpet = new BlockBuilder(MOD_ID)
+	public static final Block magentaCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/magenta_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("magentaCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("magentaCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder mossCarpet = new BlockBuilder(MOD_ID)
+	public static final Block mossCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/moss_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("mossCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("mossCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder orangeCarpet = new BlockBuilder(MOD_ID)
+	public static final Block orangeCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/orange_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("orangeCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("orangeCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder pinkCarpet = new BlockBuilder(MOD_ID)
+	public static final Block pinkCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pink_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("pinkCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("pinkCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder purpleCarpet = new BlockBuilder(MOD_ID)
+	public static final Block purpleCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/purple_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("purpleCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("purpleCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder redCarpet = new BlockBuilder(MOD_ID)
+	public static final Block redCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/red_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("redCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("redCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder whiteCarpet = new BlockBuilder(MOD_ID)
+	public static final Block whiteCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/white_carpet.json")
+				.build(block))
+		.build(new DragonBlockModel("whiteCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-				.build(new DragonBlockModel("whiteCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
-
-	public static final BlockBuilder yellowCarpet = new BlockBuilder(MOD_ID)
+	public static final Block yellowCarpet = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/yellow_carpet.json")
-
-				.build(new DragonBlockModel("yellowCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth)));
+				.build(block))
+		.build(new DragonBlockModel("yellowCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
 	public static final BlockBuilder chain = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -3166,14 +3158,14 @@ public class ModBlocks {
 				.setMetaStateInterpreter(new StairsMetaStateInterpreter())
 				.build(new BlockStairs(Block.dirt,UtilIdRegistrar.nextIdBlock())));
 
-	public static final Block fence = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport", "block/fence/birch_fence_inventory.json")
-				.setBlockState("backport", "birch_fence.json") // Assuming the block state file is named birch_fence.json
-				.setMetaStateInterpreter(new FenceMetaState())
-				.build(block))
-		.build(new DragonBlockModel("exampleFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+//	public static final Block fence = new BlockBuilder(MOD_ID)
+//		.setBlockModel(
+//			block -> new DFBlockModelBuilder(MOD_ID)
+//				.setBlockModel("backport", "block/fence/birch_fence_inventory.json")
+//				.setBlockState("backport", "birch_fence.json") // Assuming the block state file is named birch_fence.json
+//				.setMetaStateInterpreter(new FenceMetaState())
+//				.build(block))
+//		.build(new DragonBlockModel("exampleFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static void register() {
 	}
