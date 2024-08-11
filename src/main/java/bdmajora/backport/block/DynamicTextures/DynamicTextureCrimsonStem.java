@@ -3,12 +3,16 @@ package bdmajora.backport.block.DynamicTextures;
 import com.b100.json.element.JsonObject;
 import java.awt.image.BufferedImage;
 import java.util.Random;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.dynamictexture.DynamicTexture;
 import net.minecraft.client.render.stitcher.IconCoordinate;
 import net.minecraft.client.render.stitcher.TextureRegistry;
+import net.minecraft.client.render.texturepack.TexturePack;
 import net.minecraft.client.render.texturepack.TexturePackException;
 import net.minecraft.client.util.helper.TexturePackJsonHelper;
 import net.minecraft.client.util.helper.Textures;
+
+import static bdmajora.backport.backport.MOD_ID;
 
 public class DynamicTextureCrimsonStem extends DynamicTexture {
 	private static Random rand = new Random();
@@ -23,16 +27,17 @@ public class DynamicTextureCrimsonStem extends DynamicTexture {
 	private int previousFrame = -1;
 	private int nextFrameDelay = 0;
 
-	// Constructor without parameters
-	public DynamicTextureCrimsonStem() {
+	public DynamicTextureCrimsonStem(Minecraft mc, TexturePack texturePack) {
 		super();
-		String animationSource = ":block/crimson_stem.png"; // Path to the animation source
-		String texturePath = "backport:block/crimson_stem"; // Path to the texture
+		String animationSource = MOD_ID + ":block/crimson_stem.png"; // Path to the animation source
+		String texturePath = MOD_ID + ":block/crimson_stem"; // Path to the texture with namespace key
 
 		IconCoordinate texture = TextureRegistry.getTexture(texturePath);
-		BufferedImage image = null; // You can load the image from a file or resource here
+		BufferedImage image = null;
 
 		try {
+			image = Textures.readImage(texturePack.getResourceAsStream(animationSource));
+
 			if (image == null) {
 				throw new TexturePackException("Could not load image!");
 			}
@@ -40,17 +45,19 @@ public class DynamicTextureCrimsonStem extends DynamicTexture {
 			if (image.getHeight() < image.getWidth()) {
 				throw new TexturePackException("Height is smaller than width!");
 			}
-		} catch (TexturePackException e) {
+
+		} catch (Exception e) {
 			throw new TexturePackException("Error in animation " + animationSource, e);
 		}
 
 		this.frameCount = image.getHeight() / image.getWidth();
 		String jsonFilePath = animationSource.replace(".png", ".json");
-		int res;
-		JsonObject rootObject = null; // You can load the JSON object from a file or resource here
+		JsonObject rootObject = null;
 
-		if (rootObject != null) {
+		if (texturePack.hasFile(jsonFilePath)) {
 			try {
+				rootObject = TexturePackJsonHelper.readJsonObject(texturePack, jsonFilePath);
+
 				if (rootObject.has("frametime")) {
 					this.frametime = TexturePackJsonHelper.getInteger(rootObject, "frametime");
 				}
@@ -66,7 +73,7 @@ public class DynamicTextureCrimsonStem extends DynamicTexture {
 				if (rootObject.has("frames")) {
 					this.frames = TexturePackJsonHelper.getIntArray(rootObject, "frames");
 
-					for (res = 0; res < this.frames.length; ++res) {
+					for (int res = 0; res < this.frames.length; ++res) {
 						if (this.frames[res] >= this.frameCount) {
 							throw new TexturePackException("Invalid frame number: " + this.frames[res]);
 						}
@@ -81,12 +88,8 @@ public class DynamicTextureCrimsonStem extends DynamicTexture {
 			}
 		}
 
-		int tileCount = 1;
-		if (this.tile2x2) {
-			tileCount = 2;
-		}
-
-		res = image.getWidth();
+		int tileCount = this.tile2x2 ? 2 : 1;
+		int res = image.getWidth();
 		int tiledRes = res * tileCount;
 		texture.setDimension(tiledRes, tiledRes);
 		texture.parentAtlas.dontSetSize.add(texture);
@@ -132,7 +135,6 @@ public class DynamicTextureCrimsonStem extends DynamicTexture {
 			} else {
 				this.transferBlendedFrame(this.previousFrame, this.currentFrame, blendFactor);
 			}
-
 		} else {
 			if (this.nextFrameDelay > 0) {
 				--this.nextFrameDelay;
@@ -147,7 +149,6 @@ public class DynamicTextureCrimsonStem extends DynamicTexture {
 			if (this.currentFrame != this.previousFrame) {
 				this.transferFrame(this.currentFrame);
 			}
-
 		}
 	}
 
