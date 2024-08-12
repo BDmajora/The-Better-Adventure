@@ -339,7 +339,6 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(BlockModelLantern::new)
 		.setSideTextures(MOD_ID + ":block/warped_stem")
 		.setTopBottomTextures(MOD_ID + ":block/warped_stem_top")
 		.addTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
@@ -378,16 +377,16 @@ public class ModBlocks {
 
 	public static final Block cryingObsidian = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(3.0f)
+		.setResistance(3.0f)
 		.setTextures(MOD_ID + ":block/crying_obsidian")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("cryingObsidian",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block lodestone = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTopBottomTextures(MOD_ID + ":block/lodestone_top")
 		.setSideTextures(MOD_ID + ":block/lodestone_side")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
@@ -436,13 +435,12 @@ public class ModBlocks {
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("ancientDebris",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
-	public static final BlockBuilder loom = new BlockBuilder(MOD_ID)
+	public static final Block loom = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/loom.json")
-					.setBlockState("backport","loom.json")
-						.setMetaStateInterpreter(new LoomMetaState())
-		.build(new BlockLoom("loom", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/loom.json"))));
+				.setBlockModel("backport", "block/loom.json")
+				.build(block))
+		.build(new DragonBlockModel("loom", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static final Block fletchingTable = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -604,16 +602,16 @@ public class ModBlocks {
 
 	public static final Block calcite = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/calcite")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("calcite",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block dripstoneBlock = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/dripstone_block")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("dripstoneBlock",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -702,7 +700,6 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(BlockModelLantern::new)
 		.setLuminance(15)
 		.setTextures(MOD_ID + ":block/sea_lantern")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
@@ -743,8 +740,8 @@ public class ModBlocks {
 
 	public static final Block reinforcedDeepslate = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTopTexture(MOD_ID + ":block/reinforced_deepslate_top")
 		.setBottomTexture(MOD_ID + ":block/reinforced_deepslate_bottom")
 		.setSideTextures(MOD_ID + ":block/reinforced_deepslate_side")
@@ -755,7 +752,6 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(BlockModelLantern::new)
 		.setTextures(MOD_ID + ":block/sculk")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("sculk",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -2420,23 +2416,24 @@ public class ModBlocks {
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new Lilac("roseBushBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false));
 
-	public static final BlockBuilder sunflowerTop = new BlockBuilder(MOD_ID)
+	public static final Block sunflowerTop = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/sunflower_top.json")
-				.setBlockState("backport","sunflower_top.json")
-				.setMetaStateInterpreter(null)
-				.build(new Sunflower("sunflowerTop", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/sunflower_top.json")).withTags((BlockTags.NOT_IN_CREATIVE_MENU))));
+				.setBlockModel("backport", "block/sunflower_top.json")
+				.build(block))
+		.build(new DragonBlockModel("sunflowerTop", UtilIdRegistrar.nextIdBlock(), Material.wood))
+		.withTags(BlockTags.NOT_IN_CREATIVE_MENU);
 
-	public static final BlockBuilder sunflowerBottom = new BlockBuilder(MOD_ID)
+	public static final Block sunflowerBottom = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/sunflower_bottom.json")
-				.setBlockState("backport","sunflower.json")
-				.setMetaStateInterpreter(null)
-				.build(new Sunflower("sunflowerTop", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/sunflower_top.json")).withTags((BlockTags.NOT_IN_CREATIVE_MENU))));
+				.setBlockModel("backport", "block/sunflower_bottom.json")
+				.build(block))
+		.build(new DragonBlockModel("sunflowerBottom", UtilIdRegistrar.nextIdBlock(), Material.wood))
+		.withTags(BlockTags.NOT_IN_CREATIVE_MENU);
 
 	public static final Block modernDragonEgg = new BlockBuilder(MOD_ID)
+		.setIcon(MOD_ID + ":block/icon/dragon_egg")
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/dragon_egg.json")

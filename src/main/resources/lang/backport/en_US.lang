@@ -115,7 +115,7 @@ tile.backport.deepslateRedstoneOre.name=Deepslate Redstone Ore
 tile.backport.polishedDeepslate.name=Polished Deepslate
 
 ###Warden blocks
-tile.backport.sculk.name.Sculk
+tile.backport.sculk.name=Sculk
 
 ###copper
 tile.backport.copperBlock.name=Copper Block

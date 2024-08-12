@@ -33,11 +33,11 @@ public class Sunflower extends Block {
 		return new ItemStack[]{new ItemStack(ModItems.sunflower)};
 	}
 
-//	@Override
-//	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-//		Block blockBelow = world.getBlock(x, y - 1, z);
-//		return blockBelow == ModBlocks.sunflowerBottom || super.canPlaceBlockAt(world, x, y, z);
-//	}
+	@Override
+	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
+		Block blockBelow = world.getBlock(x, y - 1, z);
+		return blockBelow == ModBlocks.sunflowerBottom || super.canPlaceBlockAt(world, x, y, z);
+	}
 
 	@Override
 	public boolean isSolidRender() {
