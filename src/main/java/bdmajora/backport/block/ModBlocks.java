@@ -2448,22 +2448,32 @@ public class ModBlocks {
 		.withTags(BlockTags.MINEABLE_BY_SHEARS,BlockTags.SHEARS_DO_SILK_TOUCH);
 
 	public static final Block lilacTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.GRASS)
+		.setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures(MOD_ID + ":block/lilac_top")
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new Lilac("lilacTop", UtilIdRegistrar.nextIdBlock(), Material.plant, true));
+		.setVisualUpdateOnMetadata()
+		.build(new Lilac("lilacTop", UtilIdRegistrar.nextIdBlock(), Material.plant, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{}; // Returns nothing if the top block is broken
+			}
+		});
 
 	public static final Block lilacBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.GRASS)
+		.setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures(MOD_ID + ":block/lilac_bottom")
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new Lilac("lilacBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false));
+		.setVisualUpdateOnMetadata()
+		.build(new Lilac("lilacBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.lilac)};
+			}
+		});
 
 	public static final Block peonyTop = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.GRASS)

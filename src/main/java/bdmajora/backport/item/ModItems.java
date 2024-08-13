@@ -214,7 +214,7 @@ public class ModItems {
 	public static Item lilac  = lilac  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/lilac_top")
 		.setStackSize(64)
-		.build(new ItemLilac("item.lilac", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/lilac_top"));
+		.build(new ItemFlower("item.lilac", UtilIdRegistrar.nextIdItem(), ModBlocks.lilacTop, ModBlocks.lilacBottom));
 
 	public static Item peony  = peony  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/peony_top")

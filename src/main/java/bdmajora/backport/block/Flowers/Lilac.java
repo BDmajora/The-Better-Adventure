@@ -5,24 +5,21 @@ import bdmajora.backport.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
-import net.minecraft.core.util.helper.Direction;
-import net.minecraft.core.util.helper.Side;
 
 public class Lilac extends Block {
+	public final boolean isTop;
 
 	public Lilac(String name, int id, Material material, boolean isTop) {
 		super(name, id, material);
-		// Additional custom properties or logic can be added here
+		this.isTop = isTop;
 	}
 
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-		if (world.getBlock(x, y, z) == ModBlocks.lilacTop) {
+		if (isTop) {
 			return new ItemStack[]{}; // Returns nothing if the top block is broken
 		}
 		return new ItemStack[]{new ItemStack(ModItems.lilac)};
@@ -30,32 +27,10 @@ public class Lilac extends Block {
 
 	@Override
 	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-		Block blockBelow = world.getBlock(x, y - 1, z);
-		return blockBelow == ModBlocks.lilacBottom || super.canPlaceBlockAt(world, x, y, z);
-	}
-
-	@Override
-	public boolean isSolidRender() {
-		return false;
-	}
-
-	@Override
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
-
-	@Override
-	public float getHardness() {
-		return 0.0F; // Makes the block break instantly
-	}
-
-	@Override
-	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
-		if (world.getBlock(x, y + 1, z) == ModBlocks.lilacTop) {
-			world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
-		} else if (world.getBlock(x, y - 1, z) == ModBlocks.lilacBottom) {
-			world.setBlockWithNotify(x, y - 1, z, 0); // Destroys the bottom half
+		if (y >= world.getHeightBlocks() - 1) {
+			return false;
+		} else {
+			return world.canPlaceOnSurfaceOfBlock(x, y - 1, z) && super.canPlaceBlockAt(world, x, y, z) && super.canPlaceBlockAt(world, x, y + 1, z);
 		}
-		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);
 	}
 }

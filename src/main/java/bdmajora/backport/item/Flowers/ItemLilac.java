@@ -12,20 +12,14 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class ItemLilac extends Item {
-	private String texture;
+	private final Block lilacBlockBottom;
+	private final Block lilacBlockTop;
 
-	public ItemLilac(String name, int id, String texture) {
+	public ItemLilac(String name, int id, Block lilacBlockBottom, Block lilacBlockTop) {
 		super(name, id);
 		this.maxStackSize = 64;
-		this.texture = texture;
-	}
-
-	public String getTexture() {
-		return texture;
-	}
-
-	public void setTexture(String texture) {
-		this.texture = texture;
+		this.lilacBlockBottom = lilacBlockBottom;
+		this.lilacBlockTop = lilacBlockTop;
 	}
 
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
@@ -35,14 +29,9 @@ public class ItemLilac extends Item {
 			blockZ += side.getOffsetZ();
 		}
 
-		// Create the lilac blocks
-		Block lilacBlockBottom = ModBlocks.lilacBottom;
-		Block lilacBlockTop = ModBlocks.lilacTop;
-
 		if (!lilacBlockBottom.canPlaceBlockAt(world, blockX, blockY, blockZ)) {
 			return false;
 		} else if (!world.isAirBlock(blockX, blockY + 1, blockZ)) {
-			// If the block above is not air, return false
 			return false;
 		} else {
 			world.editingBlocks = true;
@@ -51,7 +40,7 @@ public class ItemLilac extends Item {
 			world.editingBlocks = false;
 			world.notifyBlocksOfNeighborChange(blockX, blockY, blockZ, lilacBlockBottom.id);
 			world.notifyBlocksOfNeighborChange(blockX, blockY + 1, blockZ, lilacBlockTop.id);
-			world.playBlockSoundEffect((Entity)null, (float) blockX + 0.5F, (float) blockY + 0.5F, (float) blockZ + 0.5F, lilacBlockBottom, EnumBlockSoundEffectType.PLACE);
+			world.playBlockSoundEffect((Entity)null, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, lilacBlockBottom, EnumBlockSoundEffectType.PLACE);
 			itemstack.consumeItem(entityplayer);
 			return true;
 		}
