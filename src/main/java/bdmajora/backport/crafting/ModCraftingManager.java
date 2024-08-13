@@ -55,7 +55,7 @@ public class ModCraftingManager {
 			.setShape("PP", "PP", "PP")
 			.addInput('P', ModBlocks.warpedPlanks)
 			.setConsumeContainer(false)
-			.create("warpedDoor", new ItemStack(ModItems.wardpedDoor, 3));
+			.create("warpedDoor", new ItemStack(ModItems.warpedDoor, 3));
 
 		RecipeBuilder.Shaped(MOD_ID)
 			.setShape("PPP", "PPP")

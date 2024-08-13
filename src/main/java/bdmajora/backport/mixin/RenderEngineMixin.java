@@ -46,5 +46,12 @@ public abstract class RenderEngineMixin {
 		dynamicTextures.add(new DynamicTextureCustom(mc, sculkPack, sculkPackTexture, "backport:block/sculk", false));
 	}
 
+	@Inject(method = "initDynamicTextures", at = @At(value = "TAIL"))
+	public void initmagmaTexture(CallbackInfo ci) {
+		String magmaPackTexture = "/assets/backport/textures/block/magma.png";
+		TexturePack magmaPack = mc.texturePackList.getHighestPriorityTexturePackWithFile(magmaPackTexture);
+		dynamicTextures.add(new DynamicTextureCustom(mc, magmaPack, magmaPackTexture, "backport:block/magma", false));
+	}
+
 	// Add more injections as needed
 }

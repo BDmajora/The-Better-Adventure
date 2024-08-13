@@ -1,16 +1,12 @@
 package bdmajora.backport.item;
 
 import bdmajora.backport.block.ModBlocks;
-import bdmajora.backport.block.Vines.BlockVine;
-import bdmajora.backport.item.Doors.*;
 import bdmajora.backport.UtilIdRegistrar;
 import bdmajora.backport.item.Flowers.*;
 import bdmajora.backport.item.Food.*;
 import net.minecraft.core.item.Item;
-import net.minecraft.core.item.ItemFood;
-import net.minecraft.core.item.ItemSeeds;
+import net.minecraft.core.item.ItemDoor;
 import turniplabs.halplibe.helper.ItemBuilder;
-import turniplabs.halplibe.helper.ItemHelper;
 
 import static bdmajora.backport.backport.MOD_ID;
 
@@ -53,75 +49,73 @@ public class ModItems {
 
 	//Doors
 
-	public static Item crimsonDoor = crimsonDoor = new ItemBuilder(MOD_ID)
+	public static final Item crimsonDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/crimson_door")
-		.setStackSize(64)
-		.build(new ItemCrimsonDoor("item.crimsonDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/crimson_door"));
+		.build(new ItemDoor("item.crimsonDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.crimsonDoorBottom, ModBlocks.crimsonDoorTop));
 
-	public static Item wardpedDoor  = wardpedDoor  = new ItemBuilder(MOD_ID)
+	public static final Item warpedDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/warped_door")
-		.setStackSize(64)
-		.build(new ItemWarpedDoor("item.warpedDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/warped_door"));
+		.build(new ItemDoor("item.warpedDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.warpedDoorBottom, ModBlocks.warpedDoorTop));
 
-	public static Item acaciaDoor  = acaciaDoor  = new ItemBuilder(MOD_ID)
+	public static final Item acaciaDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/acacia_door")
 		.setStackSize(64)
-		.build(new ItemAcaciaDoor("item.acaciaDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/acacia_door"));
-
-	public static Item bambooDoor  = bambooDoor  = new ItemBuilder(MOD_ID)
+		.build(new ItemDoor("item.acaciaDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.acaciaDoorBottom, ModBlocks.acaciaDoorTop));
+	public static Item bambooDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/bamboo_door")
 		.setStackSize(64)
-		.build(new ItemBambooDoor("item.bambooDoor", UtilIdRegistrar.nextIdItem(),MOD_ID + ":item/bamboo_door"));
+		.build(new ItemDoor("item.bambooDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.bambooDoorBottom, ModBlocks.bambooDoorTop));
 
-	public static Item birchDoor  = birchDoor  = new ItemBuilder(MOD_ID)
+	public static Item birchDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/birch_door")
 		.setStackSize(64)
-		.build( new ItemBirchDoor("item.birchDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/birch_door"));
+		.build(new ItemDoor("item.birchDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.birchDoorBottom, ModBlocks.birchDoorTop));
 
-	public static Item cherryDoor  = cherryDoor  = new ItemBuilder(MOD_ID)
-		.setIcon(MOD_ID + ":item/birch_door")
+	public static Item cherryDoor = new ItemBuilder(MOD_ID)
+		.setIcon(MOD_ID + ":item/cherry_door")
 		.setStackSize(64)
-		.build(new ItemCherryDoor("item.cherryDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/cherry_door"));
+		.build(new ItemDoor("item.cherryDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.cherryDoorBottom, ModBlocks.cherryDoorTop));
 
-	public static Item copperDoor  = copperDoor  = new ItemBuilder(MOD_ID)
+	public static Item copperDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/copper_door")
 		.setStackSize(64)
-		.build(new ItemCopperDoor("item.copperDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/copper_door"));
+		.build(new ItemDoor("item.copperDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.copperDoorBottom, ModBlocks.copperDoorTop));
 
-	public static Item darkOakDoor = darkOakDoor  = new ItemBuilder(MOD_ID)
+	public static Item darkOakDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/dark_oak_door")
 		.setStackSize(64)
-		.build(new ItemDarkOakDoor("item.darkOakDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/dark_oak_door"));
+		.build(new ItemDoor("item.darkOakDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.darkOakDoorBottom, ModBlocks.darkOakDoorTop));
 
-	public static Item exposedCopperDoor = exposedCopperDoor  = new ItemBuilder(MOD_ID)
+	public static Item exposedCopperDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/exposed_copper_door")
 		.setStackSize(64)
-		.build(new ItemExposedCopperDoor("item.exposedCopperDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/exposed_copper_door"));
+		.build(new ItemDoor("item.exposedCopperDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.exposedCopperDoorBottom, ModBlocks.exposedCopperDoorTop));
 
-	public static Item jungleDoor = jungleDoor  = new ItemBuilder(MOD_ID)
+	public static Item jungleDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/jungle_door")
 		.setStackSize(64)
-		.build(new ItemJungleDoor("item.jungleDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + MOD_ID + ":item/jungle_door"));
+		.build(new ItemDoor("item.jungleDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.jungleDoorBottom, ModBlocks.jungleDoorTop));
 
-	public static Item mangroveDoor = mangroveDoor  = new ItemBuilder(MOD_ID)
+	public static Item mangroveDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/mangrove_door")
 		.setStackSize(64)
-		.build(new ItemMangroveDoor("item.mangroveDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/mangrove_door"));
+		.build(new ItemDoor("item.mangroveDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.mangroveDoorBottom, ModBlocks.mangroveDoorTop));
 
-	public static Item oxidizedCopperDoor = oxidizedCopperDoor  = new ItemBuilder(MOD_ID)
+	public static Item oxidizedCopperDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/oxidized_copper_door")
 		.setStackSize(64)
-		.build(new ItemOxidizedCopperDoor("item.oxidizedCopperDoor", UtilIdRegistrar.nextIdItem(),MOD_ID + ":item/oxidized_copper_door"));
+		.build(new ItemDoor("item.oxidizedCopperDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.oxidizedCopperDoorBottom, ModBlocks.oxidizedCopperDoorTop));
 
-	public static Item spruceDoor = spruceDoor = new ItemBuilder(MOD_ID)
+	public static Item spruceDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/spruce_door")
 		.setStackSize(64)
-		.build(new ItemSpruceDoor("item.spruceDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/spruce_door"));
+		.build(new ItemDoor("item.spruceDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.spruceDoorBottom, ModBlocks.spruceDoorTop));
 
-	public static Item weatheredCopperDoor = weatheredCopperDoor = new ItemBuilder(MOD_ID)
+	public static Item weatheredCopperDoor = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/weathered_copper_door")
 		.setStackSize(64)
-		.build(new ItemWeatheredCopperDoor("item.weatheredCopperDoor", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/weathered_copper_door"));
+		.build(new ItemDoor("item.weatheredCopperDoor", UtilIdRegistrar.nextIdItem(), ModBlocks.weatheredCopperDoorBottom, ModBlocks.weatheredCopperDoorTop));
+
 
 	//food
 	public static Item glowBerries = glowBerries = new ItemBuilder(MOD_ID)
@@ -216,11 +210,6 @@ public class ModItems {
 		.build(new ItemSeedsAccessor("seeds.PitcherPod", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsBeetRoot, MOD_ID + ":item/pitcher_pod"));
 
 	//plants
-
-	public static Item vine  = vine  = new ItemBuilder(MOD_ID)
-		.setIcon(MOD_ID + ":item/vine")
-		.setStackSize(64)
-		.build(new ItemBlockVine("item.vine", UtilIdRegistrar.nextIdBlock(), (BlockVine) ModBlocks.vine, MOD_ID + ":item/vine"));
 
 	public static Item lilac  = lilac  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/lilac_top")

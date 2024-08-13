@@ -7,7 +7,6 @@ import bdmajora.backport.block.Door.*;
 import bdmajora.backport.block.Flowers.Lilac;
 import bdmajora.backport.block.Flowers.Peony;
 import bdmajora.backport.block.Flowers.Pitcher;
-import bdmajora.backport.block.Flowers.Sunflower;
 import bdmajora.backport.block.Nether.*;
 import bdmajora.backport.block.TrapDoor.*;
 import bdmajora.backport.block.Vines.BlockCaveVinesLit;
@@ -15,11 +14,16 @@ import bdmajora.backport.block.Vines.BlockVine;
 import bdmajora.backport.block.Vines.BlockVines;
 import bdmajora.backport.block.dragonfly.*;
 import bdmajora.backport.block.metastates.*;
+import bdmajora.backport.item.ModItems;
 import net.minecraft.client.render.block.model.*;
 import net.minecraft.core.block.*;
+import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.sound.BlockSounds;
+import net.minecraft.core.world.World;
 import org.useless.dragonfly.model.block.DFBlockModelBuilder;
 import turniplabs.halplibe.helper.BlockBuilder;
 import org.useless.dragonfly.helper.ModelHelper;
@@ -1050,7 +1054,6 @@ public class ModBlocks {
  .setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setBlockModel(BlockModelLantern::new)
 		.setLuminance(5)
 		.setTextures(MOD_ID + ":block/magma")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
@@ -1528,256 +1531,396 @@ public class ModBlocks {
 		.build(new BlockAxisAligned("cherryPlanks",UtilIdRegistrar.nextIdBlock(),Material.wood));
 
 	public static final Block crimsonDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/crimson_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/crimson_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new CrimsonDoor("crimsonDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new CrimsonDoor("crimsonDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.crimsonDoor)};
+			}
+		});
 
 	public static final Block crimsonDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/crimson_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/crimson_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new CrimsonDoor("crimsonDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new CrimsonDoor("crimsonDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.crimsonDoor)};
+			}
+		});
 
 	public static final Block warpedDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/warped_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/warped_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new CrimsonDoor("warpedDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new WarpedDoor("warpedDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.warpedDoor )};
+			}
+		});
 
 	public static final Block warpedDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/warped_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/warped_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new WarpedDoor("wardpedDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new WarpedDoor("warpedDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.warpedDoor )};
+			}
+		});
 
 	public static final Block acaciaDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/acacia_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/acacia_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new AcaciaDoor("acaciaDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new AcaciaDoor("acaciaDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.acaciaDoor)};
+			}
+		});
 
 	public static final Block acaciaDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/acacia_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/acacia_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new AcaciaDoor("acaciaDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new AcaciaDoor("acaciaDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.acaciaDoor)};
+			}
+		});
 
 	public static final Block bambooDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/bamboo_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/bamboo_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new BambooDoor("bambooDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new BambooDoor("bambooDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bambooDoor)};
+			}
+		});
 
 	public static final Block bambooDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/bamboo_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/bamboo_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new BambooDoor("bambooDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new BambooDoor("bambooDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bambooDoor)};
+			}
+		});
 
 	public static final Block birchDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/birch_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/birch_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new BirchDoor("birchDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new BirchDoor("birchDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.birchDoor)};
+			}
+		});
 
 	public static final Block birchDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/birch_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/birch_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new BirchDoor("birchDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new BirchDoor("birchDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.birchDoor)};
+			}
+		});
 
 	public static final Block cherryDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/cherry_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/cherry_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new CherryDoor("cherryDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new CherryDoor("cherryDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.cherryDoor)};
+			}
+		});
 
 	public static final Block cherryDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/cherry_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/cherry_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new CherryDoor("cherryDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new CherryDoor("cherryDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.cherryDoor)};
+			}
+		});
 
 	public static final Block copperDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.METAL)
+		.setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/copper_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/copper_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new CopperDoor("copperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true));
+		.setVisualUpdateOnMetadata()
+		.build(new CopperDoor("copperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.copperDoor)};
+			}
+		});
 
 	public static final Block copperDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.METAL)
+		.setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/copper_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/copper_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new CopperDoor("copperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false));
+		.setVisualUpdateOnMetadata()
+		.build(new CopperDoor("copperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.copperDoor)};
+			}
+		});
 
 	public static final Block darkOakDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/dark_oak_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/dark_oak_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new DarkOakDoor("darkOakDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new DarkOakDoor("darkOakDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.darkOakDoor)};
+			}
+		});
 
 	public static final Block darkOakDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/dark_oak_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/dark_oak_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new DarkOakDoor("darkOakDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new DarkOakDoor("darkOakDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.darkOakDoor)};
+			}
+		});
 
 	public static final Block exposedCopperDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.METAL)
+		.setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/exposed_copper_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/exposed_copper_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new ExposedCopperDoor("exposedCopperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true));
+		.setVisualUpdateOnMetadata()
+		.build(new ExposedCopperDoor("exposedCopperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.exposedCopperDoor)};
+			}
+		});
 
 	public static final Block exposedCopperDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.METAL)
+		.setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/exposed_copper_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/exposed_copper_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new ExposedCopperDoor("exposedCopperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false));
+		.setVisualUpdateOnMetadata()
+		.build(new ExposedCopperDoor("exposedCopperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.exposedCopperDoor)};
+			}
+		});
 
 	public static final Block jungleDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/jungle_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/jungle_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new JungleDoor("jungleDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new JungleDoor("jungleDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.jungleDoor)};
+			}
+		});
 
 	public static final Block jungleDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/jungle_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/jungle_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new JungleDoor("jungleDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new JungleDoor("jungleDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.jungleDoor)};
+			}
+		});
 
 	public static final Block mangroveDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/mangrove_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/mangrove_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new MangroveDoor("mangroveDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new MangroveDoor("mangroveDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.mangroveDoor)};
+			}
+		});
 
 	public static final Block mangroveDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/mangrove_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/mangrove_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new MangroveDoor("mangroveDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new MangroveDoor("mangroveDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.mangroveDoor)};
+			}
+		});
 
 	public static final Block oxidizedCopperDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.METAL)
+		.setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/oxidized_copper_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/oxidized_copper_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new OxidizedCopperDoor("oxidizedCopperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true));
+		.setVisualUpdateOnMetadata()
+		.build(new OxidizedCopperDoor("oxidizedCopperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.oxidizedCopperDoor)};
+			}
+		});
 
 	public static final Block oxidizedCopperDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.METAL)
+		.setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/oxidized_copper_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/oxidized_copper_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new OxidizedCopperDoor("oxidizedCopperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false));
+		.setVisualUpdateOnMetadata()
+		.build(new OxidizedCopperDoor("oxidizedCopperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.oxidizedCopperDoor)};
+			}
+		});
 
 	public static final Block spruceDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/spruce_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/spruce_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new SpruceDoor("spruceDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true));
+		.setVisualUpdateOnMetadata()
+		.build(new SpruceDoor("spruceDoorTop", UtilIdRegistrar.nextIdBlock(), Material.wood, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.spruceDoor)};
+			}
+		});
 
 	public static final Block spruceDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
+		.setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/spruce_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/spruce_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new SpruceDoor("spruceDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false));
+		.setVisualUpdateOnMetadata()
+		.build(new SpruceDoor("spruceDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.wood, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.spruceDoor)};
+			}
+		});
 
 	public static final Block weatheredCopperDoorTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.METAL)
+		.setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/weathered_copper_door_top")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/weathered_copper_door_top"))
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new WeatheredCopperDoor("weatheredCopperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true));
+		.setVisualUpdateOnMetadata()
+		.build(new WeatheredCopperDoor("weatheredCopperDoorTop", UtilIdRegistrar.nextIdBlock(), Material.metal, true) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.weatheredCopperDoor)};
+			}
+		});
 
 	public static final Block weatheredCopperDoorBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.METAL)
+		.setBlockSound(BlockSounds.METAL)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/weathered_copper_door_bottom")
-		.setBlockModel(BlockModelDoor::new)
+		.setBlockModel(block -> new BlockModelDoor<>(block).withTextures(MOD_ID + ":block/weathered_copper_door_bottom"))
 		.addTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new WeatheredCopperDoor("weatheredCopperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false));
+		.setVisualUpdateOnMetadata()
+		.build(new WeatheredCopperDoor("weatheredCopperDoorBottom", UtilIdRegistrar.nextIdBlock(), Material.metal, false) {
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.weatheredCopperDoor)};
+			}
+		});
 
 	public static final Block acaciaTrapDoor = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
@@ -1933,103 +2076,44 @@ public class ModBlocks {
 		.addTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BirchTrapDoor("birchTrapDoor", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
-	public static final BlockBuilder barrel = new BlockBuilder(MOD_ID)
+	public static final Block barrel = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/barrel.json")
-				.setBlockState("backport","barrel.json")
+				.setBlockModel("backport", "block/barrel.json")
+				.setBlockState("backport", "barrel.json")
 				.setMetaStateInterpreter(new BarrelMetaState())
-				.build(new BlockBarrel("barrel", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/barrel.json")).withTags((BlockTags.NOT_IN_CREATIVE_MENU))));
-
+				.build(block))
+		.build(new BlockBarrel("barrel", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static final Block beeNest = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopTexture(MOD_ID + ":block/bee_nest_top")
-		.setBottomTexture(MOD_ID + ":block/bee_nest_bottom")
-		.setNorthTexture(MOD_ID + ":block/bee_nest_side")
-		.setEastTexture(MOD_ID + ":block/bee_nest_side")
-		.setWestTexture(MOD_ID + ":block/bee_nest_side")
-		.setSouthTexture(MOD_ID + ":block/bee_nest_front")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
-		.build(new Block("beeNest",UtilIdRegistrar.nextIdBlock(),Material.wood));
-
-	public static final Block beeNestHoney = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
-		.setHardness(2.0f)
-		.setResistance(2.0f)
-		.setTopTexture(MOD_ID + ":block/bee_nest_top")
-		.setBottomTexture(MOD_ID + ":block/bee_nest_bottom")
-		.setNorthTexture(MOD_ID + ":block/bee_nest_side")
-		.setEastTexture(MOD_ID + ":block/bee_nest_side")
-		.setWestTexture(MOD_ID + ":block/bee_nest_side")
-		.setSouthTexture(MOD_ID + ":block/bee_nest_front_honey")
-		.setTags(BlockTags.MINEABLE_BY_AXE)
-		.build(new Block("beeNestHoney",UtilIdRegistrar.nextIdBlock(),Material.wood));
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/bee_nest.json")
+				.build(block))
+		.build(new DragonBlockModel("beeNest", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static final Block beeHive = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopBottomTextures(MOD_ID + ":block/beehive_end")
-		.setNorthTexture(MOD_ID + ":block/beehive_side")
-		.setEastTexture(MOD_ID + ":block/beehive_side")
-		.setWestTexture(MOD_ID + ":block/beehive_side")
-		.setSouthTexture(MOD_ID + ":block/beehive_front")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
-		.build(new Block("beeHive",UtilIdRegistrar.nextIdBlock(),Material.wood));
-
-	public static final Block beeHiveHoney = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
-		.setHardness(2.0f)
-		.setResistance(2.0f)
-		.setTopBottomTextures(MOD_ID + ":block/beehive_end")
-		.setNorthTexture(MOD_ID + ":block/beehive_side")
-		.setEastTexture(MOD_ID + ":block/beehive_side")
-		.setWestTexture(MOD_ID + ":block/beehive_side")
-		.setSouthTexture(MOD_ID + ":block/beehive_front_honey")
-		.setTags(BlockTags.MINEABLE_BY_AXE)
-		.build(new Block("beeHiveHoney",UtilIdRegistrar.nextIdBlock(),Material.wood));
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/beehive.json")
+				.build(block))
+		.build(new DragonBlockModel("beeHive", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static final Block crafter = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
 		.setHardness(2.0f)
 		.setResistance(2.0f)
-		.setTopTexture(MOD_ID + ":block/crafter_top")
-		.setBottomTexture(MOD_ID + ":block/crafter_bottom")
-		.setNorthTexture(MOD_ID + ":block/crafter_north")
-		.setEastTexture(MOD_ID + ":block/crafter_east")
-		.setWestTexture(MOD_ID + ":block/crafter_west")
-		.setSouthTexture(MOD_ID + ":block/crafter_south")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
-		.build(new Block("crafter",UtilIdRegistrar.nextIdBlock(),Material.wood));
-
-	public static final Block crafterTriggered = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
-		.setHardness(2.0f)
-		.setResistance(2.0f)
-		.setTopTexture(MOD_ID + ":block/crafter_top_triggered")
-		.setBottomTexture(MOD_ID + ":block/crafter_bottom")
-		.setNorthTexture(MOD_ID + ":block/crafter_north")
-		.setEastTexture(MOD_ID + ":block/crafter_east_triggered")
-		.setWestTexture(MOD_ID + ":block/crafter_west_triggered")
-		.setSouthTexture(MOD_ID + ":block/crafter_south_triggered")
-		.setTags(BlockTags.MINEABLE_BY_AXE)
-		.build(new Block("crafterTriggered",UtilIdRegistrar.nextIdBlock(),Material.wood));
-
-	public static final Block crafterCrafting = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.WOOD)
-		.setHardness(2.0f)
-		.setResistance(2.0f)
-		.setTopTexture(MOD_ID + ":block/crafter_top_crafting")
-		.setBottomTexture(MOD_ID + ":block/crafter_bottom")
-		.setNorthTexture(MOD_ID + ":block/crafter_north")
-		.setEastTexture(MOD_ID + ":block/crafter_east_crafting")
-		.setWestTexture(MOD_ID + ":block/crafter_west_crafting")
-		.setSouthTexture(MOD_ID + ":block/crafter_south")
-		.setTags(BlockTags.MINEABLE_BY_AXE)
-		.build(new Block("crafterCrafting",UtilIdRegistrar.nextIdBlock(),Material.wood));
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/crafter.json")
+				.build(block))
+		.build(new DragonBlockModel("crafter", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static final Block honeyBlock = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
@@ -2082,8 +2166,8 @@ public class ModBlocks {
 
 	public static final Block prismarineBricks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.STONE)
-		.setHardness(1.0f)
-		.setResistance(1.0f)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/prismarine_bricks")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
 		.build(new Block("prismarineBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -2298,6 +2382,7 @@ public class ModBlocks {
 		.setTextures(MOD_ID + ":block/twisting_vines")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockTwistingVinesPlant("twistingVines", UtilIdRegistrar.nextIdBlock()));
+
 	public static final Block weepingVinesPlant = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
@@ -2306,6 +2391,7 @@ public class ModBlocks {
 		.setTextures(MOD_ID + ":block/weeping_vines_plant")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new BlockWeepingVinesPlant("weepingVinesPlant", UtilIdRegistrar.nextIdBlock()));
+
 	public static final Block twistingVinesPlant = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
@@ -2354,13 +2440,12 @@ public class ModBlocks {
 		.build(new BlockCaveVinesLit("caveVinesPlantLit", UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block vine = new BlockBuilder(MOD_ID)
-		.setTextures(MOD_ID + ":block/vine")
- .setBlockSound(BlockSounds.GRASS)
-		.setHardness(0.1f)
-		.setResistance(0.1f)
-		.setBlockModel(BlockModelLadder::new)
-		.setTags(BlockTags.MINEABLE_BY_SHEARS,BlockTags.SHEARS_DO_SILK_TOUCH)
-		.build(new BlockVine("vine", UtilIdRegistrar.nextIdBlock()));
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/vine.json")
+				.build(block))
+		.build(new BlockVine("vine", UtilIdRegistrar.nextIdBlock(), Material.grass))
+		.withTags(BlockTags.MINEABLE_BY_SHEARS,BlockTags.SHEARS_DO_SILK_TOUCH);
 
 	public static final Block lilacTop = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.GRASS)

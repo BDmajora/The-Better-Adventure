@@ -26,28 +26,41 @@ public class BlockSoulTorch extends BlockTorch {
 	@Override
 	public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
 		int l = world.getBlockMetadata(x, y, z);
-		double d = (float)x + 0.5F;
-		double d1 = (float)y + 0.7F;
-		double d2 = (float)z + 0.5F;
+		double d = (float) x + 0.5F;
+		double d1 = (float) y + 0.7F;
+		double d2 = (float) z + 0.5F;
 		double d3 = 0.22;
 		double d4 = 0.27;
-//		if (l == 1) {
-//           world.spawnParticle("smoke", d - d4, d1 + d3, d2, 0.0, 0.0, 0.0);
-//			world.spawnParticle("blueflame", d - d4, d1 + d3, d2, 0.0, 0.0, 0.0);
-//		} else if (l == 2) {
-//            world.spawnParticle("smoke", d + d4, d1 + d3, d2, 0.0, 0.0, 0.0);
-//			world.spawnParticle("blueflame", d + d4, d1 + d3, d2, 0.0, 0.0, 0.0);
-//		} else if (l == 3) {
-//           world.spawnParticle("smoke", d, d1 + d3, d2 - d4, 0.0, 0.0, 0.0);
-//			world.spawnParticle("blueflame", d, d1 + d3, d2 - d4, 0.0, 0.0, 0.0);
-//		} else if (l == 4) {
-//           world.spawnParticle("smoke", d, d1 + d3, d2 + d4, 0.0, 0.0, 0.0);
-//			world.spawnParticle("blueflame", d, d1 + d3, d2 + d4, 0.0, 0.0, 0.0);
-//		} else {
-//           world.spawnParticle("smoke", d, d1, d2, 0.0, 0.0, 0.0);
-//			world.spawnParticle("blueflame", d, d1, d2, 0.0, 0.0, 0.0);
-//		}
 
+		double motionX = 0.0;
+		double motionY = 0.0;
+		double motionZ = 0.0;
+		int data = 0;
+		double maxDistance = 256.0; // Example max distance, adjust as needed
+
+		switch (l) {
+			case 1:
+				world.spawnParticle("smoke", d - d4, d1 + d3, d2, motionX, motionY, motionZ, data, maxDistance);
+				world.spawnParticle("blueflame", d - d4, d1 + d3, d2, motionX, motionY, motionZ, data, maxDistance);
+				break;
+			case 2:
+				world.spawnParticle("smoke", d + d4, d1 + d3, d2, motionX, motionY, motionZ, data, maxDistance);
+				world.spawnParticle("blueflame", d + d4, d1 + d3, d2, motionX, motionY, motionZ, data, maxDistance);
+				break;
+			case 3:
+				world.spawnParticle("smoke", d, d1 + d3, d2 - d4, motionX, motionY, motionZ, data, maxDistance);
+				world.spawnParticle("blueflame", d, d1 + d3, d2 - d4, motionX, motionY, motionZ, data, maxDistance);
+				break;
+			case 4:
+				world.spawnParticle("smoke", d, d1 + d3, d2 + d4, motionX, motionY, motionZ, data, maxDistance);
+				world.spawnParticle("blueflame", d, d1 + d3, d2 + d4, motionX, motionY, motionZ, data, maxDistance);
+				break;
+			default:
+				world.spawnParticle("smoke", d, d1, d2, motionX, motionY, motionZ, data, maxDistance);
+				world.spawnParticle("blueflame", d, d1, d2, motionX, motionY, motionZ, data, maxDistance);
+				break;
+		}
 	}
+
 }
 

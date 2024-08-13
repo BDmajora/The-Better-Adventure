@@ -19,7 +19,7 @@ public class WarpedDoor extends BlockDoor {
 
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-		return new ItemStack[]{new ItemStack(ModItems.wardpedDoor)};
+		return new ItemStack[]{new ItemStack(ModItems.warpedDoor)};
 	}
 }
 

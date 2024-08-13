@@ -8,7 +8,7 @@ import net.minecraft.core.world.World;
 import java.util.Random;
 
 public class BlockVine extends BlockLadder {
-	public BlockVine(String key, int id) {
+	public BlockVine(String key, int id, Material grass) {
 		super(key, id);
 		this.setTicking(true);
 		float f = 0.5f;
