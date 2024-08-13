@@ -5,21 +5,23 @@ import bdmajora.backport.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
+import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class Lilac extends Block {
-	public final boolean isTop;
 
 	public Lilac(String name, int id, Material material, boolean isTop) {
 		super(name, id, material);
-		this.isTop = isTop;
+		// Additional custom properties or logic can be added here
 	}
 
 	@Override
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-		if (isTop) {
+		if (world.getBlock(x, y, z) == ModBlocks.lilacTop) {
 			return new ItemStack[]{}; // Returns nothing if the top block is broken
 		}
 		return new ItemStack[]{new ItemStack(ModItems.lilac)};
@@ -27,10 +29,33 @@ public class Lilac extends Block {
 
 	@Override
 	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-		if (y >= world.getHeightBlocks() - 1) {
-			return false;
-		} else {
-			return world.canPlaceOnSurfaceOfBlock(x, y - 1, z) && super.canPlaceBlockAt(world, x, y, z) && super.canPlaceBlockAt(world, x, y + 1, z);
+		Block blockBelow = world.getBlock(x, y - 1, z);
+		return blockBelow == ModBlocks.lilacBottom || super.canPlaceBlockAt(world, x, y, z);
+	}
+
+	@Override
+	public boolean isSolidRender() {
+		return false;
+	}
+
+	@Override
+	public boolean renderAsNormalBlock() {
+		return false;
+	}
+
+	@Override
+	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
+		if (world.getBlock(x, y, z) == ModBlocks.lilacTop) {
+			// Destroy the bottom half if the top half is broken
+			if (world.getBlock(x, y - 1, z) == ModBlocks.lilacBottom) {
+				world.setBlockWithNotify(x, y - 1, z, 0); // Destroys the bottom half
+			}
+		} else if (world.getBlock(x, y, z) == ModBlocks.lilacBottom) {
+			// Destroy the top half if the bottom half is broken
+			if (world.getBlock(x, y + 1, z) == ModBlocks.lilacTop) {
+				world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
+			}
 		}
+		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);
 	}
 }
