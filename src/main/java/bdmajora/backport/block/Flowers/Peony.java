@@ -9,9 +9,8 @@ import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.world.World;
-import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
+import net.minecraft.core.world.World;
 
 public class Peony extends Block {
 
@@ -49,10 +48,16 @@ public class Peony extends Block {
 	@Override
 	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
 		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);
-		if (world.getBlock(x, y + 1, z) == ModBlocks.peonyTop) {
-			world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
-		} else if (world.getBlock(x, y - 1, z) == ModBlocks.peonyBottom) {
-			world.setBlockWithNotify(x, y - 1, z, 0); // Destroys the bottom half
+		if (world.getBlock(x, y, z) == ModBlocks.peonyTop) {
+			// Destroy the bottom half if the top half is broken
+			if (world.getBlock(x, y - 1, z) == ModBlocks.peonyBottom) {
+				world.setBlockWithNotify(x, y - 1, z, 0); // Destroys the bottom half
+			}
+		} else if (world.getBlock(x, y, z) == ModBlocks.peonyBottom) {
+			// Destroy the top half if the bottom half is broken
+			if (world.getBlock(x, y + 1, z) == ModBlocks.peonyTop) {
+				world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
+			}
 		}
 	}
 }

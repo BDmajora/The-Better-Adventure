@@ -7,6 +7,7 @@ import bdmajora.backport.block.Door.*;
 import bdmajora.backport.block.Flowers.Lilac;
 import bdmajora.backport.block.Flowers.Peony;
 import bdmajora.backport.block.Flowers.Pitcher;
+import bdmajora.backport.block.Flowers.RoseBush;
 import bdmajora.backport.block.Nether.*;
 import bdmajora.backport.block.TrapDoor.*;
 import bdmajora.backport.block.Vines.BlockCaveVinesLit;
@@ -2476,40 +2477,64 @@ public class ModBlocks {
 		});
 
 	public static final Block peonyTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.GRASS)
+		.setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures(MOD_ID + ":block/peony_top")
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new Peony("peonyTop", UtilIdRegistrar.nextIdBlock(), Material.plant, true));
+		.setVisualUpdateOnMetadata()
+		.build(new Peony("peonyTop", UtilIdRegistrar.nextIdBlock(), Material.plant, true) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{}; // Returns nothing if the top block is broken
+			}
+		});
 
 	public static final Block peonyBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.GRASS)
+		.setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures(MOD_ID + ":block/peony_bottom")
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new Lilac("peonyBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false));
+		.setVisualUpdateOnMetadata()
+		.build(new Peony("peonyBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.peony)};
+			}
+		});
 
 	public static final Block roseBushTop = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.GRASS)
+		.setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures(MOD_ID + ":block/rose_bush_top")
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new Peony("roseBushTop", UtilIdRegistrar.nextIdBlock(), Material.plant, true));
+		.setVisualUpdateOnMetadata()
+		.build(new RoseBush("roseBushTop", UtilIdRegistrar.nextIdBlock(), Material.plant, true) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{}; // Returns nothing if the top block is broken
+			}
+		});
 
 	public static final Block roseBushBottom = new BlockBuilder(MOD_ID)
- .setBlockSound(BlockSounds.GRASS)
+		.setBlockSound(BlockSounds.GRASS)
 		.setHardness(0.0f)
 		.setResistance(0.0f)
 		.setTextures(MOD_ID + ":block/rose_bush_bottom")
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.addTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-		.build(new Lilac("roseBushBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false));
+		.setVisualUpdateOnMetadata()
+		.build(new RoseBush("roseBushBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, false) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.roseBush)};
+			}
+		});
 
 	public static final Block sunflowerTop = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -2552,8 +2577,8 @@ public class ModBlocks {
 	public static final Block brewing = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport", "block/brewing/brewing_stand.json")
-				.setBlockState("backport", "brewing_stand.json")
+				.setBlockModel("block/brewing/brewing_stand.json")
+				.setBlockState("brewing_stand.json")
 				.setMetaStateInterpreter(new BrewingMetaState())
 				.build(block))
 		.build(new DragonBlockModel("exampleBrewingStand", UtilIdRegistrar.nextIdBlock(), Material.metal));
@@ -3229,19 +3254,21 @@ public class ModBlocks {
 				.setMetaStateInterpreter(new GlassPaneMetaState())
 				.build(new BlockGlassPane("yellowStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/yellow_stained_glass_pane_post.json"))));
 
-	public static final BlockBuilder pitcherPlantTop = new BlockBuilder(MOD_ID)
+	public static final Block pitcherPlantTop = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/pitcher_plant_top.json")
-				.setBlockState("backport", "pitcher_plant.json")
-				.build(new Pitcher("pitcherPlantTop", UtilIdRegistrar.nextIdBlock(), Material.plant, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pitcher_plant_top.json"))));
+				.setBlockModel("backport", "block/pitcher/pitcher_plant_top.json")
+				.build(block))
+		.build(new DragonBlockModel("pitcherPlantTop", UtilIdRegistrar.nextIdBlock(), Material.plant))
+		.withTags(BlockTags.NOT_IN_CREATIVE_MENU);
 
-	public static final BlockBuilder pitcherPlantBottom = new BlockBuilder(MOD_ID)
+	public static final Block pitcherPlantBottom = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/pitcher_plant_bottom.json")
-				.setBlockState("backport", "pitcher_plant.json")
-				.build(new Pitcher("pitcherPlantBottom", UtilIdRegistrar.nextIdBlock(), Material.plant, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pitcher_plant_bottom.json"))));
+				.setBlockModel("backport", "block/pitcher/pitcher_plant_bottom.json")
+				.build(block))
+		.build(new DragonBlockModel("pitcherPlantBottom", UtilIdRegistrar.nextIdBlock(), Material.plant))
+		.withTags(BlockTags.NOT_IN_CREATIVE_MENU);
 
 	public static final BlockBuilder stairs = new BlockBuilder(MOD_ID)
 		.setBlockModel(

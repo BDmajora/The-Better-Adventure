@@ -2,7 +2,6 @@ package bdmajora.backport.item;
 
 import bdmajora.backport.block.ModBlocks;
 import bdmajora.backport.UtilIdRegistrar;
-import bdmajora.backport.item.Flowers.*;
 import bdmajora.backport.item.Food.*;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDoor;
@@ -219,26 +218,22 @@ public class ModItems {
 	public static Item peony  = peony  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/peony_top")
 		.setStackSize(64)
-		.build(new ItemPeony("item.peony", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/peony_top"));
+		.build(new ItemFlower("item.peony", UtilIdRegistrar.nextIdItem(), ModBlocks.peonyTop, ModBlocks.peonyBottom));
 
 	public static Item roseBush  = roseBush  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/rose_bush_top")
 		.setStackSize(64)
-		.build(new ItemRoseBush("item.roseBush", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/rose_bush_top"));
+		.build(new ItemFlower("item.roseBush", UtilIdRegistrar.nextIdItem(), ModBlocks.roseBushTop, ModBlocks.roseBushBottom));
 
 	public static Item sunflower  = sunflower  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/sunflower_top")
 		.setStackSize(64)
-		.build(new ItemSunFlower("item.sunflower", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/sunflower_top"));
+		.build(new ItemFlower("item.sunflower", UtilIdRegistrar.nextIdItem(), ModBlocks.sunflowerTop, ModBlocks.sunflowerBottom));
 
 	public static Item pitcherFlower  = pitcherFlower  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/pitcher_plant")
 		.setStackSize(64)
-		.build(new ItemPitcher("item.pitcherFlower", UtilIdRegistrar.nextIdItem(), MOD_ID + ":item/pitcher_plant"));
-
-	//Banners
-
-//	public static final Item banner = (new ItemBanner("banner", UtilIdRegistrar.nextIdItem()).setIconCoord(11, 8).setFull3D());
+		.build(new ItemFlower("item.pitcherFlower", UtilIdRegistrar.nextIdItem(), ModBlocks.pitcherPlantTop, ModBlocks.pitcherPlantBottom));
 
 	public static void register() {
 	}

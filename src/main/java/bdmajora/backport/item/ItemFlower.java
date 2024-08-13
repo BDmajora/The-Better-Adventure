@@ -1,4 +1,4 @@
-package bdmajora.backport.item.Flowers;
+package bdmajora.backport.item;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;

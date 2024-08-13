@@ -5,12 +5,10 @@ import bdmajora.backport.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
-import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import org.useless.dragonfly.model.block.processed.BlockCube;
@@ -33,11 +31,11 @@ public class Pitcher extends Block {
 		return new ItemStack[]{new ItemStack(ModItems.pitcherFlower)};
 	}
 
-//	@Override
-//	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
-//		Block blockBelow = world.getBlock(x, y - 1, z);
-//		return blockBelow == ModBlocks.pitcherPlantBottom || super.canPlaceBlockAt(world, x, y, z);
-//	}
+	@Override
+	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
+		Block blockBelow = world.getBlock(x, y - 1, z);
+		return blockBelow == ModBlocks.pitcherPlantBottom || super.canPlaceBlockAt(world, x, y, z);
+	}
 
 	@Override
 	public boolean isSolidRender() {
@@ -54,15 +52,15 @@ public class Pitcher extends Block {
 		return 0.0F; // Makes the block break instantly
 	}
 
-//	@Override
-//	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
-//		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);
-//		if (world.getBlock(x, y + 1, z) == ModBlocks.pitcherPlantTop) {
-//			world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
-//		} else if (world.getBlock(x, y - 1, z) == ModBlocks.pitcherPlantBottom) {
-//			world.setBlockWithNotify(x, y - 1, z, 0); // Destroys the bottom half
-//		}
-//	}
+	@Override
+	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
+		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);
+		if (world.getBlock(x, y + 1, z) == ModBlocks.pitcherPlantTop) {
+			world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
+		} else if (world.getBlock(x, y - 1, z) == ModBlocks.pitcherPlantBottom) {
+			world.setBlockWithNotify(x, y - 1, z, 0); // Destroys the bottom half
+		}
+	}
 
 	@Override
 	public void getCollidingBoundingBoxes(World world, int x, int y, int z, AABB aabb, ArrayList<AABB> aabbList) {

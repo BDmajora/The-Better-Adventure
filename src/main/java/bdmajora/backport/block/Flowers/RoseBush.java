@@ -48,10 +48,16 @@ public class RoseBush extends Block {
 	@Override
 	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, Side side, int meta, EntityPlayer player, Item item) {
 		super.onBlockDestroyedByPlayer(world, x, y, z, side, meta, player, item);
-		if (world.getBlock(x, y + 1, z) == ModBlocks.roseBushTop) {
-			world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
-		} else if (world.getBlock(x, y - 1, z) == ModBlocks.roseBushBottom) {
-			world.setBlockWithNotify(x, y - 1, z, 0); // Destroys the bottom half
+		if (world.getBlock(x, y, z) == ModBlocks.roseBushTop) {
+			// Destroy the bottom half if the top half is broken
+			if (world.getBlock(x, y - 1, z) == ModBlocks.roseBushBottom) {
+				world.setBlockWithNotify(x, y - 1, z, 0); // Destroys the bottom half
+			}
+		} else if (world.getBlock(x, y, z) == ModBlocks.roseBushBottom) {
+			// Destroy the top half if the bottom half is broken
+			if (world.getBlock(x, y + 1, z) == ModBlocks.roseBushTop) {
+				world.setBlockWithNotify(x, y + 1, z, 0); // Destroys the top half
+			}
 		}
 	}
 }
