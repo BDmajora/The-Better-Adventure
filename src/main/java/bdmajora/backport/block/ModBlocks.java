@@ -3414,6 +3414,17 @@ public class ModBlocks {
 				.build(block))
 		.build(new DragonBlockModel("blackstoneWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
 
+	public static final Block brickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/brick_wall_inventory.json")
+				.setBlockState("backport", "wall/brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("brickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
 	public static final Block dioriteWall = new BlockBuilder(MOD_ID)
 		.setFlammability(0, 0)
 		.setTags(BlockTags.FENCES_CONNECT)
