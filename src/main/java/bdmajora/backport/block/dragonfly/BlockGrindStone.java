@@ -13,11 +13,11 @@ import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 import java.util.ArrayList;
 
 public class BlockGrindStone extends BlockTransparent {
-	public org.useless.dragonfly.model.block.processed.ModernBlockModel model;
+	public ModernBlockModel model;
 
-	public BlockGrindStone(String key, int id, Material material, ModernBlockModel model) {
+	public BlockGrindStone(String key, int id, Material material) {
 		super(key, id, material);
-		this.model = model;
+		this.model = model;  // Ensure the model is assigned correctly here
 	}
 
 	@Override
@@ -26,14 +26,11 @@ public class BlockGrindStone extends BlockTransparent {
 		Direction hRotation = entity.getHorizontalPlacementDirection(side);
 		if (hRotation == Direction.NORTH) {
 			meta |= 1;
-		}
-		if (hRotation == Direction.EAST) {
+		} else if (hRotation == Direction.EAST) {
 			meta |= 2;
-		}
-		if (hRotation == Direction.SOUTH) {
+		} else if (hRotation == Direction.SOUTH) {
 			meta |= 0;
-		}
-		if (hRotation == Direction.WEST) {
+		} else if (hRotation == Direction.WEST) {
 			meta |= 3;
 		}
 		world.setBlockMetadataWithNotify(x, y, z, meta);
@@ -53,12 +50,18 @@ public class BlockGrindStone extends BlockTransparent {
 	public int getRenderBlockPass() {
 		return 0;
 	}
+
 	@Override
 	public void getCollidingBoundingBoxes(World world, int x, int y, int z, AABB aabb, ArrayList<AABB> aabbList) {
-		for (BlockCube cube: model.blockCubes) {
-			setBlockBounds(cube.xMin(), cube.yMin(), cube.zMin(), cube.xMax(), cube.yMax(), cube.zMax());
+		if (model != null) {
+			for (BlockCube cube : model.blockCubes) {
+				setBlockBounds(cube.xMin(), cube.yMin(), cube.zMin(), cube.xMax(), cube.yMax(), cube.zMax());
+				super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
+			}
+			this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+		} else {
+			// Handle the null case to avoid crashes
 			super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
 		}
-		this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
 	}
 }

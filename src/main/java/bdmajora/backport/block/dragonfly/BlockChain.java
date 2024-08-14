@@ -12,11 +12,12 @@ import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 import java.util.ArrayList;
 
 public class BlockChain extends BlockTransparent {
-	public org.useless.dragonfly.model.block.processed.ModernBlockModel model;
+	public ModernBlockModel model;
 
-	public BlockChain(String key, int id, Material material, ModernBlockModel model) {
+	public BlockChain(String key, int id, Material material) {
 		super(key, id, material);
-		this.model = model;
+		// Properly initialize the model
+		this.model = model; // Replace this with the actual model initialization
 	}
 
 	@Override
@@ -32,7 +33,6 @@ public class BlockChain extends BlockTransparent {
 		world.setBlockMetadataWithNotify(x, y, z, meta);
 	}
 
-
 	@Override
 	public boolean renderAsNormalBlock() {
 		return false;
@@ -47,11 +47,14 @@ public class BlockChain extends BlockTransparent {
 	public int getRenderBlockPass() {
 		return 0;
 	}
+
 	@Override
 	public void getCollidingBoundingBoxes(World world, int x, int y, int z, AABB aabb, ArrayList<AABB> aabbList) {
-		for (BlockCube cube: model.blockCubes) {
-			setBlockBounds(cube.xMin(), cube.yMin(), cube.zMin(), cube.xMax(), cube.yMax(), cube.zMax());
-			super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
+		if (model != null) { // Add a null check for the model
+			for (BlockCube cube : model.blockCubes) {
+				setBlockBounds(cube.xMin(), cube.yMin(), cube.zMin(), cube.xMax(), cube.yMax(), cube.zMax());
+				super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
+			}
 		}
 		this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
 	}

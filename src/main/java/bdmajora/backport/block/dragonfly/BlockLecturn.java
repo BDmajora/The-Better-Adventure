@@ -5,20 +5,14 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
-import net.minecraft.core.world.World;
-import org.useless.dragonfly.model.block.processed.BlockCube;
-import org.useless.dragonfly.model.block.processed.ModernBlockModel;
 import net.minecraft.core.util.phys.AABB;
-
+import net.minecraft.core.world.World;
 import java.util.ArrayList;
 
 public class BlockLecturn extends BlockTransparent {
 
-	public org.useless.dragonfly.model.block.processed.ModernBlockModel model;
-
-	public BlockLecturn(String key, int id, Material material, ModernBlockModel model) {
+	public BlockLecturn(String key, int id, Material material) {
 		super(key, id, material);
-		this.model = model;
 	}
 
 	@Override
@@ -27,14 +21,11 @@ public class BlockLecturn extends BlockTransparent {
 		Direction hRotation = entity.getHorizontalPlacementDirection(side);
 		if (hRotation == Direction.NORTH) {
 			meta |= 2;
-		}
-		if (hRotation == Direction.EAST) {
+		} else if (hRotation == Direction.EAST) {
 			meta |= 1;
-		}
-		if (hRotation == Direction.SOUTH) {
+		} else if (hRotation == Direction.SOUTH) {
 			meta |= 3;
-		}
-		if (hRotation == Direction.WEST) {
+		} else if (hRotation == Direction.WEST) {
 			meta |= 0;
 		}
 		world.setBlockMetadataWithNotify(x, y, z, meta);
@@ -54,12 +45,12 @@ public class BlockLecturn extends BlockTransparent {
 	public int getRenderBlockPass() {
 		return 0;
 	}
+
 	@Override
 	public void getCollidingBoundingBoxes(World world, int x, int y, int z, AABB aabb, ArrayList<AABB> aabbList) {
-		for (BlockCube cube: model.blockCubes) {
-			setBlockBounds(cube.xMin(), cube.yMin(), cube.zMin(), cube.xMax(), cube.yMax(), cube.zMax());
-			super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
-		}
+		// Use default bounding box or any fixed logic here
+		// Example using default bounds:
+		super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
 		this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
 	}
 }

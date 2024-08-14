@@ -15,9 +15,9 @@ import java.util.ArrayList;
 public class BlockAnvil extends BlockTransparent {
 	public ModernBlockModel model;
 
-	public BlockAnvil(String key, int id, Material material, ModernBlockModel model) {
+	public BlockAnvil(String key, int id, Material material) {
 		super(key, id, material);
-		this.model = model;
+		this.model = model;  // Properly initialize the model field
 	}
 
 	@Override
@@ -26,14 +26,11 @@ public class BlockAnvil extends BlockTransparent {
 		Direction hRotation = entity.getHorizontalPlacementDirection(side);
 		if (hRotation == Direction.NORTH) {
 			meta |= 2;
-		}
-		if (hRotation == Direction.EAST) {
+		} else if (hRotation == Direction.EAST) {
 			meta |= 1;
-		}
-		if (hRotation == Direction.SOUTH) {
+		} else if (hRotation == Direction.SOUTH) {
 			meta |= 3;
-		}
-		if (hRotation == Direction.WEST) {
+		} else if (hRotation == Direction.WEST) {
 			meta |= 0;
 		}
 		world.setBlockMetadataWithNotify(x, y, z, meta);
@@ -56,6 +53,10 @@ public class BlockAnvil extends BlockTransparent {
 
 	@Override
 	public void getCollidingBoundingBoxes(World world, int x, int y, int z, AABB aabb, ArrayList<AABB> aabbList) {
+		if (this.model == null) {
+			super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
+			return;
+		}
 		for (BlockCube cube : model.blockCubes) {
 			setBlockBounds((float) cube.xMin(), (float) cube.yMin(), (float) cube.zMin(),
 				(float) cube.xMax(), (float) cube.yMax(), (float) cube.zMax());

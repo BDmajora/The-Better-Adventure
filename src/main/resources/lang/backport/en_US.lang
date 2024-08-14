@@ -473,6 +473,8 @@ item.backport.seeds.BeetRoot.name=Beetroot seeds
 item.backport.seeds.TorchFlower.name=Torchflower seeds
 item.backport.seeds.watermelon.name=Watermelon seeds
 item.backport.seeds.PitcherPod.name=Pitcher Pod
+item.backport.seeds.carrot.name=Carrot seeds
+item.backport.seeds.potato.name=Potato seeds
 
 ###Doors
 item.backport.item.crimsonDoor.name=Crimson Door

@@ -6,7 +6,6 @@ import bdmajora.backport.block.Crops.Models.*;
 import bdmajora.backport.block.Door.*;
 import bdmajora.backport.block.Flowers.Lilac;
 import bdmajora.backport.block.Flowers.Peony;
-import bdmajora.backport.block.Flowers.Pitcher;
 import bdmajora.backport.block.Flowers.RoseBush;
 import bdmajora.backport.block.Nether.*;
 import bdmajora.backport.block.TrapDoor.*;
@@ -2583,46 +2582,52 @@ public class ModBlocks {
 				.build(block))
 		.build(new DragonBlockModel("exampleBrewingStand", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder bookshelf = new BlockBuilder(MOD_ID)
+	public static final Block bookshelf = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/bookshelf/chiseled_bookshelf_inventory.json")
+				.setBlockModel("block/bookshelf/chiseled_bookshelf_inventory.json")
+				.setBlockState("chiseled_bookshelf.json")
 				.setMetaStateInterpreter(new BookshelfMetaState())
-				.build(new BlockBookshelf("exampleBookshelf", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/bookshelf/chiseled_bookshelf_inventory.json"))));
+				.build(block))
+		.build(new BlockBookshelf("exampleBookshelf", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
-	public static final BlockBuilder anvil = new BlockBuilder(MOD_ID)
+	public static final Block anvil = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/anvil.json")
+				.setBlockModel("backport", "block/anvil.json")
 				.setBlockState("backport", "anvil.json")
 				.setMetaStateInterpreter(new AnvilMetaState())
-				.build(new BlockAnvil("anvil", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/anvil.json"))));
+				.build(block))
+		.build(new BlockAnvil("anvil", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder lantern = new BlockBuilder(MOD_ID)
+	public static final Block lantern = new BlockBuilder(MOD_ID)
 		.setLuminance(15)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/lantern.json")
+				.setBlockModel("backport", "block/lantern.json")
 				.setBlockState("backport", "lantern.json")
 				.setMetaStateInterpreter(new LanternMetaState())
-				.build(new BlockLantern("lantern", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/lantern.json"))));
+				.build(block))
+		.build(new BlockLantern("lantern", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder soulLantern = new BlockBuilder(MOD_ID)
+	public static final Block soulLantern = new BlockBuilder(MOD_ID)
 		.setLuminance(15)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/soul_lantern.json")
+				.setBlockModel("backport", "block/soul_lantern.json")
 				.setBlockState("backport", "soul_lantern.json")
 				.setMetaStateInterpreter(new LanternMetaState())
-				.build(new BlockLantern("soulLantern", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/soul_lantern.json"))));
+				.build(block))
+		.build(new BlockLantern("soulLantern", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder lectern = new BlockBuilder(MOD_ID)
+	public static final Block lectern = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/lectern.json")
+				.setBlockModel("backport", "block/lectern.json")
 				.setBlockState("backport", "lectern.json")
 				.setMetaStateInterpreter(new LecternMetaState())
-				.build(new BlockLecturn("lectern", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/lectern.json"))));
+				.build(block))
+		.build(new BlockLecturn("lectern", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
 	public static final Block campfire = new BlockBuilder(MOD_ID)
 		.setLuminance(15)
@@ -2643,23 +2648,6 @@ public class ModBlocks {
 				.setMetaStateInterpreter(new CampFireMetaState())
 				.build(block))
 		.build(new DragonBlockModel("soulfire", UtilIdRegistrar.nextIdBlock(), Material.metal));
-
-	public static final Block campfireoff = new BlockBuilder(MOD_ID)
-		.setLuminance(15)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport", "block/campfire_off.json")
-				.setBlockState("backport", "campfire.json")
-				.setMetaStateInterpreter(new CampFireMetaState())
-				.build(block))
-		.build(new DragonBlockModel("campfireoff", UtilIdRegistrar.nextIdBlock(), Material.metal));
-
-	public static final Block endPortalFrameFilled = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport", "block/end_portal_frame_filled.json")
-				.build(block))
-		.build(new DragonBlockModel("endPortalFrameFilled", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
 	public static final Block endPortalFrame = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -2923,7 +2911,6 @@ public class ModBlocks {
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/blue_ice")
 		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
-		.setSlipperiness(1200)
 		.build(new Block("blueIce",UtilIdRegistrar.nextIdBlock(),Material.ice));
 
 	public static final Block blackCarpet = new BlockBuilder(MOD_ID)
@@ -3045,39 +3032,45 @@ public class ModBlocks {
 				.build(block))
 		.build(new DragonBlockModel("yellowCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
-	public static final BlockBuilder chain = new BlockBuilder(MOD_ID)
+	public static final Block chain = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/chain.json")
+				.setBlockModel("backport", "block/chain.json")
 				.setBlockState("backport", "chain.json")
 				.setMetaStateInterpreter(new ChainMetaState())
-				.build(new BlockChain("chain", UtilIdRegistrar.nextIdBlock(), Material.metal, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/chain.json"))));
+				.build(block))
+		.build(new BlockChain("chain", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
-	public static final BlockBuilder smoker = new BlockBuilder(MOD_ID)
+	public static final Block smoker = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/smoker.json")
+				.setBlockModel("backport", "block/smoker.json")
 				.setBlockState("backport", "smoker.json")
 				.setMetaStateInterpreter(new SmokerMetaState())
-				.build(new BlockSmoker("smoker", UtilIdRegistrar.nextIdBlock(), Material.wood, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/smoker.json"))));
+				.build(block))
+		.build(new BlockSmoker("smoker", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
-	public static final BlockBuilder stonecutter = new BlockBuilder(MOD_ID)
+	public static final Block stonecutter = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/stonecutter.json")
+				.setBlockModel("backport", "block/stonecutter.json")
 				.setBlockState("backport", "stonecutter.json")
 				.setMetaStateInterpreter(new StoneCutterMetaState())
-				.build(new BlockStoneCutter("stonecutter", UtilIdRegistrar.nextIdBlock(), Material.stone, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/stonecutter.json"))));
+				.build(block))
+		.build(new BlockStoneCutter("stonecutter", UtilIdRegistrar.nextIdBlock(), Material.stone));
 
-	public static final BlockBuilder grindstone = new BlockBuilder(MOD_ID)
+	public static final Block grindstone = new BlockBuilder(MOD_ID)
+		.setTags()
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/grindstone.json")
+				.setBlockModel("backport", "block/grindstone.json")
 				.setBlockState("backport", "grindstone.json")
 				.setMetaStateInterpreter(new GrindStoneMetaState())
-				.build(new BlockGrindStone("grindstone", UtilIdRegistrar.nextIdBlock(), Material.stone, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/grindstone.json"))));
+				.build(block))
+		.build(new BlockGrindStone("grindstone", UtilIdRegistrar.nextIdBlock(), Material.stone));
 
 	public static final Block cropsBeetRoot = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
 		.setBlockModel(BlockModelCropsBeetRoot::new)
 		.build(new BlockCropsBeetRoot("crops.BeetRoot", UtilIdRegistrar.nextIdBlock())
 			.withDisabledStats()
@@ -3085,6 +3078,7 @@ public class ModBlocks {
 			.withLitInteriorSurface(true));
 
 	public static final Block cropsCarrot = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
 		.setBlockModel(BlockModelCropsCarrot::new)
 		.build(new BlockCropsCarrot("crops.Carrot", UtilIdRegistrar.nextIdBlock())
 			.withDisabledStats()
@@ -3092,6 +3086,7 @@ public class ModBlocks {
 			.withLitInteriorSurface(true));
 
 	public static final Block cropsPotato = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
 		.setBlockModel(BlockModelCropsPotato::new)
 		.build(new BlockCropsPotato("crops.potato", UtilIdRegistrar.nextIdBlock())
 			.withDisabledStats()
@@ -3099,12 +3094,12 @@ public class ModBlocks {
 			.withLitInteriorSurface(true));
 
 	public static final Block cropsTorchFlower = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
 		.setBlockModel(BlockModelCropsTorchFlower::new)
 		.build(new BlockCropsTorchFlower("crops.TorchFlower", UtilIdRegistrar.nextIdBlock())
 			.withDisabledStats()
 			.withDisabledNeighborNotifyOnMetadataChange()
 			.withLitInteriorSurface(true));
-
 
 	public static final Block blockWatermelon = new BlockBuilder(MOD_ID)
 		.setSideTextures(MOD_ID + ":block/melonSide")
@@ -3112,6 +3107,7 @@ public class ModBlocks {
 		.build(new BlockWatermelon("block.melon",  UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static final Block cropsWatermelon = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
 		.setBlockModel(BlockModelCropsWatermelon::new)
 		.build(new BlockCropsWatermelon("crops.watermelon", UtilIdRegistrar.nextIdBlock())
 			.withDisabledStats()

@@ -120,22 +120,22 @@ public class ModItems {
 	public static Item glowBerries = glowBerries = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/glow_berries")
 		.setStackSize(64)
-		.build(new ItemFoodGlowBerries("item.glowBerries", UtilIdRegistrar.nextIdItem(), 4, 10,false, 64, MOD_ID + ":item/glow_berries"));
+		.build(new ItemFoodAccessor("item.glowBerries", UtilIdRegistrar.nextIdItem(), 4, 10,false, 64, MOD_ID + ":item/glow_berries"));
 
 	public static Item foodBeetRoot = foodBeetRoot = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/beetroot")
 		.setStackSize(64)
-		.build(new ItemFoodBeetRoot("item.foodBeetRoot", UtilIdRegistrar.nextIdItem(), 4, 10,false, 64, ModBlocks.cropsBeetRoot, MOD_ID + ":item/beetroot"));
+		.build(new ItemFoodAccessor("item.foodBeetRoot", UtilIdRegistrar.nextIdItem(), 4, 10,false, 64, MOD_ID + ":item/beetroot"));
 
 	public static Item foodCarrot = foodCarrot = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/carrot")
 		.setStackSize(64)
-		.build(new ItemFoodCarrot("food.Carrot", UtilIdRegistrar.nextIdItem(), 1, 10,false, 64, ModBlocks.cropsCarrot, MOD_ID + ":item/carrot"));
+		.build(new ItemFoodAccessor("food.Carrot",UtilIdRegistrar.nextIdItem(), 2, 10, false, 64, MOD_ID +  ":item/carrot"));
 
 	public static Item foodPotatoRaw = foodPotatoRaw = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/potato_raw")
 		.setStackSize(64)
-		.build(new ItemFoodPotatoRaw("food.potato.raw", UtilIdRegistrar.nextIdItem(), 1, 10, false, 64, ModBlocks.cropsPotato, MOD_ID + ":item/potato_raw"));
+		.build(new ItemFoodAccessor("food.potato.raw", UtilIdRegistrar.nextIdItem(), 1, 10, false, 64, MOD_ID + ":item/potato_raw"));
 
 	public static Item foodPotatoBaked = foodPotatoBaked = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/potato_baked")
@@ -145,12 +145,12 @@ public class ModItems {
 	public static Item foodTorchFlower = foodTorchFlower = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/torchflower")
 		.setStackSize(64)
-		.build(new ItemFoodTorchFlower("food.TorchFlower", UtilIdRegistrar.nextIdItem(), 1, 10, false, 64, ModBlocks.cropsTorchFlower, MOD_ID + ":item/torchflower"));
+		.build(new ItemFoodAccessor("food.TorchFlower", UtilIdRegistrar.nextIdItem(), 1, 10, false, 64, MOD_ID + ":item/torchflower"));
 
 	public static Item foodWatermelonSlice = foodWatermelonSlice = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/watermelonSlice")
 		.setStackSize(64)
-		.build(new ItemFoodWatermelonSlice("food.watermelon.slice", UtilIdRegistrar.nextIdItem(), 2, 10,false, 64, MOD_ID + ":item/watermelonSlice"));
+		.build(new ItemFoodAccessor("food.watermelon.slice", UtilIdRegistrar.nextIdItem(), 2, 10,false, 64, MOD_ID + ":item/watermelonSlice"));
 
 	public static Item foodBeetRootSoup = foodBeetRootSoup = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/beetroot_soup")
@@ -188,6 +188,16 @@ public class ModItems {
 		.build(new ItemFoodAccessor("food.mutton.cooked", UtilIdRegistrar.nextIdItem(), 5, 10,true, 64, MOD_ID + ":item/mutton_cooked"));
 
 	//seeds
+	public static Item seedsCarrot = new ItemBuilder(MOD_ID)
+			.setIcon(MOD_ID + ":item/seedsCarrot")
+			.setStackSize(64)
+			.build(new ItemSeedsAccessor("seeds.carrot", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsCarrot, MOD_ID + ":item/seedsCarrot"));
+
+	public static Item seedsPotato = new ItemBuilder(MOD_ID)
+		.setIcon(MOD_ID + ":item/seedsPotato")
+		.setStackSize(64)
+		.build(new ItemSeedsAccessor("seeds.potato", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsPotato, MOD_ID + ":item/seedsPotato"));
+
 	public static Item seedsBeetRoot  = seedsBeetRoot  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/beetroot_seeds")
 		.setStackSize(64)
@@ -206,7 +216,7 @@ public class ModItems {
 	public static Item seedsPitcherPod  = seedsPitcherPod  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/pitcher_pod")
 		.setStackSize(64)
-		.build(new ItemSeedsAccessor("seeds.PitcherPod", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsBeetRoot, MOD_ID + ":item/pitcher_pod"));
+		.build(new ItemSeedsAccessor("seeds.PitcherPod", UtilIdRegistrar.nextIdItem(), ModBlocks.pitcherPlantBottom, MOD_ID + ":item/pitcher_pod"));
 
 	//plants
 

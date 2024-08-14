@@ -16,6 +16,7 @@
       "entity.EntityPlayerMixin",
       "entity.EntityPlayerMPMixin",
       "entity.EntityPlayerSPMixin",
+      "entity.ItemDyeMixin",
       "item.ItemStackMixin",
       "item.ItemToolMixin",
       "net.NetServerHandlerMixin",

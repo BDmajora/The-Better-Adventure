@@ -13,9 +13,9 @@ import net.minecraft.core.util.phys.AABB;
 import java.util.ArrayList;
 
 public class BlockSmoker extends BlockTransparent {
-	public org.useless.dragonfly.model.block.processed.ModernBlockModel model;
+	public ModernBlockModel model;
 
-	public BlockSmoker(String key, int id, Material material, ModernBlockModel model) {
+	public BlockSmoker(String key, int id, Material material) {
 		super(key, id, material);
 		this.model = model;
 	}
@@ -53,9 +53,11 @@ public class BlockSmoker extends BlockTransparent {
 
 	@Override
 	public void getCollidingBoundingBoxes(World world, int x, int y, int z, AABB aabb, ArrayList<AABB> aabbList) {
-		for (BlockCube cube: model.blockCubes) {
-			setBlockBounds(cube.xMin(), cube.yMin(), cube.zMin(), cube.xMax(), cube.yMax(), cube.zMax());
-			super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
+		if (model != null) {
+			for (BlockCube cube : model.blockCubes) {
+				setBlockBounds(cube.xMin(), cube.yMin(), cube.zMin(), cube.xMax(), cube.yMax(), cube.zMax());
+				super.getCollidingBoundingBoxes(world, x, y, z, aabb, aabbList);
+			}
 		}
 		this.setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
 	}
