@@ -26,7 +26,6 @@ import net.minecraft.core.sound.BlockSounds;
 import net.minecraft.core.world.World;
 import org.useless.dragonfly.model.block.DFBlockModelBuilder;
 import turniplabs.halplibe.helper.BlockBuilder;
-import org.useless.dragonfly.helper.ModelHelper;
 
 import static bdmajora.backport.backport.MOD_ID;
 
@@ -3114,141 +3113,159 @@ public class ModBlocks {
 			.withDisabledNeighborNotifyOnMetadataChange()
 			.withLitInteriorSurface(true));
 
-	public static final BlockBuilder glassPane = new BlockBuilder(MOD_ID)
+	public static final Block glassPane = new BlockBuilder(MOD_ID)
+		.setTags()
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/glass_pane_post.json")
+				.setBlockModel("backport", "block/pane/glass_pane_post.json")
 				.setBlockState("backport", "glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("glassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("glassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder blackStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block blackStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/black_stained_glass_pane_post.json")
-				.setBlockState("backport", "black_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/black_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/black_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("blackStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/black_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("blackStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder blueStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block blueStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/blue_stained_glass_pane_post.json")
-				.setBlockState("backport", "blue_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/blue_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/blue_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/blue_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder brownStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block brownStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/brown_stained_glass_pane_post.json")
-				.setBlockState("backport", "brown_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/brown_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/brown_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("brownStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/brown_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("brownStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder cyanStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block cyanStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/cyan_stained_glass_pane_post.json")
-				.setBlockState("backport", "cyan_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/cyan_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/cyan_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("cyanStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/cyan_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("cyanStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder grayStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block grayStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/gray_stained_glass_pane_post.json")
-				.setBlockState("backport", "gray_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/gray_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/gray_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("grayStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/gray_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("grayStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder greenStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block greenStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/green_stained_glass_pane_post.json")
-				.setBlockState("backport", "green_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/green_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/green_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("greenStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/green_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("greenStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder lightBlueStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block lightBlueStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/light_blue_stained_glass_pane_post.json")
-				.setBlockState("backport", "light_blue_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/light_blue_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/light_blue_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("lightBlueStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/light_blue_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("lightBlueStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder lightGrayStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block lightGrayStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/light_gray_stained_glass_pane_post.json")
-				.setBlockState("backport", "light_gray_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/light_gray_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/light_gray_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("lightGrayStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/light_gray_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("lightGrayStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder limeStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block limeStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/lime_stained_glass_pane_post.json")
-				.setBlockState("backport", "lime_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/lime_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/lime_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("limeStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/lime_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("limeStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder magentaStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block magentaStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/magenta_stained_glass_pane_post.json")
-				.setBlockState("backport", "magenta_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/magenta_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/magenta_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("magentaStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/magenta_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("magentaStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder orangeStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block orangeStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/orange_stained_glass_pane_post.json")
-				.setBlockState("backport", "orange_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/orange_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/orange_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("orangeStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/orange_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("orangeStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder pinkStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block pinkStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/pink_stained_glass_pane_post.json")
-				.setBlockState("backport", "pink_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/pink_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/pink_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("pinkStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/pink_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("pinkStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder purpleStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block purpleStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/purple_stained_glass_pane_post.json")
-				.setBlockState("backport", "purple_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/purple_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/purple_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("purpleStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/purple_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("purpleStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder redStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block redStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/red_stained_glass_pane_post.json")
-				.setBlockState("backport", "red_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/red_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/red_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("redStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/red_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("redStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder whiteStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block whiteStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/white_stained_glass_pane_post.json")
-				.setBlockState("backport", "white_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/white_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/white_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("whiteStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/white_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("whiteStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
-	public static final BlockBuilder yellowStainedGlassPane = new BlockBuilder(MOD_ID)
+	public static final Block yellowStainedGlassPane = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/yellow_stained_glass_pane_post.json")
-				.setBlockState("backport", "yellow_stained_glass_pane.json")
+				.setBlockModel("backport", "block/pane/yellow_stained_glass_pane_post.json")
+				.setBlockState("backport", "panes/yellow_stained_glass_pane.json")
 				.setMetaStateInterpreter(new GlassPaneMetaState())
-				.build(new BlockGlassPane("yellowStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass, ModelHelper.getOrCreateBlockModel(MOD_ID, "block/yellow_stained_glass_pane_post.json"))));
+				.build(block))
+		.build(new BlockGlassPane("yellowStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block pitcherPlantTop = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -3266,12 +3283,12 @@ public class ModBlocks {
 		.build(new DragonBlockModel("pitcherPlantBottom", UtilIdRegistrar.nextIdBlock(), Material.plant))
 		.withTags(BlockTags.NOT_IN_CREATIVE_MENU);
 
-	public static final BlockBuilder stairs = new BlockBuilder(MOD_ID)
+	public static final Block stairs = new BlockBuilder(MOD_ID)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport","block/stairs.json")
-				.setMetaStateInterpreter(new StairsMetaStateInterpreter())
-				.build(new BlockStairs(Block.dirt,UtilIdRegistrar.nextIdBlock())));
+				.setBlockModel("backport", "block/stairs.json")
+				.build(block))
+		.build(new BlockStairs(ModBlocks.birchPlank, UtilIdRegistrar.nextIdBlock()));
 
 //	public static final Block fence = new BlockBuilder(MOD_ID)
 //		.setBlockModel(

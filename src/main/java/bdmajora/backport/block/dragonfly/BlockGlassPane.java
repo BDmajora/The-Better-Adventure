@@ -1,6 +1,5 @@
 package bdmajora.backport.block.dragonfly;
 
-import bdmajora.backport.block.ModBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFenceThin;
 import net.minecraft.core.block.entity.TileEntity;
@@ -18,24 +17,14 @@ public class BlockGlassPane extends BlockFenceThin {
 	private final String glassPane;
 	private final int id;
 	private final Material glass;
-	private final ModernBlockModel model;
+	public ModernBlockModel model; // Properly initialize the model field
 
-	// Constructor using default material and no model
-	public BlockGlassPane(String key, int id) {
-		super(key, id, Material.glass);
-		this.glassPane = key;
-		this.id = id;
-		this.glass = Material.glass;
-		this.model = null; // No model provided
-	}
-
-	// Constructor using all parameters including a model
-	public BlockGlassPane(String glassPane, int id, Material glass, ModernBlockModel model) {
+	public BlockGlassPane(String glassPane, int id, Material glass) {
 		super(glassPane, id, glass);
 		this.glassPane = glassPane;
 		this.id = id;
 		this.glass = glass;
-		this.model = model;
+		this.model = model;  // Properly initialize the model field
 	}
 
 	@Override
@@ -84,7 +73,7 @@ public class BlockGlassPane extends BlockFenceThin {
 		boolean connectXNeg = this.canConnectTo(worldSource, x - 1, y, z);
 		boolean connectZPos = this.canConnectTo(worldSource, x, y, z + 1);
 		boolean connectZNeg = this.canConnectTo(worldSource, x, y, z - 1);
-		return AABB.getBoundingBoxFromPool((double)((float)x + (connectXNeg ? 0.0F : 0.375F)), (double)y, (double)((float)z + (connectZNeg ? 0.0F : 0.375F)), (double)((float)(x + 1) - (connectXPos ? 0.0F : 0.375F)), (double)((float)y + 1.0F), (double)((float)(z + 1) - (connectZPos ? 0.0F : 0.375F)));
+		return AABB.getBoundingBoxFromPool((double)((float)x + (connectXNeg ? 0.0F : 0.375F)), (double)y, (double)((float)z + (connectZNeg ? 0.0F : 0.375F)), (double)((float)(x + 1) - (connectXPos ? 0.0F : 0.375F)), (double)((float)y + 1.0F), (double)((float)(z + 1) - (connectZPos ? 0.375F : 0.0F)));
 	}
 
 	@Override
