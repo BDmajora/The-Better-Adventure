@@ -453,6 +453,24 @@ tile.backport.redStainedGlassPane.name=Red Stained Glass Pane
 tile.backport.whiteStainedGlassPane.name=White Stained Glass Pane
 tile.backport.yellowStainedGlassPane.name=Yellow Stained Glass Pane
 
+###Fences
+tile.backport.acaciaFence.name=Acacia Fence
+tile.backport.bambooFence.name=Bamboo Fence
+tile.backport.birchFence.name=Birch Fence
+tile.backport.cherryFence.name=Cherry Fence
+tile.backport.crimsonFence.name=Crimson Fence
+tile.backport.darkOakFence.name=Dark Oak Fence
+tile.backport.jungleFence.name=Jungle Fence
+tile.backport.mangroveFence.name=Mangrove Fence
+tile.backport.netherBrickFence.name=Nether Brick Fence
+tile.backport.spruceFence.name=Spruce Fence
+tile.backport.warpedFence.name=Warped Fence
+
+###Walls
+tile.backport.blackstoneWall.name=Blackstone Wall
+tile.backport.brickWall.name=Brick Wall
+tile.backport.dioriteWall.name=Diorite Wall
+
 ###Food
 item.backport.item.foodBeetRoot.name=Beetroot
 item.backport.food.Carrot.name=Carrot

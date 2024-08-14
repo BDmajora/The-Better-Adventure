@@ -38,7 +38,7 @@ public class ModBlocks {
 		.setTopTexture(MOD_ID + ":block/blackstone_top")
 		.setSideTextures(MOD_ID + ":block/blackstone")
 		.setBottomTexture(MOD_ID + ":block/blackstone")
-		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
 		.build(new Block("blackStone", UtilIdRegistrar.nextIdBlock(), Material.stone));
 
 	public static final Block chiseledPolishedBlackstone = new BlockBuilder(MOD_ID)
@@ -46,7 +46,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/chiseled_polished_blackstone")
-		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
 		.build(new Block("chiseledPolishedBlackstone",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block crackedPolishedBlackstoneBricks = new BlockBuilder(MOD_ID)
@@ -54,7 +54,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/cracked_polished_blackstone_bricks")
-		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
 		.build(new Block("crackedPolishedBlackstoneBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block gildedBlackstone = new BlockBuilder(MOD_ID)
@@ -409,7 +409,7 @@ public class ModBlocks {
 		.setHardness(1.0f)
 		.setResistance(1.0f)
 		.setTextures(MOD_ID + ":block/quartz_bricks")
-		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
 		.build(new Block("quartzBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 	public static final Block soulSoil = new BlockBuilder(MOD_ID)
@@ -3290,14 +3290,140 @@ public class ModBlocks {
 				.build(block))
 		.build(new BlockStairs(ModBlocks.birchPlank, UtilIdRegistrar.nextIdBlock()));
 
-//	public static final Block fence = new BlockBuilder(MOD_ID)
-//		.setBlockModel(
-//			block -> new DFBlockModelBuilder(MOD_ID)
-//				.setBlockModel("backport", "block/fence/birch_fence_inventory.json")
-//				.setBlockState("backport", "birch_fence.json") // Assuming the block state file is named birch_fence.json
-//				.setMetaStateInterpreter(new FenceMetaState())
-//				.build(block))
-//		.build(new DragonBlockModel("exampleFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+	public static final Block birchFence = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/birch_fence_inventory.json")
+				.setBlockState("backport", "fence/birch_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("birchFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block acaciaFence = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/acacia_fence_inventory.json")
+				.setBlockState("backport", "fence/acacia_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("acaciaFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block bambooFence = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/bamboo_fence_inventory.json")
+				.setBlockState("backport", "fence/bamboo_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("bambooFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block cherryFence = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/cherry_fence_inventory.json")
+				.setBlockState("backport", "fence/cherry_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("cherryFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block crimsonFence = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setFlammability(0, 0)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/crimson_fence_inventory.json")
+				.setBlockState("backport", "fence/crimson_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("crimsonFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block darkOakFence = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/dark_oak_fence_inventory.json")
+				.setBlockState("backport", "fence/dark_oak_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("darkOakFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block jungleFence = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/jungle_fence_inventory.json")
+				.setBlockState("backport", "fence/jungle_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("jungleFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block mangroveFence = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/mangrove_fence_inventory.json")
+				.setBlockState("backport", "fence/mangrove_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("mangroveFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block spruceFence = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/spruce_fence_inventory.json")
+				.setBlockState("backport", "fence/spruce_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("spruceFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block warpedFence = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/warped_fence_inventory.json")
+				.setBlockState("backport", "fence/warped_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("warpedFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block netherBrickFence = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/fence/nether_brick_fence_inventory.json")
+				.setBlockState("backport", "fence/nether_brick_fence.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("netherBrickFence", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block blackstoneWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/blackstone_wall_inventory.json")
+				.setBlockState("backport", "wall/blackstone_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("blackstoneWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block dioriteWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/diorite_wall_inventory.json")
+				.setBlockState("backport", "wall/diorite_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("dioriteWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
 
 	public static void register() {
 	}
