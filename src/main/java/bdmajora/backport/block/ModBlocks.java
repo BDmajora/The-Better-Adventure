@@ -3283,13 +3283,6 @@ public class ModBlocks {
 		.build(new DragonBlockModel("pitcherPlantBottom", UtilIdRegistrar.nextIdBlock(), Material.plant))
 		.withTags(BlockTags.NOT_IN_CREATIVE_MENU);
 
-	public static final Block stairs = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport", "block/stairs.json")
-				.build(block))
-		.build(new BlockStairs(ModBlocks.birchPlank, UtilIdRegistrar.nextIdBlock()));
-
 	public static final Block birchFence = new BlockBuilder(MOD_ID)
 		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
@@ -3666,6 +3659,24 @@ public class ModBlocks {
 				.setMetaStateInterpreter(new FenceMetaState())
 				.build(block))
 		.build(new DragonBlockModel("tuffWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block andesiteWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/andesite_wall_inventory.json")
+				.setBlockState("backport", "wall/andesite_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("andesiteWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block stairs = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/stairs.json")
+				.build(block))
+		.build(new BlockStairs(ModBlocks.birchPlank, UtilIdRegistrar.nextIdBlock()));
 
 	public static void register() {
 	}

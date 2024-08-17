@@ -467,6 +467,7 @@ tile.backport.spruceFence.name=Spruce Fence
 tile.backport.warpedFence.name=Warped Fence
 
 ###Walls
+tile.backport.andesiteWall.name=Andesite Wall
 tile.backport.blackstoneWall.name=Blackstone Wall
 tile.backport.brickWall.name=Brick Wall
 tile.backport.cobbledDeepslateWall.name=Cobbled Deepslate Wall
