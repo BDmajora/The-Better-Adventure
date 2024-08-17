@@ -3436,6 +3436,237 @@ public class ModBlocks {
 				.build(block))
 		.build(new DragonBlockModel("dioriteWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
 
+	public static final Block graniteWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/granite_wall_inventory.json")
+				.setBlockState("backport", "wall/granite_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("graniteWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block cobbledDeepslateWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/cobbled_deepslate_wall_inventory.json")
+				.setBlockState("backport", "wall/cobbled_deepslate_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("cobbledDeepslateWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block cobblestoneWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/cobblestone_wall_inventory.json")
+				.setBlockState("backport", "wall/cobblestone_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("cobblestoneWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block deepslateBrickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/deepslate_brick_wall_inventory.json")
+				.setBlockState("backport", "wall/deepslate_brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("deepslateBrickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block deepslateTileWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/deepslate_tile_wall_inventory.json")
+				.setBlockState("backport", "wall/deepslate_tile_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("deepslateTileWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block endStoneBrickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/end_stone_brick_wall_inventory.json")
+				.setBlockState("backport", "wall/end_stone_brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("endStoneBrickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block mossyCobblestoneWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/mossy_cobblestone_wall_inventory.json")
+				.setBlockState("backport", "wall/mossy_cobblestone_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("mossyCobblestoneWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block mossyStoneBrickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/mossy_stone_brick_wall_inventory.json")
+				.setBlockState("backport", "wall/mossy_stone_brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("mossyStoneBrickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block mudBrickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/mud_brick_wall_inventory.json")
+				.setBlockState("backport", "wall/mud_brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("mudBrickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block netherBrickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/nether_brick_wall_inventory.json")
+				.setBlockState("backport", "wall/nether_brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("netherBrickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block polishedBlackstoneBrickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/polished_blackstone_brick_wall_inventory.json")
+				.setBlockState("backport", "wall/polished_blackstone_brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("polishedBlackstoneBrickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block polishedBlackstoneWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/polished_blackstone_wall_inventory.json")
+				.setBlockState("backport", "wall/polished_blackstone_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("polishedBlackstoneWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block polishedDeepslateWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/polished_deepslate_wall_inventory.json")
+				.setBlockState("backport", "wall/polished_deepslate_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("polishedDeepslateWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block polishedTuffWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/polished_tuff_wall_inventory.json")
+				.setBlockState("backport", "wall/polished_tuff_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("polishedTuffWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block prismarineWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/prismarine_wall_inventory.json")
+				.setBlockState("backport", "wall/prismarine_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("prismarineWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block redNetherBrickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/red_nether_brick_wall_inventory.json")
+				.setBlockState("backport", "wall/red_nether_brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("redNetherBrickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block redSandstoneWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/red_sandstone_wall_inventory.json")
+				.setBlockState("backport", "wall/red_sandstone_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("redSandstoneWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block sandstoneWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/sandstone_wall_inventory.json")
+				.setBlockState("backport", "wall/sandstone_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("sandstoneWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block stoneBrickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/stone_brick_wall_inventory.json")
+				.setBlockState("backport", "wall/stone_brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("stoneBrickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block tuffBrickWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/tuff_brick_wall_inventory.json")
+				.setBlockState("backport", "wall/tuff_brick_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("tuffBrickWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block tuffWall = new BlockBuilder(MOD_ID)
+		.setFlammability(0, 0)
+		.setTags(BlockTags.FENCES_CONNECT)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/wall/tuff_wall_inventory.json")
+				.setBlockState("backport", "wall/tuff_wall.json")
+				.setMetaStateInterpreter(new FenceMetaState())
+				.build(block))
+		.build(new DragonBlockModel("tuffWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
 	public static void register() {
 	}
 

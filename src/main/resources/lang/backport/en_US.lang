@@ -469,7 +469,28 @@ tile.backport.warpedFence.name=Warped Fence
 ###Walls
 tile.backport.blackstoneWall.name=Blackstone Wall
 tile.backport.brickWall.name=Brick Wall
+tile.backport.cobbledDeepslateWall.name=Cobbled Deepslate Wall
+tile.backport.cobblestoneWall.name=Cobblestone Wall
+tile.backport.deepslateBrickWall.name=Deepslate Brick Wall
+tile.backport.deepslateTileWall.name=Deepslate Tile Wall
 tile.backport.dioriteWall.name=Diorite Wall
+tile.backport.endStoneBrickWall.name=End Stone Brick Wall
+tile.backport.graniteWall.name=Granite Wall
+tile.backport.mossyCobblestoneWall.name=Mossy Cobblestone Wall
+tile.backport.mossyStoneBrickWall.name=Mossy Stone Brick Wall
+tile.backport.mudBrickWall.name=Mud Brick Wall
+tile.backport.netherBrickWall.name=Nether Brick Wall
+tile.backport.polishedBlackstoneBrickWall.name=Polished Blackstone Brick Wall
+tile.backport.polishedBlackstoneWall.name=Polished Blackstone Wall
+tile.backport.polishedDeepslateWall.name=Polished Deepslate Wall
+tile.backport.polishedTuffWall.name=Polished Tuff Wall
+tile.backport.prismarineWall.name=Prismarine Wall
+tile.backport.redNetherBrickWall.name=Red Nether Brick Wall
+tile.backport.redSandstoneWall.name=Red Sandstone Wall
+tile.backport.sandstoneWall.name=Sandstone Wall
+tile.backport.stoneBrickWall.name=Stone Brick Wall
+tile.backport.tuffBrickWall.name=Tuff Brick Wall
+tile.backport.tuffWall.name=Tuff Wall
 
 ###Food
 item.backport.item.foodBeetRoot.name=Beetroot
