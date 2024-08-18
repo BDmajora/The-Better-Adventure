@@ -22,6 +22,7 @@ import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.sound.BlockSound;
 import net.minecraft.core.sound.BlockSounds;
 import net.minecraft.core.world.World;
 import org.useless.dragonfly.model.block.DFBlockModelBuilder;
@@ -3671,12 +3672,551 @@ public class ModBlocks {
 				.build(block))
 		.build(new DragonBlockModel("andesiteWall", UtilIdRegistrar.nextIdBlock(), Material.stone));
 
-	public static final Block stairs = new BlockBuilder(MOD_ID)
-		.setBlockModel(
-			block -> new DFBlockModelBuilder(MOD_ID)
-				.setBlockModel("backport", "block/stairs.json")
-				.build(block))
-		.build(new BlockStairs(ModBlocks.birchPlank, UtilIdRegistrar.nextIdBlock()));
+	public static final Block acaciaStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(acaciaPlanks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block andesiteStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(andesite, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block bambooMosaicStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(bambooMosaic, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block bambooStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(bambooPlanks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block birchStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(birchPlank, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block blackstoneStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(blackStone, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block cherryStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(cherryPlanks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block cobbledDeepslateStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(cobbledDeepslate, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block crimsonStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(crimsonPlanks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block cutCopperStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(cutCopper, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block darkOakStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(darkOakPlanks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block prismarine = new BlockBuilder(MOD_ID)
+		.setBlockSound(BlockSounds.STONE)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
+		.setTextures(MOD_ID + ":block/prismarine")
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.build(new Block("prismarine",UtilIdRegistrar.nextIdBlock(),Material.stone));
+
+	public static final Block prismarineStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(prismarine, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block deepslateBrickStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(deepslateBricks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block deepslateTile = new BlockBuilder(MOD_ID)
+		.setBlockSound(BlockSounds.STONE)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
+		.setTextures(MOD_ID + ":block/deepslate_tiles")
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.build(new Block("deepslateTile",UtilIdRegistrar.nextIdBlock(),Material.stone));
+
+	public static final Block deepslateTileStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(deepslateTile, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block dioriteStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(diorite, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block endStoneBrickStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(endStoneBricks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block exposedCutCopperStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(exposedCutCopper, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block graniteStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(granite, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block jungleStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(junglePlanks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block mangroveStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(mangrovePlanks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block cobbleStoneMossyStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(Block.cobbleStoneMossy, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block mossyStoneBricks = new BlockBuilder(MOD_ID)
+		.setBlockSound(BlockSounds.STONE)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
+		.setTextures(MOD_ID + ":block/mossy_stone_bricks")
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.build(new Block("mossyStoneBricks",UtilIdRegistrar.nextIdBlock(),Material.stone));
+
+	public static final Block mossyStoneBrickStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(mossyStoneBricks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block mudBrickStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(mudBricks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block netherBricksStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(netherBricks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block oxidizedCutCopperStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(oxidizedCutCopper, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block polishedAndesiteStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(polishedAndesite, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block polishedBlackstoneBricksStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(polishedBlackstoneBricks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block polishedBlackstoneStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(polishedBlackstone, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block polishedDeepslateStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(polishedDeepslate, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block polishedDioriteStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(polishedDiorite, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block polishedGranite = new BlockBuilder(MOD_ID)
+		.setBlockSound(BlockSounds.STONE)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
+		.setTextures(MOD_ID + ":block/polished_granite")
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.build(new Block("polishedGranite",UtilIdRegistrar.nextIdBlock(),Material.stone));
+
+	public static final Block polishedGraniteStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(polishedGranite, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block polishedTuffStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(polishedTuff, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block prismarineBricksStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(prismarineBricks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block purpurBlockStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(purpurBlock, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block blockQuartzStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(Block.blockQuartz, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block redNetherBricksStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(redNetherBricks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block redSandstone = new BlockBuilder(MOD_ID)
+		.setBlockSound(BlockSounds.STONE)
+		.setHardness(2.0f)
+		.setResistance(2.0f)
+		.setTextures(MOD_ID + ":block/red_sandstone")
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.build(new Block("redSandstone",UtilIdRegistrar.nextIdBlock(),Material.stone));
+
+	public static final Block redSandstoneStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(redSandstone, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block sandstoneStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(Block.sandstone, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block sprucePlanksStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(sprucePlanks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block brickStoneStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(Block.brickStone, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block stoneStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(Block.stone, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block tuffBricksStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(tuffBricks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block tuffStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(tuff, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block warpedPlanksStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(warpedPlanks, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block weatheredCutCopperStairs = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelStairs::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockStairs(weatheredCutCopper, UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block acaciaSlab = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelSlab::new)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockSlab(acaciaPlanks, UtilIdRegistrar.nextIdBlock()));
 
 	public static void register() {
 	}

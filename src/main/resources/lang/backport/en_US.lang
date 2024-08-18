@@ -23,6 +23,11 @@ tile.backport.chiseledTuff.name=Chiseled Tuff
 tile.backport.polishedTuff.name=Polished Tuff
 tile.backport.tuffBricks.name=Tuff Bricks
 tile.backport.tuff.name=Tuff
+tile.backport.mossyStoneBricks.name=Mossy Stone Brick
+tile.backport.polishedGranite.name=Polished Granite
+
+###Sand and Red Sand
+tile.backport.redSandstone.name=Red Sandstone
 
 ###quartz
 tile.backport.quartzBricks.name=Quartz Bricks
@@ -288,6 +293,7 @@ tile.backport.jigsaw.name=Jigsaw
 
 ###aquatic
 tile.backport.prismarineBricks.name=Prismarine Bricks
+tile.backport.prismarine.name=Prismarine
 
 ###flowers
 tile.backport.azureBluet.name=Azure Bluet
@@ -323,13 +329,6 @@ tile.backport.redStainedGlass.name=Red Stained Glass
 tile.backport.tintedGlass.name=Tinted Glass
 tile.backport.yellowStainedGlass.name=Yellow Stained Glass
 tile.backport.purpleStainedGlass.name=Purple Stained Glass
-
-###test
-tile.backport.testblock.name=Test Block 1
-tile.backport.testblock2.name=Test Block 2
-tile.backport.testblock3.name=Test Block 3
-tile.backport.testblock4.name=Test Block 4
-tile.backport.stairs.dirt.name=Test Block 5
 
 ###Dragonfly complex blocks
 tile.backport.exampleDragon.name=Dragon Egg
@@ -492,6 +491,56 @@ tile.backport.sandstoneWall.name=Sandstone Wall
 tile.backport.stoneBrickWall.name=Stone Brick Wall
 tile.backport.tuffBrickWall.name=Tuff Brick Wall
 tile.backport.tuffWall.name=Tuff Wall
+
+###Stairs
+tile.backport.stairs.acaciaPlanks.name=Acacia Stairs
+tile.backport.stairs.andesite.name=Andesite Stairs
+tile.backport.stairs.bambooMosaic.name=Bamboo Mosaic Stairs
+tile.backport.stairs.bambooPlanks.name=Bamboo Stairs
+tile.backport.stairs.birchPlank.name=Birch Planks Stairs
+tile.backport.stairs.blackStone.name=Black Stone Stairs
+tile.backport.stairs.cherryPlanks.name=Cherry Stairs
+tile.backport.stairs.cobbledDeepslate.name=Cobbled Deepslate Stairs
+tile.backport.stairs.crimson_planks.name=Crimson Stairs
+tile.backport.stairs.cutCopper.name=Cut Copper Stairs
+tile.backport.stairs.darkOakPlanks.name=Dark Oak Stairs
+tile.backport.stairs.prismarine.name=Prismarine Stairs
+tile.backport.stairs.deepslateBricks.name=Deepslate Brick Stairs
+tile.backport.stairs.deepslateTile.name=Deepslate Tile Stairs
+tile.backport.stairs.diorite.name=Diorite Stairs
+tile.backport.stairs.endStoneBricks.name=EndStone Brick Stairs
+tile.backport.stairs.exposedCutCopper.name=Exposed Cut Copper Stairs
+tile.backport.stairs.granite.name=Granite Stairs
+tile.backport.stairs.junglePlanks.name=Jungle Stairs
+tile.backport.stairs.mangrovePlanks.name=Mangrove Stairs
+tile.backport.stairs.cobble.stone.mossy.name=Mossy Cobblestone Stairs
+tile.backport.stairs.mossyStoneBricks.name=Mossy Stone Brick Stairs
+tile.backport.stairs.mudBricks.name=Mud Brick Stairs
+tile.backport.stairs.netherBricks.name=Nether Brick Stairs
+tile.backport.stairs.oxidizedCutCopper.name=Oxidized Cut Copper Stairs
+tile.backport.stairs.polishedAndesite.name=Polished Andesite Stairs
+tile.backport.stairs.polishedBlackstoneBricks.name=Polished Blackstone Brick Stairs
+tile.backport.stairs.polishedBlackstone.name=Polished Blackstone Stairs
+tile.backport.stairs.polishedDeepslate.name=Polished Deepslate Stairs
+tile.backport.stairs.polishedDiorite.name=Polished Diorite Stairs
+tile.backport.stairs.polishedGranite.name=Polished Granite Stairs
+tile.backport.stairs.polishedTuff.name=Polished Tuff Stairs
+tile.backport.stairs.prismarineBricks.name=Prismarine Brick Stairs
+tile.backport.stairs.purpurBlock.name=Purpur Stairs
+tile.backport.stairs.block.quartz.name=Quartz Stairs
+tile.backport.stairs.redNetherBricks.name=Red Nether Brick Stairs
+tile.backport.stairs.redSandstone.name=Red Sandstone Stairs
+tile.backport.stairs.sandstone.name=Sandstone Stairs
+tile.backport.stairs.sprucePlanks.name=Spruce Stairs
+tile.backport.stairs.brick.stone.name=Stone Brick Stairs
+tile.backport.stairs.stone.name=Stone Stairs
+tile.backport.stairs.tuffBricks.name=Tuff Brick Stairs
+tile.backport.stairs.tuff.name=Tuff Stairs
+tile.backport.stairs.warped_planks.name=Warped Stairs
+tile.backport.stairs.weatheredCutCopper.name=Weathered Cut Copper Stairs
+
+###Slabs
+tile.backport.slab.acaciaPlanks.name=Acacia Slab
 
 ###Food
 item.backport.item.foodBeetRoot.name=Beetroot
