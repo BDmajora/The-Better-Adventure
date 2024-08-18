@@ -584,7 +584,7 @@ tile.backport.slab.brick.stone.name=Stone Brick Slab
 tile.backport.slab.stone.name=Stone Slab
 tile.backport.slab.tuffBricks.name=Tuff Bricks Slab
 tile.backport.slab.tuff.name=Tuff Slab
-tile.backport.slab.warpedPlanks.name=Warped Slab
+tile.backport.slab.warped_planks.name=Warped Slab
 tile.backport.slab.weatheredCutCopper.name=Weathered Cut Copper Slab
 
 ###Food
