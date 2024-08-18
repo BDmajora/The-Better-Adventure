@@ -28,6 +28,8 @@ tile.backport.polishedGranite.name=Polished Granite
 
 ###Sand and Red Sand
 tile.backport.redSandstone.name=Red Sandstone
+tile.backport.cutRedSandstone.name=Cut Red Sandstone
+tile.backport.cutSandstone.name=Cut Sandstone
 
 ###quartz
 tile.backport.quartzBricks.name=Quartz Bricks
@@ -541,6 +543,49 @@ tile.backport.stairs.weatheredCutCopper.name=Weathered Cut Copper Stairs
 
 ###Slabs
 tile.backport.slab.acaciaPlanks.name=Acacia Slab
+tile.backport.slab.andesite.name=Andesite Slab
+tile.backport.slab.bambooMosaic.name=Bamboo Mosaic Slab
+tile.backport.slab.bambooPlanks.name=Bamboo Slab
+tile.backport.slab.birchPlank.name=Birch Slab
+tile.backport.slab.blackStone.name=Black Stone Slab
+tile.backport.slab.cherryPlanks.name=Cherry Slab
+tile.backport.slab.cobbledDeepslate.name=Cobbled Deepslate Slab
+tile.backport.slab.crimson_planks.name=Crimson Slab
+tile.backport.slab.cutCopper.name=Cut Copper Slab
+tile.backport.slab.cutRedSandstone.name=Cut Red Sandstone Slab
+tile.backport.slab.cutSandstone.name=Cut Sandstone Slab
+tile.backport.slab.darkOakPlanks.name=Dark Oak Slab
+tile.backport.slab.prismarine.name=Prismarine Slab
+tile.backport.slab.deepslateBricks.name=Deepslate Brick Slab
+tile.backport.slab.deepslateTile.name=Deepslate Tile Slab
+tile.backport.slab.diorite.name=Diorite Slab
+tile.backport.slab.endStoneBricks.name=End Stone Brick Slab
+tile.backport.slab.exposedCutCopper.name=Exposed Cut Copper Slab
+tile.backport.slab.granite.name=Granite Slab
+tile.backport.slab.junglePlanks.name=Jungle Slab
+tile.backport.slab.mangrovePlanks.name=Mangrove Slab
+tile.backport.slab.cobble.stone.mossy.name=Mossy Cobblestone Slab
+tile.backport.slab.mossyStoneBricks.name=Mossy Stone Brick Slab
+tile.backport.slab.mudBricks.name=Mud Brick Slab
+tile.backport.slab.netherBricks.name=Nether Brick Slab
+tile.backport.slab.oxidizedCutCopper.name=Oxidized Cut Copper Slab
+tile.backport.slab.polishedAndesite.name=Polished Andesite Slab
+tile.backport.slab.polishedBlackstoneBricks.name=Polished Blackstone Brick Slab
+tile.backport.slab.polishedBlackstone.name=Polished Blackstone Slab
+tile.backport.slab.polishedDiorite.name=Polished Diorite Slab
+tile.backport.slab.polishedTuff.name=Polished Tuff Slab
+tile.backport.slab.prismarineBricks.name=Prismarine Brick Slab
+tile.backport.slab.purpurBlock.name=Purpur Slab
+tile.backport.slab.block.quartz.name=Quartz Slab
+tile.backport.slab.redNetherBricks.name=Red Nether Brick Slab
+tile.backport.slab.redSandstone.name=Red Sandstone Slab
+tile.backport.slab.sprucePlanks.name=Spruce Slab
+tile.backport.slab.brick.stone.name=Stone Brick Slab
+tile.backport.slab.stone.name=Stone Slab
+tile.backport.slab.tuffBricks.name=Tuff Bricks Slab
+tile.backport.slab.tuff.name=Tuff Slab
+tile.backport.slab.warpedPlanks.name=Warped Slab
+tile.backport.slab.weatheredCutCopper.name=Weathered Cut Copper Slab
 
 ###Food
 item.backport.item.foodBeetRoot.name=Beetroot
