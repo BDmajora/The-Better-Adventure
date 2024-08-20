@@ -4746,6 +4746,127 @@ public class ModBlocks {
 		.setTicking(true)
 		.build(new BlockSlab(weatheredCutCopper, UtilIdRegistrar.nextIdBlock()));
 
+	public static final Block acaciaGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/acacia_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("acaciaGate", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block bambooGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/bamboo_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("bambooGate", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block birchGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/birch_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("birchGate", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block cherryGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/cherry_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("cherryGate", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block crimsonGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/crimson_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("crimsonGate", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block darkOakGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/dark_oak_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("darkOakGate", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block jungleGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/jungle_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("jungleGate", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block mangroveGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/mangrove_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("mangroveGate", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block spruceGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/spruce_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("spruceGate", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block warpedGate = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setBlockModel(BlockModelFenceGate::new)
+		.setTextures(MOD_ID + ":block/warped_planks")
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
+		.setHardness(2)
+		.setResistance(2.0f)
+		.setTicking(true)
+		.build(new BlockFenceGate("warpedGate", UtilIdRegistrar.nextIdBlock()));
+
+
 
 	public static void register() {
 	}

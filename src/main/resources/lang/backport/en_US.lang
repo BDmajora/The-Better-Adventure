@@ -587,6 +587,18 @@ tile.backport.slab.tuff.name=Tuff Slab
 tile.backport.slab.warped_planks.name=Warped Slab
 tile.backport.slab.weatheredCutCopper.name=Weathered Cut Copper Slab
 
+###Gate
+tile.backport.acaciaGate.name=Acacia Fence Gate
+tile.backport.bambooGate.name=Bamboo Fence Gate
+tile.backport.birchGate.name=Birch Fence Gate
+tile.backport.cherryGate.name=Cherry Fence Gate
+tile.backport.crimsonGate.name=Crimson Fence Gate
+tile.backport.darkOakGate.name=Dark Oak Fence Gate
+tile.backport.jungleGate.name=Jungle Fence Gate
+tile.backport.mangroveGate.name=Mangrove Fence Gate
+tile.backport.spruceGate.name=Spruce Fence Gate
+tile.backport.warpedGate.name=Warped Fence Gate
+
 ###Food
 item.backport.item.foodBeetRoot.name=Beetroot
 item.backport.food.Carrot.name=Carrot
