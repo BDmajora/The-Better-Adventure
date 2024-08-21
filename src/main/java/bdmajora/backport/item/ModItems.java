@@ -306,7 +306,7 @@ public class ModItems {
 
 	public static Item bedYellow= new ItemBuilder(MOD_ID)
 		.setIcon("backport:item/icon/yellow_bed")
-		.build(new ItemCustomBed("bed.Yellow", UtilIdRegistrar.nextIdItem(), ModBlocks.bedWhite));
+		.build(new ItemCustomBed("bed.Yellow", UtilIdRegistrar.nextIdItem(), ModBlocks.bedYellow));
 
 	public static void register() {
 	}
