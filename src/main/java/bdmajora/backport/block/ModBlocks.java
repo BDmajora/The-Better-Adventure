@@ -4944,7 +4944,7 @@ public class ModBlocks {
 		});
 
 	public static final Block bedGreen = new BlockBuilder(MOD_ID)
-		.setBlockModel(BlockModelGrayBed::new)
+		.setBlockModel(BlockModelGreenBed::new)
 		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
 		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
 		.setUseInternalLight()
