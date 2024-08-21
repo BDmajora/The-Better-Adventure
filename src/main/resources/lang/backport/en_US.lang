@@ -617,20 +617,21 @@ tile.backport.beds.White.name=White Bed
 tile.backport.beds.Yellow.name=Yellow Bed
 
 ###Bed Items
-item.backport.item.bed.black.name=Black Bed
-item.backport.item.bed.blue.name=Blue Bed
-item.backport.item.bed.brown.name=Brown Bed
-item.backport.item.bed.cyan.name=Cyan Bed
-item.backport.item.bed.gray.name=Gray Bed
-item.backport.item.bed.green.name=Green Bed
-item.backport.item.bed.Lightblue.name=Light Blue Bed
-item.backport.item.bed.Lightgray.name=Light Gray Bed
-item.backport.item.bed.Lime.name=Lime Bed
-item.backport.item.bed.Magenta.name=Magenta Bed
-item.backport.item.bed.Orange.name=Orange Bed
-item.backport.item.bed.Purple.name=Purple Bed
-item.backport.item.bed.White.name=White Bed
-item.backport.item.bed.Yellow.name=Yellow Bed
+item.backport.bed.black.name=Black Bed
+item.backport.bed.blue.name=Blue Bed
+item.backport.bed.brown.name=Brown Bed
+item.backport.bed.cyan.name=Cyan Bed
+item.backport.bed.gray.name=Gray Bed
+item.backport.bed.green.name=Green Bed
+item.backport.bed.Lightblue.name=Light Blue Bed
+item.backport.bed.Lightgray.name=Light Gray Bed
+item.backport.bed.Lime.name=Lime Bed
+item.backport.bed.Magenta.name=Magenta Bed
+item.backport.bed.Orange.name=Orange Bed
+item.backport.bed.Pink.name=Pink Bed
+item.backport.bed.Purple.name=Purple Bed
+item.backport.bed.White.name=White Bed
+item.backport.bed.Yellow.name=Yellow Bed
 
 ###Food
 item.backport.item.foodBeetRoot.name=Beetroot
