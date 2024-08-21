@@ -28,6 +28,7 @@ import net.minecraft.core.sound.BlockSounds;
 import net.minecraft.core.world.World;
 import org.useless.dragonfly.model.block.DFBlockModelBuilder;
 import turniplabs.halplibe.helper.BlockBuilder;
+import bdmajora.backport.block.BedModels.*;
 
 import static bdmajora.backport.backport.MOD_ID;
 
@@ -4856,6 +4857,7 @@ public class ModBlocks {
 
 	public static final Block warpedGate = new BlockBuilder(MOD_ID)
 		.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.5f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
 		.setUseInternalLight()
 		.setVisualUpdateOnMetadata()
 		.setBlockModel(BlockModelFenceGate::new)
@@ -4866,7 +4868,230 @@ public class ModBlocks {
 		.setTicking(true)
 		.build(new BlockFenceGate("warpedGate", UtilIdRegistrar.nextIdBlock()));
 
+	public static final Block bedBlack = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelBlackBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.black", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedBlack)};
+			}
+		});
 
+	public static final Block bedBlue = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelBlueBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.blue", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedBlue)};
+			}
+		});
+
+	public static final Block bedBrown = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelBrownBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.brown", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedBrown)};
+			}
+		});
+
+	public static final Block bedCyan = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelCyanBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.cyan", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedCyan)};
+			}
+		});
+
+	public static final Block bedGray = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelGrayBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.gray", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedGray)};
+			}
+		});
+
+	public static final Block bedGreen = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelGrayBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.green", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedGreen)};
+			}
+		});
+
+	public static final Block bedLightblue = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelLightblueBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.Lightblue", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedLightblue)};
+			}
+		});
+
+	public static final Block bedLightgray = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelLightGrayBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.Lightgray", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedLightgray)};
+			}
+		});
+
+	public static final Block bedLime = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelLimeBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.Lime", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedLime)};
+			}
+		});
+
+	public static final Block bedMagenta = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelMagentaBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.Magenta", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedMagenta)};
+			}
+		});
+
+	public static final Block bedOrange = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelOrangeBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.Orange", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedOrange)};
+			}
+		});
+
+	public static final Block bedPink = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelPinkBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.Pink", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedPink)};
+			}
+		});
+
+	public static final Block bedPurple = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelPinkBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.Purple", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedPurple)};
+			}
+		});
+
+	public static final Block bedWhite = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelWhiteBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.White", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedWhite)};
+			}
+		});
+
+	public static final Block bedYellow = new BlockBuilder(MOD_ID)
+		.setBlockModel(BlockModelYellowBed::new)
+		.setBlockSound(new BlockSound("step.cloth", "step.cloth", 1.0f, 1.0f))
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setUseInternalLight()
+		.setVisualUpdateOnMetadata()
+		.setHardness(0.5f)
+		.setResistance(1.0f)
+		.build(new BlockBed("bed.Yellow", UtilIdRegistrar.nextIdBlock()) {
+			@Override
+			public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+				return new ItemStack[]{new ItemStack(ModItems.bedYellow)};
+			}
+		});
 
 	public static void register() {
 	}

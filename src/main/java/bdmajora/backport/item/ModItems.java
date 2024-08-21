@@ -3,6 +3,7 @@ package bdmajora.backport.item;
 import bdmajora.backport.block.ModBlocks;
 import bdmajora.backport.UtilIdRegistrar;
 import bdmajora.backport.item.Food.*;
+import luke.color.item.ItemCustomBed;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDoor;
 import turniplabs.halplibe.helper.ItemBuilder;
@@ -244,6 +245,68 @@ public class ModItems {
 		.setIcon(MOD_ID + ":item/pitcher_plant")
 		.setStackSize(64)
 		.build(new ItemFlower("item.pitcherFlower", UtilIdRegistrar.nextIdItem(), ModBlocks.pitcherPlantTop, ModBlocks.pitcherPlantBottom));
+
+	//Beds
+
+	public static Item bedBlack = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/black_bed")
+		.build(new ItemCustomBed("bed.black", UtilIdRegistrar.nextIdItem(), ModBlocks.bedBlack));
+
+	public static Item bedBlue = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/blue_bed")
+		.build(new ItemCustomBed("bed.blue", UtilIdRegistrar.nextIdItem(), ModBlocks.bedBlue));
+
+	public static Item bedBrown = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/brown_bed")
+		.build(new ItemCustomBed("bed.brown", UtilIdRegistrar.nextIdItem(), ModBlocks.bedBrown));
+
+	public static Item bedCyan = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/cyan_bed")
+		.build(new ItemCustomBed("bed.cyan", UtilIdRegistrar.nextIdItem(), ModBlocks.bedCyan));
+
+	public static Item bedGray = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/gray_bed")
+		.build(new ItemCustomBed("bed.gray", UtilIdRegistrar.nextIdItem(), ModBlocks.bedGray));
+
+	public static Item bedGreen = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/green_bed")
+		.build(new ItemCustomBed("bed.green", UtilIdRegistrar.nextIdItem(), ModBlocks.bedGreen));
+
+	public static Item bedLightblue = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/lightblue_bed")
+		.build(new ItemCustomBed("bed.Lightblue", UtilIdRegistrar.nextIdItem(), ModBlocks.bedLightblue));
+
+	public static Item bedLightgray = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/silver_bed")
+		.build(new ItemCustomBed("bed.Lightgray", UtilIdRegistrar.nextIdItem(), ModBlocks.bedLightgray));
+
+	public static Item bedLime = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/lime_bed")
+		.build(new ItemCustomBed("bed.Lime", UtilIdRegistrar.nextIdItem(), ModBlocks.bedLime));
+
+	public static Item bedMagenta = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/magenta_bed")
+		.build(new ItemCustomBed("bed.Magenta", UtilIdRegistrar.nextIdItem(), ModBlocks.bedMagenta));
+
+	public static Item bedOrange = new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/orange_bed")
+		.build(new ItemCustomBed("bed.Orange", UtilIdRegistrar.nextIdItem(), ModBlocks.bedOrange));
+
+	public static Item bedPink= new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/pink_bed")
+		.build(new ItemCustomBed("bed.Pink", UtilIdRegistrar.nextIdItem(), ModBlocks.bedPink));
+
+	public static Item bedPurple= new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/purple_bed")
+		.build(new ItemCustomBed("bed.Purple", UtilIdRegistrar.nextIdItem(), ModBlocks.bedPurple));
+
+	public static Item bedWhite= new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/white_bed")
+		.build(new ItemCustomBed("bed.White", UtilIdRegistrar.nextIdItem(), ModBlocks.bedWhite));
+
+	public static Item bedYellow= new ItemBuilder(MOD_ID)
+		.setIcon("color:item/icon/yellow_bed")
+		.build(new ItemCustomBed("bed.Yellow", UtilIdRegistrar.nextIdItem(), ModBlocks.bedWhite));
 
 	public static void register() {
 	}

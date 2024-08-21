@@ -5,6 +5,7 @@
     "compatibilityLevel": "JAVA_8",
     "plugin": "bdmajora.backport.backportMixinPlugin",
     "mixins": [
+      "TileEntitySeatMixin",
       "EntityTrackerAccessor",
       "SurfaceGeneratorNetherMixin",
       "WorldTypeNetherMixin",

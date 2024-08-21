@@ -599,6 +599,39 @@ tile.backport.mangroveGate.name=Mangrove Fence Gate
 tile.backport.spruceGate.name=Spruce Fence Gate
 tile.backport.warpedGate.name=Warped Fence Gate
 
+###Bed Blocks
+tile.backport.beds.black.name=Black Bed
+tile.backport.beds.blue.name=Blue Bed
+tile.backport.beds.brown.name=Brown Bed
+tile.backport.beds.cyan.name=Cyan Bed
+tile.backport.beds.gray.name=Gray Bed
+tile.backport.beds.green.name=Green Bed
+tile.backport.beds.Lightblue.name=Light Blue Bed
+tile.backport.beds.Lightgray.name=Light Gray Bed
+tile.backport.beds.Lime.name=Lime Bed
+tile.backport.beds.Magenta.name=Magenta Bed
+tile.backport.beds.Orange.name=Orange Bed
+tile.backport.beds.Pink.name=Pink Bed
+tile.backport.beds.Purple.name=Purple Bed
+tile.backport.beds.White.name=White Bed
+tile.backport.beds.Yellow.name=Yellow Bed
+
+###Bed Items
+item.backport.item.bed.black.name=Black Bed
+item.backport.item.bed.blue.name=Blue Bed
+item.backport.item.bed.brown.name=Brown Bed
+item.backport.item.bed.cyan.name=Cyan Bed
+item.backport.item.bed.gray.name=Gray Bed
+item.backport.item.bed.green.name=Green Bed
+item.backport.item.bed.Lightblue.name=Light Blue Bed
+item.backport.item.bed.Lightgray.name=Light Gray Bed
+item.backport.item.bed.Lime.name=Lime Bed
+item.backport.item.bed.Magenta.name=Magenta Bed
+item.backport.item.bed.Orange.name=Orange Bed
+item.backport.item.bed.Purple.name=Purple Bed
+item.backport.item.bed.White.name=White Bed
+item.backport.item.bed.Yellow.name=Yellow Bed
+
 ###Food
 item.backport.item.foodBeetRoot.name=Beetroot
 item.backport.food.Carrot.name=Carrot
