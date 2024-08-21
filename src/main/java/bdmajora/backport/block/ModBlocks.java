@@ -2441,7 +2441,7 @@ public class ModBlocks {
 		.setResistance(0.5f)
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures(MOD_ID + ":block/cave_vines")
-		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
 		.build(new BlockCaveVines("caveVines", UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block caveVinesPlant = new BlockBuilder(MOD_ID)
@@ -2963,7 +2963,7 @@ public class ModBlocks {
 		.setHardness(2.0f)
 		.setResistance(2.0f)
 		.setTextures(MOD_ID + ":block/blue_ice")
-		.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+		.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.FENCES_CONNECT)
 		.build(new Block("blueIce",UtilIdRegistrar.nextIdBlock(),Material.ice));
 
 	public static final Block blackCarpet = new BlockBuilder(MOD_ID)
@@ -3086,6 +3086,7 @@ public class ModBlocks {
 		.build(new DragonBlockModel("yellowCarpet", UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
 	public static final Block chain = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/chain.json")
@@ -3095,6 +3096,7 @@ public class ModBlocks {
 		.build(new BlockChain("chain", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
 	public static final Block smoker = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/smoker.json")
@@ -3168,7 +3170,7 @@ public class ModBlocks {
 			.withLitInteriorSurface(true));
 
 	public static final Block glassPane = new BlockBuilder(MOD_ID)
-		.setTags()
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/glass_pane_post.json")
@@ -3178,6 +3180,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("glassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block blackStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/black_stained_glass_pane_post.json")
@@ -3187,6 +3190,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("blackStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block blueStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/blue_stained_glass_pane_post.json")
@@ -3196,6 +3200,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("blueStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block brownStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/brown_stained_glass_pane_post.json")
@@ -3205,6 +3210,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("brownStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block cyanStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/cyan_stained_glass_pane_post.json")
@@ -3214,6 +3220,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("cyanStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block grayStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/gray_stained_glass_pane_post.json")
@@ -3223,6 +3230,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("grayStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block greenStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/green_stained_glass_pane_post.json")
@@ -3232,6 +3240,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("greenStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block lightBlueStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/light_blue_stained_glass_pane_post.json")
@@ -3241,6 +3250,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("lightBlueStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block lightGrayStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/light_gray_stained_glass_pane_post.json")
@@ -3250,6 +3260,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("lightGrayStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block limeStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/lime_stained_glass_pane_post.json")
@@ -3259,6 +3270,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("limeStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block magentaStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/magenta_stained_glass_pane_post.json")
@@ -3268,6 +3280,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("magentaStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block orangeStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/orange_stained_glass_pane_post.json")
@@ -3277,6 +3290,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("orangeStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block pinkStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/pink_stained_glass_pane_post.json")
@@ -3286,6 +3300,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("pinkStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block purpleStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/purple_stained_glass_pane_post.json")
@@ -3295,6 +3310,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("purpleStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block redStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/red_stained_glass_pane_post.json")
@@ -3304,6 +3320,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("redStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block whiteStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/white_stained_glass_pane_post.json")
@@ -3313,6 +3330,7 @@ public class ModBlocks {
 		.build(new BlockGlassPane("whiteStainedGlassPane", UtilIdRegistrar.nextIdBlock(), Material.glass));
 
 	public static final Block yellowStainedGlassPane = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/pane/yellow_stained_glass_pane_post.json")
