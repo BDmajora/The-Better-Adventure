@@ -2406,7 +2406,7 @@ public class ModBlocks {
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures(MOD_ID + ":block/weeping_vines")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
-		.build(new BlockWeepingVinesPlant("weepingVinesPlant", UtilIdRegistrar.nextIdBlock()));
+		.build(new BlockWeepingVinesPlant("weepingVines", UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block twistingVines = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.GRASS)
@@ -2422,6 +2422,7 @@ public class ModBlocks {
 		.setHardness(0.0f)
 		.setResistance(0.5f)
 		.setBlockModel(BlockModelCrossedSquares::new)
+		.setBlockDrop(weepingVines)
 		.setTextures(MOD_ID + ":block/weeping_vines_plant")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new BlockWeepingVinesPlant("weepingVinesPlant", UtilIdRegistrar.nextIdBlock()));
@@ -2431,6 +2432,7 @@ public class ModBlocks {
 		.setHardness(0.0f)
 		.setResistance(0.5f)
 		.setBlockModel(BlockModelCrossedSquares::new)
+		.setBlockDrop(twistingVines)
 		.setTextures(MOD_ID + ":block/twisting_vines_plant")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new BlockTwistingVinesPlant("twistingVinesPlant", UtilIdRegistrar.nextIdBlock()));
@@ -2450,6 +2452,7 @@ public class ModBlocks {
 		.setResistance(0.5f)
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures(MOD_ID + ":block/cave_vines_plant")
+		.setBlockDrop(caveVines)
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new BlockCaveVines("caveVinesPlant", UtilIdRegistrar.nextIdBlock()));
 
@@ -2471,6 +2474,7 @@ public class ModBlocks {
 		.setResistance(0.5f)
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures(MOD_ID + ":block/cave_vines_plant_lit")
+		.setBlockDrop(caveVinesLit)
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.setLuminance(15)
 		.build(new BlockCaveVinesLit("caveVinesPlantLit", UtilIdRegistrar.nextIdBlock()));

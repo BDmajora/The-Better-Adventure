@@ -20,6 +20,13 @@ public class BlockCaveVines extends BlockFlower {
 	public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
 		super.onNeighborBlockChange(world, x, y, z, blockId);
 		this.checkBlockCoordValid(world, x, y, z);
+
+		int belowBlockId = world.getBlockId(x, y - 1, z);
+
+		// Ensure the current block was a caveVines before updating
+		if (belowBlockId == ModBlocks.caveVines.id && world.getBlockId(x, y, z) == this.id) {
+			world.setBlockWithNotify(x, y, z, ModBlocks.caveVinesPlant.id);
+		}
 	}
 
 	protected final void checkBlockCoordValid(World world, int x, int y, int z) {
@@ -37,16 +44,12 @@ public class BlockCaveVines extends BlockFlower {
 	}
 
 	protected void updateBlockState(World world, int x, int y, int z) {
+		int belowBlockId = world.getBlockId(x, y - 1, z);
 		int aboveBlockId = world.getBlockId(x, y + 1, z);
 
-		// If the block above is also a vine, update the current block to vine plant
-		if (aboveBlockId == this.id) {
+		// If the block below is also a caveVines, update the current block to caveVinesPlant
+		if (belowBlockId == ModBlocks.caveVines.id && world.getBlockId(x, y, z) == this.id) {
 			world.setBlockWithNotify(x, y, z, ModBlocks.caveVinesPlant.id);
-		}
-
-		// If the block above is the same as this one, set the block above to vine plant
-		if (aboveBlockId == this.id) {
-			world.setBlockWithNotify(x, y + 1, z, ModBlocks.caveVinesPlant.id);
 		}
 	}
 
