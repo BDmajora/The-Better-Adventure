@@ -14,10 +14,12 @@ import bdmajora.backport.block.Vines.BlockCaveVinesLit;
 import bdmajora.backport.block.Vines.BlockVine;
 import bdmajora.backport.block.bamboo.BambooSapling;
 import bdmajora.backport.block.bamboo.BambooShoot;
+import bdmajora.backport.block.bamboo.OldBambooShoot;
 import bdmajora.backport.block.dragonfly.*;
 import bdmajora.backport.block.metastates.*;
 import bdmajora.backport.item.ModItems;
 import net.minecraft.client.render.block.model.*;
+import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -5218,7 +5220,7 @@ public class ModBlocks {
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/bamboo/bamboo1_age1.json")
 				.build(block))
-		.build(new DragonBlockModel("oldbambooShoot", UtilIdRegistrar.nextIdBlock(), Material.wood));
+		.build(new OldBambooShoot("oldbambooShoot", UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block bambooSapling = new BlockBuilder(MOD_ID)
 		.setBlockSound(BlockSounds.GRASS)
@@ -5226,7 +5228,7 @@ public class ModBlocks {
 		.setResistance(0.5f)
 		.setBlockModel(BlockModelCrossedSquares::new)
 		.setTextures(MOD_ID + ":block/bamboo_stage0")
-		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new BambooSapling("bambooSapling", UtilIdRegistrar.nextIdBlock()));
 
 

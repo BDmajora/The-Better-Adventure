@@ -308,6 +308,11 @@ public class ModItems {
 		.setIcon("backport:item/icon/yellow_bed")
 		.build(new ItemCustomBed("bed.Yellow", UtilIdRegistrar.nextIdItem(), ModBlocks.bedYellow));
 
+	//bamboo
+	public static Item bamboo= new ItemBuilder(MOD_ID)
+		.setIcon("backport:item/bamboo")
+		.build(new ItemBamboo("bamboo", UtilIdRegistrar.nextIdItem(), ModBlocks.bambooSapling));
+
 	public static void register() {
 	}
 }
