@@ -131,12 +131,12 @@ public class ModItems {
 	public static Item foodCarrot = foodCarrot = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/carrot")
 		.setStackSize(64)
-		.build(new ItemFoodAccessor("food.Carrot",UtilIdRegistrar.nextIdItem(), 2, 10, false, 64, MOD_ID +  ":item/carrot"));
+		.build(new ItemFoodCarrot("food.Carrot",UtilIdRegistrar.nextIdItem(), 1, 10,false, 64, ModBlocks.cropsCarrot, MOD_ID + ":item/carrot"));
 
 	public static Item foodPotatoRaw = foodPotatoRaw = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/potato_raw")
 		.setStackSize(64)
-		.build(new ItemFoodAccessor("food.potato.raw", UtilIdRegistrar.nextIdItem(), 1, 10, false, 64, MOD_ID + ":item/potato_raw"));
+		.build(new ItemFoodPotatoRaw("food.potato.raw", UtilIdRegistrar.nextIdItem(), 1, 10, false, 64, ModBlocks.cropsPotato, MOD_ID + ":item/potato_raw"));
 
 	public static Item foodPotatoBaked = foodPotatoBaked = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/potato_baked")
@@ -189,16 +189,6 @@ public class ModItems {
 		.build(new ItemFoodAccessor("food.mutton.cooked", UtilIdRegistrar.nextIdItem(), 5, 10,true, 64, MOD_ID + ":item/mutton_cooked"));
 
 	//seeds
-	public static Item seedsCarrot = new ItemBuilder(MOD_ID)
-			.setIcon(MOD_ID + ":item/seedsCarrot")
-			.setStackSize(64)
-			.build(new ItemSeedsAccessor("seeds.carrot", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsCarrot, MOD_ID + ":item/seedsCarrot"));
-
-	public static Item seedsPotato = new ItemBuilder(MOD_ID)
-		.setIcon(MOD_ID + ":item/seedsPotato")
-		.setStackSize(64)
-		.build(new ItemSeedsAccessor("seeds.potato", UtilIdRegistrar.nextIdItem(), ModBlocks.cropsPotato, MOD_ID + ":item/seedsPotato"));
-
 	public static Item seedsBeetRoot  = seedsBeetRoot  = new ItemBuilder(MOD_ID)
 		.setIcon(MOD_ID + ":item/beetroot_seeds")
 		.setStackSize(64)
