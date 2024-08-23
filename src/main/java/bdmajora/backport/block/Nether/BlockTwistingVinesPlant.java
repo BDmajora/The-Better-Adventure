@@ -20,10 +20,12 @@ public class BlockTwistingVinesPlant extends BlockFlower {
 		super.onNeighborBlockChange(world, x, y, z, blockId);
 		this.checkBlockCoordValid(world, x, y, z);
 
-
 		int belowBlockId = world.getBlockId(x, y - 1, z);
-		if (belowBlockId == ModBlocks.weepingVinesPlant.id) {
-			world.setBlockWithNotify(x, y - 1, z, ModBlocks.weepingVines.id);
+		int aboveBlockId = world.getBlockId(x, y + 1, z);
+
+		// Correct logic: Check the block above and update the block below
+		if (aboveBlockId == ModBlocks.twistingVines.id) {
+			world.setBlockWithNotify(x, y, z, ModBlocks.twistingVinesPlant.id);
 		}
 	}
 
@@ -37,20 +39,16 @@ public class BlockTwistingVinesPlant extends BlockFlower {
 
 	@Override
 	public boolean canBlockStay(World world, int x, int y, int z) {
-
 		return !world.isAirBlock(x, y - 1, z);
 	}
 
 	protected void updateBlockState(World world, int x, int y, int z) {
 		int belowBlockId = world.getBlockId(x, y - 1, z);
+		int aboveBlockId = world.getBlockId(x, y + 1, z);
 
-
-		if (belowBlockId == this.id) {
+		// Update state based on the block above
+		if (aboveBlockId == ModBlocks.twistingVines.id) {
 			world.setBlockWithNotify(x, y, z, ModBlocks.twistingVinesPlant.id);
-		}
-
-		if (belowBlockId == this.id) {
-			world.setBlockWithNotify(x, y - 1, z, ModBlocks.twistingVinesPlant.id);
 		}
 	}
 

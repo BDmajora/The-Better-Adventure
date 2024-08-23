@@ -2623,7 +2623,6 @@ public class ModBlocks {
 		.build(new DragonBlockModel("exampleBrewingStand", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
 	public static final Block bookshelf = new BlockBuilder(MOD_ID)
-		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("block/bookshelf/chiseled_bookshelf_inventory.json")
@@ -5162,10 +5161,39 @@ public class ModBlocks {
 			}
 		});
 
+	public static final Block allium = new BlockBuilder(MOD_ID)
+		.setBlockSound(BlockSounds.GRASS)
+		.setHardness(0.0f)
+		.setResistance(0.5f)
+		.setBlockModel(BlockModelCrossedSquares::new)
+		.setTextures(MOD_ID + ":block/allium")
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.build(new BlockFlower("allium", UtilIdRegistrar.nextIdBlock()));
 
+	public static final Block cartographyTable = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/cartography_table.json")
+				.build(block))
+		.build(new DragonBlockModel("cartographyTable", UtilIdRegistrar.nextIdBlock(), Material.cloth));
+
+	public static final Block darkPrismarine = new BlockBuilder(MOD_ID)
+		.setBlockSound(BlockSounds.GRASS)
+		.setHardness(0.0f)
+		.setResistance(0.5f)
+		.setTextures(MOD_ID + ":block/dark_prismarine")
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.build(new Block("darkPrismarine", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block brownMushroomBlock = new BlockBuilder(MOD_ID)
+		.setBlockSound(BlockSounds.GRASS)
+		.setHardness(0.0f)
+		.setResistance(0.5f)
+		.setTextures(MOD_ID + ":block/brown_mushroom_block")
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.build(new Block("brownMushroomBlock", UtilIdRegistrar.nextIdBlock(), Material.stone));
 
 	public static void register() {
 	}
-
 
 }

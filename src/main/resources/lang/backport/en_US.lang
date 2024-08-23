@@ -99,6 +99,8 @@ tile.backport.caveVinesPlant.name=Cave Vines Plant
 tile.backport.caveVinesLit.name=Cave Vines Lit
 tile.backport.caveVinesPlantLit.name=Cave Vines Plant Lit
 tile.backport.vine.name=Vines
+tile.backport.cartographyTable.name=Cartography Table
+tile.backport.brownMushroomBlock.name=Brown Mushroom Block
 
 ###caves and cliffs
 tile.backport.amethystBlock.name=Amethyst Block
@@ -296,6 +298,7 @@ tile.backport.jigsaw.name=Jigsaw
 ###aquatic
 tile.backport.prismarineBricks.name=Prismarine Bricks
 tile.backport.prismarine.name=Prismarine
+tile.backport.darkPrismarine.name=Dark Prismarine
 
 ###flowers
 tile.backport.azureBluet.name=Azure Bluet
@@ -313,6 +316,7 @@ item.backport.item.peony.name=Peony
 item.backport.item.roseBush.name=Rose Bush
 item.backport.item.sunflower.name=Sunflower
 item.backport.item.pitcherFlower.name=Pitcher Plant
+tile.backport.allium.name=Allium
 
 ###glass
 tile.backport.blackStainedGlass.name=Black Stained Glass
