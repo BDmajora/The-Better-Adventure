@@ -161,6 +161,9 @@ tile.backport.bambooBlock.name=Bamboo Block
 tile.backport.bambooMosaic.name=Bamboo Mosaic
 tile.backport.bambooPlanks.name=Bamboo Planks
 tile.backport.strippedBambooBlock.name=Stripped Bamboo Block
+tile.backport.bambooShoot.name=Bamboo Shoot
+tile.backport.oldbambooShoot.name=Old Bamboo Shoot
+tile.backport.bambooSapling.name=Bamboo Sapling
 
 ###terracotta
 tile.backport.blackTerracotta.name=Black Terracotta

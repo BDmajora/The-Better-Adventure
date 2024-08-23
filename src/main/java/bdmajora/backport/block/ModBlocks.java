@@ -12,6 +12,8 @@ import bdmajora.backport.block.TrapDoor.*;
 import bdmajora.backport.block.Vines.BlockCaveVines;
 import bdmajora.backport.block.Vines.BlockCaveVinesLit;
 import bdmajora.backport.block.Vines.BlockVine;
+import bdmajora.backport.block.bamboo.BambooSapling;
+import bdmajora.backport.block.bamboo.BambooShoot;
 import bdmajora.backport.block.dragonfly.*;
 import bdmajora.backport.block.metastates.*;
 import bdmajora.backport.item.ModItems;
@@ -1477,7 +1479,8 @@ public class ModBlocks {
 		.setTopBottomTextures(MOD_ID + ":block/dark_oak_log_top")
 		.setSideTextures(MOD_ID + ":block/dark_oak_log")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-		.build(new BlockAxisAligned("darkOakLog",UtilIdRegistrar.nextIdBlock(),Material.wood));
+		.setBlockModel(BlockModelAxisAligned::new)
+		.build(new BlockLog("darkOakLog",UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block darkOakPlanks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
@@ -1494,7 +1497,8 @@ public class ModBlocks {
 		.setTopBottomTextures(MOD_ID + ":block/jungle_log_top")
 		.setSideTextures(MOD_ID + ":block/jungle_log")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-		.build(new BlockAxisAligned("jungleLog",UtilIdRegistrar.nextIdBlock(),Material.wood));
+		.setBlockModel(BlockModelAxisAligned::new)
+		.build(new BlockLog("jungleLog",UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block junglePlanks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
@@ -1511,7 +1515,8 @@ public class ModBlocks {
 		.setTopBottomTextures(MOD_ID + ":block/mangrove_log_top")
 		.setSideTextures(MOD_ID + ":block/mangrove_log")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-		.build(new BlockAxisAligned("mangroveLog",UtilIdRegistrar.nextIdBlock(),Material.wood));
+		.setBlockModel(BlockModelAxisAligned::new)
+		.build(new BlockLog("mangroveLog",UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block mangrovePlanks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
@@ -1528,7 +1533,8 @@ public class ModBlocks {
 		.setTopBottomTextures(MOD_ID + ":block/spruce_log_top")
 		.setSideTextures(MOD_ID + ":block/spruce_log")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.FENCES_CONNECT)
-		.build(new BlockAxisAligned("spruceLog",UtilIdRegistrar.nextIdBlock(),Material.wood));
+		.setBlockModel(BlockModelAxisAligned::new)
+		.build(new BlockLog("spruceLog",UtilIdRegistrar.nextIdBlock()));
 
 	public static final Block sprucePlanks = new BlockBuilder(MOD_ID)
  .setBlockSound(BlockSounds.WOOD)
@@ -2910,7 +2916,7 @@ public class ModBlocks {
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/scaffolding_stable.json")
 				.build(block))
-		.build(new DragonBlockModel("scaffolding", UtilIdRegistrar.nextIdBlock(), Material.wood));
+		.build(new BlockScaffolding("scaffolding", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static final Block amethystCluster = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -5196,6 +5202,33 @@ public class ModBlocks {
 		.setTextures(MOD_ID + ":block/brown_mushroom_block")
 		.setTags(BlockTags.MINEABLE_BY_AXE)
 		.build(new Block("brownMushroomBlock", UtilIdRegistrar.nextIdBlock(), Material.stone));
+
+	public static final Block bambooShoot = new BlockBuilder(MOD_ID)
+		.setTags(BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/bamboo/bamboo1_age0.json")
+				.build(block))
+		.build(new BambooShoot("bambooShoot", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block oldbambooShoot = new BlockBuilder(MOD_ID)
+		.setBlockDrop(bambooShoot)
+		.setTags(BlockTags.FENCES_CONNECT, BlockTags.NOT_IN_CREATIVE_MENU)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/bamboo/bamboo1_age1.json")
+				.build(block))
+		.build(new DragonBlockModel("oldbambooShoot", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block bambooSapling = new BlockBuilder(MOD_ID)
+		.setBlockSound(BlockSounds.GRASS)
+		.setHardness(0.0f)
+		.setResistance(0.5f)
+		.setBlockModel(BlockModelCrossedSquares::new)
+		.setTextures(MOD_ID + ":block/bamboo_stage0")
+		.setTags(BlockTags.MINEABLE_BY_AXE)
+		.build(new BambooSapling("bambooSapling", UtilIdRegistrar.nextIdBlock()));
+
 
 	public static void register() {
 	}
