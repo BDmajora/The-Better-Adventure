@@ -2959,8 +2959,10 @@ public class ModBlocks {
 		.setBlockModel(
 			block -> new DFBlockModelBuilder(MOD_ID)
 				.setBlockModel("backport", "block/big_dripleaf.json")
+				.setBlockState("backport", "big_dripleaf.json")
+				.setMetaStateInterpreter(new bigdripleafMetaState())
 				.build(block))
-		.build(new DragonBlockModel("bigDripleaf", UtilIdRegistrar.nextIdBlock(), Material.leaves));
+		.build(new BlockBigDripleaf("bigDripleaf", UtilIdRegistrar.nextIdBlock(), Material.leaves));
 
 	public static final Block buddingAmethyst = new BlockBuilder(MOD_ID)
 		.setBlockModel(
@@ -5230,6 +5232,17 @@ public class ModBlocks {
 		.setTextures(MOD_ID + ":block/bamboo_stage0")
 		.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
 		.build(new BambooSapling("bambooSapling", UtilIdRegistrar.nextIdBlock()));
+
+	public static final Block bigDripleafStem = new BlockBuilder(MOD_ID)
+		.setBlockDrop(bigDripleaf)
+		.setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/big_dripleaf_stem.json")
+				.setBlockState("backport", "big_dripleaf_stem.json")
+				.setMetaStateInterpreter(new bigdripleafMetaState())
+				.build(block))
+		.build(new BlockBigDripleaf("bigDripleafStem", UtilIdRegistrar.nextIdBlock(), Material.leaves));
 
 
 	public static void register() {
