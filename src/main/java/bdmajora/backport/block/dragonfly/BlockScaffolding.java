@@ -92,6 +92,11 @@ public class BlockScaffolding extends BlockTransparent {
 		}
 	}
 
+	@Override
+	public boolean canBlockStay(World world, int x, int y, int z) {
+		return !world.isAirBlock(x, y - 1, z);
+	}
+
 	protected void destroyAllAbove(World world, int x, int y, int z) {
 		for (int i = y + 1; i <= 256; i++) { // Assume 256 is the world height limit
 			if (world.getBlockId(x, i, z) == this.id) {

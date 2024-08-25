@@ -625,6 +625,10 @@ tile.backport.beds.Purple.name=Purple Bed
 tile.backport.beds.White.name=White Bed
 tile.backport.beds.Yellow.name=Yellow Bed
 
+###Candles
+tile.backport.candle.name=Candle
+tile.backport.candleBlack.name=Candle Black
+
 ###Bed Items
 item.backport.bed.black.name=Black Bed
 item.backport.bed.blue.name=Blue Bed

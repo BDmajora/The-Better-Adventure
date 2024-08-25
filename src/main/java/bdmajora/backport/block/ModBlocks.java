@@ -5244,6 +5244,42 @@ public class ModBlocks {
 				.build(block))
 		.build(new BlockBigDripleaf("bigDripleafStem", UtilIdRegistrar.nextIdBlock(), Material.leaves));
 
+	public static final Block candle = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
+		.setIcon("backport:item/candle")
+		.setTextures("backport:block/candle")
+		.setHardness(0.0f)
+		.setResistance(0.0f)
+		.setBlockModel(BlockModelCandle::new)
+		.setVisualUpdateOnMetadata()
+		.setTags(BlockTags.BROKEN_BY_FLUIDS)
+		.build(new bdmajora.backport.block.decoration.BlockCandle("candle",  UtilIdRegistrar.nextIdBlock(), false));
+
+	public static final Block candleLit = new BlockBuilder(MOD_ID)
+			.setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
+		.setIcon("backport:item/candle")
+			.setTextures("backport:block/candle")
+			.setHardness(0.0f)
+			.setResistance(0.0f)
+			.setLuminance(10)
+			.setUseInternalLight()
+			.setVisualUpdateOnMetadata()
+			.setBlockModel(BlockModelCandle::new)
+			.setVisualUpdateOnMetadata()
+			.setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
+			.build(new bdmajora.backport.block.decoration.BlockCandle("candle.lit", UtilIdRegistrar.nextIdBlock(), true));
+
+	public static final Block candleBlack = new BlockBuilder(MOD_ID)
+		.setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
+		.setIcon("backport:item/black_candle")
+		.setTextures("backport:block/black_candle")
+		.setHardness(0.0f)
+		.setResistance(0.0f)
+		.setBlockModel(BlockModelCandle::new)
+		.setVisualUpdateOnMetadata()
+		.setTags(BlockTags.BROKEN_BY_FLUIDS)
+		.build(new BlockCandle("candleBlack",  UtilIdRegistrar.nextIdBlock(), Material.decoration));
+
 
 	public static void register() {
 	}
