@@ -5280,6 +5280,12 @@ public class ModBlocks {
 		.setTags(BlockTags.BROKEN_BY_FLUIDS)
 		.build(new BlockCandle("candleBlack",  UtilIdRegistrar.nextIdBlock(), Material.decoration));
 
+	public static final Block sporeBlossom = new BlockBuilder(MOD_ID)
+		.setBlockModel(
+			block -> new DFBlockModelBuilder(MOD_ID)
+				.setBlockModel("backport", "block/spore_blossom.json")
+				.build(block))
+		.build(new DragonBlockModel("sporeBlossom", UtilIdRegistrar.nextIdBlock(), Material.wood));
 
 	public static void register() {
 	}

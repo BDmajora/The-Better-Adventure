@@ -109,6 +109,7 @@ tile.backport.basalt.name=Basalt
 tile.backport.smoothBasalt.name=Smooth Basalt
 tile.backport.mossBlock.name=Moss Block
 tile.backport.bigDripleafStem.name=Big Dripleaf Stem
+tile.backport.sporeBlossom.name=Spore Blossom
 
 ###deepslate
 tile.backport.deepslate.name=Deepslate

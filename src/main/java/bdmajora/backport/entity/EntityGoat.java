@@ -42,17 +42,17 @@ public class EntityGoat extends EntityAnimal {
 
 	@Override
 	public String getLivingSound() {
-		return "cavecliff.goatidle";
+		return "backport.goatidle";
 	}
 
 	@Override
 	public String getHurtSound() {
-		return "cavecliff.goatidle";
+		return "backport.goatidle";
 	}
 
 	@Override
 	public String getDeathSound() {
-		return "cavecliff.goatdeath";
+		return "backport.goatdeath";
 	}
 
 	@Override
