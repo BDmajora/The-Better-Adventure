@@ -3,20 +3,23 @@ package bdmajora.backport;
 import bdmajora.backport.biome.ModBiomes;
 import bdmajora.backport.block.ModBlocks;
 import bdmajora.backport.crafting.ModCraftingManager;
-import bdmajora.backport.entity.BackportEntities;
-import bdmajora.backport.entity.EntityParrot;
+import bdmajora.backport.entity.*;
 import bdmajora.backport.item.ModItems;
 import bdmajora.backport.network.packet.PacketEnchantItem;
 import bdmajora.backport.world.biome.provider.BiomeProviderNether;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
+import net.minecraft.client.gui.guidebook.mobs.MobInfoRegistry;
+import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.enums.EnumCreatureType;
+import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
+import net.minecraft.server.entity.ServerSkinVariantList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.NetworkHelper;
-import turniplabs.halplibe.helper.SoundHelper;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
@@ -56,25 +59,23 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 		// Register the Parrot Entity
 		Biomes.OVERWORLD_RAINFOREST.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(EntityParrot.class, 102));
 
-		// Register Parrot Sounds with Correct Paths
-		registerParrotSounds();
+		// Register entities with skin counts
+		ServerSkinVariantList.registerSkinCount(EntityGoat.class, 4);
+		ServerSkinVariantList.registerSkinCount(EntityGlowSquid.class, 4);
+		ServerSkinVariantList.registerSkinCount(EntityAxolotl.class, 5);
+
+		// Add spawn entries for entities in all biomes
+		for (Biome b : Registries.BIOMES) {
+			b.getSpawnableList(EnumCreatureType.waterCreature).add(new SpawnListEntry(EntityGlowSquid.class, 5));
+			b.getSpawnableList(EnumCreatureType.waterCreature).add(new SpawnListEntry(EntityAxolotl.class, 25));
+			b.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(EntityGoat.class, 102));
+		}
+
+		// Initialize sounds
+		BackportSounds.init();
 
 		LOGGER.info("BackPort loaded successfully!");
-	}
-
-	private void registerParrotSounds() {
-		// Ensure all sound file paths are correct relative to the assets directory.
-		SoundHelper.addSound(MOD_ID, "parrotidle1.ogg");
-		SoundHelper.addSound(MOD_ID, "parrotidle2.ogg");
-		SoundHelper.addSound(MOD_ID, "parrotidle3.ogg");
-		SoundHelper.addSound(MOD_ID, "parrotidle4.ogg");
-
-		SoundHelper.addSound(MOD_ID, "parrothurt1.ogg");
-		SoundHelper.addSound(MOD_ID, "parrothurt2.ogg");
-
-		SoundHelper.addSound(MOD_ID, "parrotdeath1.ogg");
-		SoundHelper.addSound(MOD_ID, "parrotdeath2.ogg");
-
+		LOGGER.info("Caves and Cliffs initialized.");
 	}
 
 	@Override

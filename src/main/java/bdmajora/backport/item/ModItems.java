@@ -303,6 +303,16 @@ public class ModItems {
 		.setIcon("backport:item/bamboo")
 		.build(new ItemBamboo("bamboo", UtilIdRegistrar.nextIdItem(), ModBlocks.bambooSapling));
 
+	//horn
+	public static Item goatHorn= new ItemBuilder(MOD_ID)
+		.setIcon("backport:item/goat_horn")
+		.build(new ItemHorn("goatHorn", UtilIdRegistrar.nextIdItem()));
+
+	//Ink sac
+	public static Item inksacGlow= new ItemBuilder(MOD_ID)
+		.setIcon("backport:item/inksac_glow")
+		.build(new Item("inksacGlow", UtilIdRegistrar.nextIdItem()));
+
 	public static void register() {
 	}
 }

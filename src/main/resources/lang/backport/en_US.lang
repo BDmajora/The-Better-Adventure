@@ -696,6 +696,10 @@ item.backport.item.vine.name=Vine
 ###Food
 item.backport.item.glowBerries.name=Glow Berries
 
+###Caves and Cliff Items
+item.backport.goatHorn.name=Goat Horn
+item.backport.inksacGlow.name=Ink sac Glow
+
 ###enchantments
 enchantment.backport.haste.name = Haste
 enchantment.backport.unbreaking.name = Unbreaking
