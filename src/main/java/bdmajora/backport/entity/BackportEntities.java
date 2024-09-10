@@ -2,7 +2,7 @@ package bdmajora.backport.entity;
 
 import turniplabs.halplibe.helper.EntityHelper;
 
-public class ColorEntities {
+public class BackportEntities {
 	public static int entityID = 120;
 
 	public void initializeEntities() {

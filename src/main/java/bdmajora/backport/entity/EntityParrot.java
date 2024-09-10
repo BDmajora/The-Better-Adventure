@@ -148,15 +148,15 @@ public class EntityParrot extends EntityAnimal implements IAnimal {
 	}
 
 	public String getLivingSound() {
-		return "color.parrotidle";
+		return "backport.parrotidle";
 	}
 
 	public String getHurtSound() {
-		return "color.parrothurt";
+		return "backport.parrothurt";
 	}
 
 	public String getDeathSound() {
-		return "color.parrotdeath";
+		return "backport.parrotdeath";
 	}
 
 	public int getSkinVariant() {

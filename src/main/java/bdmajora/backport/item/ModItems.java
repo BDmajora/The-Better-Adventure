@@ -3,7 +3,7 @@ package bdmajora.backport.item;
 import bdmajora.backport.block.ModBlocks;
 import bdmajora.backport.UtilIdRegistrar;
 import bdmajora.backport.item.Food.*;
-import luke.color.item.ItemCustomBed;
+import bdmajora.backport.item.ItemCustomBed;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDoor;
 import turniplabs.halplibe.helper.ItemBuilder;
