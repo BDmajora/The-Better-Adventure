@@ -1,5 +1,6 @@
-package bdmajora.backport.entity;
+package bdmajora.backport.entity.renderer;
 
+import bdmajora.backport.entity.EntityGoat;
 import net.minecraft.client.render.entity.LivingRenderer;
 import net.minecraft.client.render.model.ModelBase;
 import net.minecraft.client.render.tessellator.Tessellator;

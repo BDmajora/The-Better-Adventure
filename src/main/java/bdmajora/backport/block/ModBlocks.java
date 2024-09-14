@@ -1,6 +1,7 @@
 package bdmajora.backport.block;
 
 import bdmajora.backport.UtilIdRegistrar;
+import bdmajora.backport.block.BlockModels.BlockModelSeaGrass;
 import bdmajora.backport.block.Crops.*;
 import bdmajora.backport.block.Crops.Models.*;
 import bdmajora.backport.block.Door.*;
@@ -11,22 +12,22 @@ import bdmajora.backport.block.Nether.*;
 import bdmajora.backport.block.TrapDoor.*;
 import bdmajora.backport.block.Vines.BlockCaveVines;
 import bdmajora.backport.block.Vines.BlockCaveVinesLit;
-import bdmajora.backport.block.Vines.BlockVine;
+import bdmajora.backport.block.WaterPlants.BlockWaterPlantFlow;
+import bdmajora.backport.block.WaterPlants.BlockWaterPlantStill;
 import bdmajora.backport.block.bamboo.BambooSapling;
 import bdmajora.backport.block.bamboo.BambooShoot;
 import bdmajora.backport.block.bamboo.OldBambooShoot;
 import bdmajora.backport.block.dragonfly.*;
 import bdmajora.backport.block.metastates.*;
 import bdmajora.backport.item.ModItems;
+import bdmajora.backport.item.SeaGrassItemModel;
 import net.minecraft.client.render.block.model.*;
-import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.item.block.ItemBlockLadder;
 import net.minecraft.core.item.block.ItemBlockSlab;
 import net.minecraft.core.sound.BlockSound;
 import net.minecraft.core.sound.BlockSounds;
@@ -5286,6 +5287,36 @@ public class ModBlocks {
 				.setBlockModel("backport", "block/spore_blossom.json")
 				.build(block))
 		.build(new DragonBlockModel("sporeBlossom", UtilIdRegistrar.nextIdBlock(), Material.wood));
+
+	public static final Block sea_grass = new BlockBuilder(MOD_ID)
+		.setHardness(0.0f)
+		.setResistance(100F)
+		.setLightOpacity(1)
+		.setTags(BlockTags.IS_WATER, BlockTags.PLACE_OVERWRITES, BlockTags.SHEARS_DO_SILK_TOUCH)
+		.setBlockSound(BlockSounds.GRASS)
+		.setBlockModel(block -> {
+			return new BlockModelSeaGrass<>(block).withTextures("backport:block/sea_grass");
+		})
+		.setItemModel(itemBlock -> {
+			return new SeaGrassItemModel(itemBlock);
+		})
+		.build(new BlockWaterPlantStill("sea_grass", UtilIdRegistrar.nextIdBlock(), Material.water).withLitInteriorSurface(true));
+
+	public static final Block sea_grass_flow = new BlockBuilder(MOD_ID)
+		.setHardness(0.0f)
+		.setResistance(100F)
+		.setLightOpacity(1)
+		.setBlockModel(block -> {
+			return new BlockModelSeaGrass<>(block).withTextures("backport:block/sea_grass");
+		})
+		.setItemModel(itemBlock -> {
+			return new SeaGrassItemModel(itemBlock);
+		})
+		.setBlockDrop(sea_grass)
+		.setTags(BlockTags.IS_WATER, BlockTags.PLACE_OVERWRITES, BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.NOT_IN_CREATIVE_MENU)
+		.setBlockSound(BlockSounds.GRASS)
+		.build(new BlockWaterPlantFlow("sea_grass_flow", UtilIdRegistrar.nextIdBlock(), Material.water));
+
 
 	public static void register() {
 	}

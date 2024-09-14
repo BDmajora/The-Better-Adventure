@@ -41,5 +41,10 @@ public class BackportSounds {
 
 		SoundHelper.addSound(MOD_ID, "parrotdeath1.ogg");
 		SoundHelper.addSound(MOD_ID, "parrotdeath2.ogg");
+
+		SoundHelper.addSound(MOD_ID, "drowned_death.wav");
+		SoundHelper.addSound(MOD_ID, "drowned_hurt_extra.wav");
+		SoundHelper.addSound(MOD_ID, "drowned_hurt.wav");
+		SoundHelper.addSound(MOD_ID, "drowned_idle.wav");
 	}
 }

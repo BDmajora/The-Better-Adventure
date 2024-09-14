@@ -1,5 +1,6 @@
-package bdmajora.backport.entity;
+package bdmajora.backport.entity.renderer;
 
+import bdmajora.backport.entity.EntityGlowSquid;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.LightmapHelper;
 import net.minecraft.client.render.entity.LivingRenderer;

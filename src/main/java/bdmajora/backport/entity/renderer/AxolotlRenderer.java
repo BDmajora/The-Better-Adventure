@@ -1,5 +1,7 @@
-package bdmajora.backport.entity;
+package bdmajora.backport.entity.renderer;
 
+import bdmajora.backport.entity.EntityAxolotl;
+import bdmajora.backport.entity.models.ModelAxolotl;
 import net.minecraft.client.render.block.model.BlockModel;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.client.render.entity.LivingRenderer;

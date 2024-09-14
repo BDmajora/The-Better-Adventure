@@ -1,4 +1,4 @@
-package bdmajora.backport.entity;
+package bdmajora.backport.entity.models;
 
 import net.minecraft.client.render.model.Cube;
 import net.minecraft.client.render.model.ModelBase;

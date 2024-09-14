@@ -305,6 +305,7 @@ tile.backport.jigsaw.name=Jigsaw
 tile.backport.prismarineBricks.name=Prismarine Bricks
 tile.backport.prismarine.name=Prismarine
 tile.backport.darkPrismarine.name=Dark Prismarine
+tile.backport.sea_grass.name=Sea grass
 
 ###flowers
 tile.backport.azureBluet.name=Azure Bluet
