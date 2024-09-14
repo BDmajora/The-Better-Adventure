@@ -1,17 +1,12 @@
 package bdmajora.backport;
 
 
-import bdmajora.backport.entity.models.FrogModel;
 import net.fabricmc.api.ClientModInitializer;
-import org.useless.dragonfly.helper.ModelHelper;
-import org.useless.dragonfly.model.entity.BenchEntityModel;
 import turniplabs.halplibe.helper.SoundHelper;
 
 import static bdmajora.backport.backport.MOD_ID;
 
 public class backportmodclient implements ClientModInitializer {
-
-	public static final BenchEntityModel modelFrog = ModelHelper.getOrCreateEntityModel(MOD_ID, "entity/frog.geo.json", FrogModel.class);
 
 	@Override
 	public void onInitializeClient() {
