@@ -31,14 +31,12 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 	public static final String MOD_ID = "backport";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static int START_COST_OFFSET = 5;
-
-	// Force enable swim feature for testing
-	private static final boolean enable_swim = true;
-
+	private static final boolean enable_swim;
 	public static String ENCHANTMENT_TABLE_NAME = "Enchantment Table";
+
 	public static ConfigHandler config;
 
-	// Static block to initialize config
+	// Static block to ensure enable_swim is initialized correctly
 	static {
 		Properties prop = new Properties();
 		prop.setProperty("starting_block_id", "7000");
@@ -51,7 +49,9 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 		prop.setProperty("enable_swim", "true"); // Default value in config
 
 		config = new ConfigHandler(MOD_ID, prop);
+		enable_swim = config.getBoolean("enable_swim");
 		UtilIdRegistrar.initIds(config.getInt("starting_block_id"), config.getInt("starting_item_id"));
+
 		config.updateConfig();
 	}
 
@@ -100,17 +100,18 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 		// Further game start logic
 	}
 
-	// Force swim feature to be always enabled
 	public static boolean isEnableSwim() {
-		return true;
+		return enable_swim;
 	}
 
 	@Override
 	public void onPreLaunch() {
 		NetworkHelper.register(PacketEnchantItem.class, true, false);
 
-		// Always register the swim packet for testing purposes
-		NetworkHelper.register(SwimPacket.class, true, false); // No need to check if swimming is enabled
+		// Register the swim packet if swimming is enabled
+		if (isEnableSwim()) {
+			NetworkHelper.register(SwimPacket.class, true, false); // Assuming SwimPacket handles the swim feature
+		}
 	}
 
 	@Override
