@@ -8,9 +8,6 @@ public class ModelPiglin extends ModelBase {
 
 	public Cube body;
 	public Cube head;
-	public Cube snout;
-	public Cube leftTusk;
-	public Cube rightTusk;
 	public Cube leftEar;
 	public Cube rightEar;
 	public Cube rightArm;
@@ -26,18 +23,6 @@ public class ModelPiglin extends ModelBase {
 		this.head = new Cube(0, 0);
 		this.head.addBox(-5.0F, -8.0F, -4.0F, 10, 8, 8);
 		this.head.setRotationPoint(0.0F, 0.0F, 0.0F);
-
-		this.snout = new Cube(0, 40);
-		this.snout.addBox(-2.0F, 24.0F, -5.0F, 4, 4, 1, 0);
-		this.snout.setRotationPoint(0.0F, -28.0F, 0.0F);
-
-		this.leftTusk = new Cube(0, 48);
-		this.leftTusk.addBox(2.0F, 24.0F, -5.0F, 1, 2, 1, 0);
-		this.leftTusk.setRotationPoint(0.0F, -26.0F, 0.0F);
-
-		this.rightTusk = new Cube(0, 52);
-		this.rightTusk.addBox(-3.0F, 24.0F, -5.0F, 1, 2, 1, 0);
-		this.rightTusk.setRotationPoint(0.0F, -26.0F, 0.0F);
 
 		this.leftEar = new Cube(51, 6);
 		this.leftEar.addBox(4.0F, -5.0F, -2.0F, 1, 5, 4);
@@ -74,9 +59,6 @@ public class ModelPiglin extends ModelBase {
 		this.setRotationAngles(limbSwing, limbYaw, limbPitch, headYaw, headPitch, scale);
 		this.body.render(scale);
 		this.head.render(scale);
-		this.snout.render(scale);
-		this.leftTusk.render(scale);
-		this.rightTusk.render(scale);
 		this.leftEar.render(scale);
 		this.rightEar.render(scale);
 		this.rightArm.render(scale);
@@ -89,16 +71,6 @@ public class ModelPiglin extends ModelBase {
 	public void setRotationAngles(float limbSwing, float limbYaw, float limbPitch, float headYaw, float headPitch, float scale) {
 		this.head.rotateAngleX = headPitch / 57.29578F;
 		this.head.rotateAngleY = headYaw / 57.29578F;
-
-		// Link snout and tusk rotations directly to the head, without additional offsets
-		this.snout.rotateAngleX = this.head.rotateAngleX;
-		this.snout.rotateAngleY = this.head.rotateAngleY;
-
-		this.leftTusk.rotateAngleX = this.head.rotateAngleX;
-		this.leftTusk.rotateAngleY = this.head.rotateAngleY;
-
-		this.rightTusk.rotateAngleX = this.head.rotateAngleX;
-		this.rightTusk.rotateAngleY = this.head.rotateAngleY;
 
 		// Ears follow head movement
 		this.leftEar.rotateAngleX = this.head.rotateAngleX;

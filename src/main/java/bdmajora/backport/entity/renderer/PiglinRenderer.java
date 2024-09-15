@@ -18,16 +18,6 @@ public class PiglinRenderer extends LivingRenderer<EntityPiglin> {
 		// Manually adjust the snout, tusks, and ears based on the head's position and rotation
 		ModelPiglin model = (ModelPiglin) this.mainModel;
 
-		// Syncing head rotations
-		model.snout.rotateAngleX = model.head.rotateAngleX;
-		model.snout.rotateAngleY = model.head.rotateAngleY;
-
-		model.leftTusk.rotateAngleX = model.head.rotateAngleX;
-		model.leftTusk.rotateAngleY = model.head.rotateAngleY;
-
-		model.rightTusk.rotateAngleX = model.head.rotateAngleX;
-		model.rightTusk.rotateAngleY = model.head.rotateAngleY;
-
 		model.leftEar.rotateAngleX = model.head.rotateAngleX;
 		model.leftEar.rotateAngleY = model.head.rotateAngleY;
 
