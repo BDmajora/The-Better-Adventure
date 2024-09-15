@@ -70,6 +70,7 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 			b.getSpawnableList(EnumCreatureType.waterCreature).add(new SpawnListEntry(EntityAxolotl.class, 25));
 			b.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(EntityGoat.class, 102));
 			b.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityDrowned.class, 100));
+			b.getSpawnableList(EnumCreatureType.waterCreature).add(new SpawnListEntry(EntityFish.class, 100));
 		}
 
 		// Initialize sounds

@@ -13,7 +13,7 @@ public class BackportEntities {
 		EntityHelper.createEntity(EntityGoat.class, entityID++, "Goat", () -> new GoatRenderer(new ModelGoat(), 0.7f));
 		EntityHelper.createEntity(EntityAxolotl.class, entityID++, "Axolotl", () -> new AxolotlRenderer(new ModelAxolotl(), 0.5f));
 		EntityHelper.createEntity(EntityDrowned.class, entityID + 2, "Drowned", () -> new DrownedRenderer(new ModelDrowned(), 0.5F)); // Add the new entity
-
+		EntityHelper.createEntity(EntityFish.class, entityID, "Fish", () -> new RenderFish(new FishModel(), 0.3F));
 
 	}
 }
