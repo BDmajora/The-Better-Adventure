@@ -313,6 +313,10 @@ public class ModItems {
 		.setIcon("backport:item/inksac_glow")
 		.build(new Item("inksacGlow", UtilIdRegistrar.nextIdItem()));
 
+	public static Item goldNugget= new ItemBuilder(MOD_ID)
+		.setIcon("backport:item/gold_nugget")
+		.build(new Item("goldNugget", UtilIdRegistrar.nextIdItem()));
+
 	public static void register() {
 	}
 }

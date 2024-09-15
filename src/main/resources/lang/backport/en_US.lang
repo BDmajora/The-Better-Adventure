@@ -694,6 +694,7 @@ tile.backport.shield.name=Shield
 item.backport.record.Disc.name=Music Disc
 item.backport.item.brick.name=Nether Brick
 item.backport.item.vine.name=Vine
+item.backport.item.goldNugget.name=Gold Nugget
 
 ###Food
 item.backport.item.glowBerries.name=Glow Berries
