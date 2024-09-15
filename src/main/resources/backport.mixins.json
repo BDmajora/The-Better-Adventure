@@ -10,6 +10,7 @@
       "SurfaceGeneratorNetherMixin",
       "WorldTypeNetherMixin",
       "RenderEngineMixin",
+      "MinecraftMixin",
       "entity.EntityItemMixin",
       "entity.EntityLivingMixin",
       "entity.EntityBobberMixin",
@@ -18,6 +19,7 @@
       "entity.EntityPlayerMPMixin",
       "entity.EntityPlayerSPMixin",
       "entity.ItemDyeMixin",
+      "entity.EntityMixin",
       "item.ItemStackMixin",
       "item.ItemToolMixin",
       "net.NetServerHandlerMixin",
@@ -25,7 +27,13 @@
     ],
     "client": [
       "client.GuiTooltipMixin",
-      "client.PlayerControllerMixin"
+      "client.PlayerControllerMixin",
+      "client.ChunkRendererMixin",
+      "client.EntityClientPlayerMPMixin",
+      "client.EntityPlayerSPMixin",
+      "client.ModelPlayerMixin",
+      "client.PlayerInputMixin",
+      "client.PlayerRendererMixin"
     ],
     "injectors": {
         "defaultRequire": 1

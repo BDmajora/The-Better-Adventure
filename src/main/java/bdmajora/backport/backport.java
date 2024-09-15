@@ -6,6 +6,7 @@ import bdmajora.backport.crafting.ModCraftingManager;
 import bdmajora.backport.entity.*;
 import bdmajora.backport.item.ModItems;
 import bdmajora.backport.network.packet.PacketEnchantItem;
+import bdmajora.backport.packet.SwimPacket;
 import bdmajora.backport.world.biome.provider.BiomeProviderNether;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
@@ -13,7 +14,6 @@ import net.minecraft.client.gui.guidebook.mobs.MobInfoRegistry;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.enums.EnumCreatureType;
-import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.server.entity.ServerSkinVariantList;
@@ -31,11 +31,15 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 	public static final String MOD_ID = "backport";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static int START_COST_OFFSET = 5;
-	public static String ENCHANTMENT_TABLE_NAME = "Enchantment Table";
 
+	// Force enable swim feature for testing
+	private static final boolean enable_swim = true;
+
+	public static String ENCHANTMENT_TABLE_NAME = "Enchantment Table";
 	public static ConfigHandler config;
 
-	private void handleConfig() {
+	// Static block to initialize config
+	static {
 		Properties prop = new Properties();
 		prop.setProperty("starting_block_id", "7000");
 		prop.setProperty("starting_item_id", "30000");
@@ -44,17 +48,16 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 		prop.setProperty("packet_enchant_id", "190");
 		prop.setProperty("expensive_crafting", "true");
 		prop.setProperty("default_item_enchantability", "15");
+		prop.setProperty("enable_swim", "true"); // Default value in config
 
 		config = new ConfigHandler(MOD_ID, prop);
 		UtilIdRegistrar.initIds(config.getInt("starting_block_id"), config.getInt("starting_item_id"));
-
 		config.updateConfig();
 	}
 
 	@Override
 	public void onInitialize() {
 		LOGGER.info("backport loading! Watch out for bugs");
-		handleConfig();
 
 		// Register the Parrot Entity
 		Biomes.OVERWORLD_RAINFOREST.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(EntityParrot.class, 102));
@@ -97,9 +100,17 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 		// Further game start logic
 	}
 
+	// Force swim feature to be always enabled
+	public static boolean isEnableSwim() {
+		return true;
+	}
+
 	@Override
 	public void onPreLaunch() {
 		NetworkHelper.register(PacketEnchantItem.class, true, false);
+
+		// Always register the swim packet for testing purposes
+		NetworkHelper.register(SwimPacket.class, true, false); // No need to check if swimming is enabled
 	}
 
 	@Override
