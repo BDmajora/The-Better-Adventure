@@ -12,6 +12,28 @@ public class PiglinRenderer extends LivingRenderer<EntityPiglin> {
 
 	@Override
 	public void render(EntityPiglin entityPiglin, double x, double y, double z, float yaw, float partialTicks) {
+		// Make sure to call the parent render method
 		super.render(entityPiglin, x, y, z, yaw, partialTicks);
+
+		// Manually adjust the snout, tusks, and ears based on the head's position and rotation
+		ModelPiglin model = (ModelPiglin) this.mainModel;
+
+		// Syncing head rotations
+		model.snout.rotateAngleX = model.head.rotateAngleX;
+		model.snout.rotateAngleY = model.head.rotateAngleY;
+
+		model.leftTusk.rotateAngleX = model.head.rotateAngleX;
+		model.leftTusk.rotateAngleY = model.head.rotateAngleY;
+
+		model.rightTusk.rotateAngleX = model.head.rotateAngleX;
+		model.rightTusk.rotateAngleY = model.head.rotateAngleY;
+
+		model.leftEar.rotateAngleX = model.head.rotateAngleX;
+		model.leftEar.rotateAngleY = model.head.rotateAngleY;
+
+		model.rightEar.rotateAngleX = model.head.rotateAngleX;
+		model.rightEar.rotateAngleY = model.head.rotateAngleY;
+
+		// This ensures all parts attached to the head rotate with it
 	}
 }
