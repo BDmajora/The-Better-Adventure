@@ -15,37 +15,41 @@ public class ModelBee extends ModelBase {
 	public Cube legBack;
 
 	public ModelBee() {
+		// Bee body remains the same
 		this.body = new Cube(0, 0);
 		this.body.addBox(-3.5F, -4.0F, -5.0F, 7, 7, 10);
-		this.body.setRotationPoint(0.5F, 19.0F, 0.0F);
+		this.body.setRotationPoint(0.5F, 19.0F, 0.0F);  // Y = 19.0F
 
+		// Adjust stinger's position to be in line with the body
 		this.stinger = new Cube(26, 7);
 		this.stinger.addBox(0.0F, 0.0F, 4.0F, 0, 1, 2);
-		this.stinger.setRotationPoint(0.0F, -1.0F, 1.0F);
+		this.stinger.setRotationPoint(0.0F, 18.0F, 1.0F);  // Y lowered to 18.0F
 
+		// Adjust wing positions to be in line with the body
 		this.rightWing = new Cube(0, 18);
 		this.rightWing.addBox(-9.0F, 0.0F, 0.0F, 9, 0, 6);
-		this.rightWing.setRotationPoint(-1.5F, -4.0F, -3.0F);
+		this.rightWing.setRotationPoint(-1.5F, 15.0F, -3.0F);  // Y lowered to 15.0F
 		this.rightWing.rotateAngleX = (float) Math.toRadians(15);
 		this.rightWing.rotateAngleY = (float) Math.toRadians(-15);
 
 		this.leftWing = new Cube(9, 24);
 		this.leftWing.addBox(0.0F, 0.0F, 0.0F, 9, 0, 6);
-		this.leftWing.setRotationPoint(1.5F, -4.0F, -3.0F);
+		this.leftWing.setRotationPoint(1.5F, 15.0F, -3.0F);  // Y lowered to 15.0F
 		this.leftWing.rotateAngleX = (float) Math.toRadians(15);
 		this.leftWing.rotateAngleY = (float) Math.toRadians(15);
 
+		// Adjust leg positions to be in line with the body
 		this.legFront = new Cube(26, 1);
 		this.legFront.addBox(-5.0F, 0.0F, 0.0F, 7, 2, 0);
-		this.legFront.setRotationPoint(1.5F, 3.0F, -2.0F);
+		this.legFront.setRotationPoint(1.5F, 22.0F, -2.0F);  // Y lowered to 22.0F
 
 		this.legMid = new Cube(26, 3);
 		this.legMid.addBox(-5.0F, 0.0F, 0.0F, 7, 2, 0);
-		this.legMid.setRotationPoint(1.5F, 3.0F, 0.0F);
+		this.legMid.setRotationPoint(1.5F, 22.0F, 0.0F);  // Y lowered to 22.0F
 
 		this.legBack = new Cube(26, 5);
 		this.legBack.addBox(-5.0F, 0.0F, 0.0F, 7, 2, 0);
-		this.legBack.setRotationPoint(1.5F, 3.0F, 2.0F);
+		this.legBack.setRotationPoint(1.5F, 22.0F, 2.0F);  // Y lowered to 22.0F
 	}
 
 	@Override
