@@ -75,13 +75,13 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 			b.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityDrowned.class, 100));
 			b.getSpawnableList(EnumCreatureType.waterCreature).add(new SpawnListEntry(EntityFish.class, 100));
 			b.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityPiglin.class, 100));
+			b.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityPiglinBrute.class, 100));
+			b.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityZombifiedPiglin.class, 100));
 		}
 
 		// Initialize sounds
 		BackportSounds.init();
-
 		LOGGER.info("BackPort loaded successfully!");
-		LOGGER.info("Caves and Cliffs initialized.");
 	}
 
 	@Override

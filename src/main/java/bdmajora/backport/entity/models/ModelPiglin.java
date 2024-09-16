@@ -87,5 +87,4 @@ public class ModelPiglin extends ModelBase {
 		this.rightArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + 3.141593F) * 1.4F * limbYaw;
 	}
 
-
 }

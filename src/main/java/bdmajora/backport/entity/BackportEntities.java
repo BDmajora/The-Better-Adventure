@@ -15,7 +15,7 @@ public class BackportEntities {
 		EntityHelper.createEntity(EntityDrowned.class, entityID + 2, "Drowned", () -> new DrownedRenderer(new ModelDrowned(), 0.5F)); // Add the new entity
 		EntityHelper.createEntity(EntityFish.class, entityID, "Fish", () -> new RenderFish(new FishModel(), 0.3F));
 		EntityHelper.createEntity(EntityPiglin.class, entityID + 2, "Piglin", () -> new PiglinRenderer(new ModelPiglin(), 0.5F)); // Add the new entity
-
-
+		EntityHelper.createEntity(EntityPiglinBrute.class, entityID + 2, "PiglinBrute", () -> new PiglinRenderer(new ModelPiglin(), 0.5F)); // Add the new entity
+		EntityHelper.createEntity(EntityZombifiedPiglin.class, entityID + 2, "ZombifiedPiglin", () -> new ZombifiedPiglinRenderer(new ModelPiglin(), 0.5F)); // Add the new entity
 	}
 }
