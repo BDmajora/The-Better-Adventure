@@ -26,7 +26,7 @@ public class ModelTurtle extends ModelBase {
 		// Define eggbelly
 		this.eggbelly = new Cube(70, 33, 128, 64);
 		this.eggbelly.addBox(-4.5F, 3.0F, -14.0F, 9, 18, 1);
-		this.eggbelly.setRotationPoint(0.0F, 11.0F, -10.0F);
+		this.eggbelly.setRotationPoint(0.0F, 8.0F, -10.0F);
 
 		this.eggbelly.rotateAngleX = (float) Math.toRadians(90.0F);
 
@@ -38,11 +38,11 @@ public class ModelTurtle extends ModelBase {
 		// Define legs
 		this.leg0 = new Cube(1, 23, 128, 64);
 		this.leg0.addBox(-2.0F, 0.0F, 0.0F, 4, 1, 10);
-		this.leg0.setRotationPoint(-7.5F, 22.0F, 11.0F);
+		this.leg0.setRotationPoint(-3.5F, 22.0F, 11.0F);
 
 		this.leg1 = new Cube(1, 12, 128, 64);
 		this.leg1.addBox(-2.0F, 0.0F, 0.0F, 4, 1, 10);
-		this.leg1.setRotationPoint(7.5F, 22.0F, 11.0F);
+		this.leg1.setRotationPoint(3.5F, 22.0F, 11.0F);
 
 		this.leg2 = new Cube(27, 30, 128, 64);
 		this.leg2.addBox(-13.0F, 0.0F, -2.0F, 13, 1, 5);
