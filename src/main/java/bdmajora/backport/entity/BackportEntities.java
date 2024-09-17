@@ -21,6 +21,8 @@ public class BackportEntities {
 		EntityHelper.createEntity(EntityWarden.class, entityID + 2, "Warden", () -> new WardenRenderer(new ModelWarden(), 0.5F)); // Add the new entity
 		EntityHelper.createEntity(EntityTurtle.class, entityID++, "Turtle", () -> new TurtleRenderer(new ModelTurtle(), 0.5f));
 		EntityHelper.createEntity(EntityAllay.class, entityID++, "Allay", () -> new AllayRenderer(new ModelAllay(), 0.2f));
+		EntityHelper.createEntity(EntityArmadillo.class, entityID++, "Armadillo", () -> new ArmadilloRenderer(new ModelArmadillo(), 0.2f));
+
 
 	}
 }
