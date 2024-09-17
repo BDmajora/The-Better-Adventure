@@ -2,14 +2,8 @@ package bdmajora.backport.entity.renderer;
 
 import bdmajora.backport.entity.EntityArmadillo;
 import bdmajora.backport.entity.models.ModelArmadillo;
-import net.minecraft.client.render.block.model.BlockModel;
-import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.client.render.entity.LivingRenderer;
-import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.client.render.tessellator.Tessellator;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.item.ItemStack;
-import org.lwjgl.opengl.GL11;
 
 public class ArmadilloRenderer extends LivingRenderer<EntityArmadillo> {
 	public ModelArmadillo modelArmadilloMain;
@@ -20,6 +14,10 @@ public class ArmadilloRenderer extends LivingRenderer<EntityArmadillo> {
 	}
 
 	public void renderArmadillo(EntityArmadillo entityArmadillo, double x, double y, double z, float yaw, float partialTick) {
+		// Set the rolled-up state in the model
+		this.modelArmadilloMain.setRolledUp(entityArmadillo.isRolledUp());
+
+		// Call the parent render method
 		super.render(entityArmadillo, x, y, z, yaw, partialTick);
 	}
 
