@@ -6,7 +6,6 @@ import net.minecraft.core.util.helper.MathHelper;
 
 public class ModelAllay extends ModelBase {
 
-
 	public Cube head;
 	public Cube body;
 	public Cube rightArm;
@@ -65,27 +64,30 @@ public class ModelAllay extends ModelBase {
 		this.head.rotateAngleX = headPitch / 57.29578F;
 		this.head.rotateAngleY = headYaw / 57.29578F;
 
-		// Resting arm angle
-		float armRestingAngle = (float) Math.toRadians(15); // 15-degree outward angle for the resting position
+		// Resting arm and wing angle
+		float armRestingAngle = (float) Math.toRadians(15); // 15-degree outward angle for arms
+		float wingRestingAngle = (float) Math.toRadians(10); // 10-degree resting angle for wings
 
-		// Arms: slight up and down movement around the resting angle
-		float armSwingAmplitude = (float) Math.toRadians(8); // Adjust for slight movement
-		float armSwingSpeed = limbSwing * 0.6662F; // Speed of the movement
+		// Arm swing parameters
+		float armSwingAmplitude = (float) Math.toRadians(5); // Slight movement amplitude for arms
+		float armSwingSpeed = limbSwing * 0.6662F; // Speed of arm swing
 
-		// Right arm movement: start from resting position and add slight movement
+		// Wing swing parameters
+		float wingSwingAmplitude = (float) Math.toRadians(10); // Slight movement amplitude for wings
+		float wingSwingSpeed = limbSwing * 0.6662F; // Speed of wing movement
+
+		// Right arm movement: starts at resting position and swings from there
 		this.rightArm.rotateAngleZ = armRestingAngle + MathHelper.cos(armSwingSpeed) * armSwingAmplitude;
 
-		// Left arm movement: mirror of the right arm
-		this.leftArm.rotateAngleZ = -armRestingAngle + MathHelper.cos(armSwingSpeed + (float) Math.PI) * armSwingAmplitude;
+		// Left arm movement: mirror of the right arm, starts at resting position and swings from there
+		this.leftArm.rotateAngleZ = -armRestingAngle + MathHelper.cos(armSwingSpeed) * armSwingAmplitude;
 
-		// Wings movement (left-right strafe, kept as is)
-		float wingAmplitude = 0.5F; // Adjust amplitude for gentler movement
-		float wingSpeed = limbSwing * 0.3331F; // Adjust speed for smoother movement
+		// Swap right and left wing movement:
+		// Right wing movement: mirror of the left wing
+		this.rightWing.rotateAngleY = -wingRestingAngle + MathHelper.cos(wingSwingSpeed + (float) Math.PI) * wingSwingAmplitude;
 
-		// Move wings left and right without rotating them vertically
-		this.rightWing.rotationPointZ = MathHelper.cos(wingSpeed) * wingAmplitude; // Moves right wing in and out along Z-axis
-		this.leftWing.rotationPointZ = -MathHelper.cos(wingSpeed) * wingAmplitude; // Moves left wing in and out along Z-axis
+		// Left wing movement: original movement of the right wing
+		this.leftWing.rotateAngleY = wingRestingAngle + MathHelper.cos(wingSwingSpeed) * wingSwingAmplitude;
 	}
-
 
 }
