@@ -65,16 +65,20 @@ public class ModelAllay extends ModelBase {
 		this.head.rotateAngleX = headPitch / 57.29578F;
 		this.head.rotateAngleY = headYaw / 57.29578F;
 
-		// Make arms move up and down, and add a slight angle to them
-		float armAngle = (float) Math.toRadians(15); // 15-degree angle for arms
-		this.rightArm.rotateAngleZ = armAngle; // Right arm angled outward
-		this.leftArm.rotateAngleZ = -armAngle; // Left arm angled outward
+		// Resting arm angle
+		float armRestingAngle = (float) Math.toRadians(15); // 15-degree outward angle for the resting position
 
-		// Arms moving up and down based on limbSwing and limbYaw
-		this.rightArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbYaw;
-		this.leftArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + 3.141593F) * 1.4F * limbYaw;
+		// Arms: slight up and down movement around the resting angle
+		float armSwingAmplitude = (float) Math.toRadians(8); // Adjust for slight movement
+		float armSwingSpeed = limbSwing * 0.6662F; // Speed of the movement
 
-		// Gentle wing strafe (left to right)
+		// Right arm movement: start from resting position and add slight movement
+		this.rightArm.rotateAngleZ = armRestingAngle + MathHelper.cos(armSwingSpeed) * armSwingAmplitude;
+
+		// Left arm movement: mirror of the right arm
+		this.leftArm.rotateAngleZ = -armRestingAngle + MathHelper.cos(armSwingSpeed + (float) Math.PI) * armSwingAmplitude;
+
+		// Wings movement (left-right strafe, kept as is)
 		float wingAmplitude = 0.5F; // Adjust amplitude for gentler movement
 		float wingSpeed = limbSwing * 0.3331F; // Adjust speed for smoother movement
 
@@ -82,5 +86,6 @@ public class ModelAllay extends ModelBase {
 		this.rightWing.rotationPointZ = MathHelper.cos(wingSpeed) * wingAmplitude; // Moves right wing in and out along Z-axis
 		this.leftWing.rotationPointZ = -MathHelper.cos(wingSpeed) * wingAmplitude; // Moves left wing in and out along Z-axis
 	}
+
 
 }
