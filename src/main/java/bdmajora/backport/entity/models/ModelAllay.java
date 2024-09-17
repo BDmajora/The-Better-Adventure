@@ -69,7 +69,7 @@ public class ModelAllay extends ModelBase {
 		float wingRestingAngle = (float) Math.toRadians(10); // 10-degree resting angle for wings
 
 		// Arm swing parameters
-		float armSwingAmplitude = (float) Math.toRadians(5); // Slight movement amplitude for arms
+		float armSwingAmplitude = (float) Math.toRadians(10); // Slight movement amplitude for arms
 		float armSwingSpeed = limbSwing * 0.6662F; // Speed of arm swing
 
 		// Wing swing parameters
