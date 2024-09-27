@@ -22,7 +22,7 @@ public class BackportEntities {
 		EntityHelper.createEntity(EntityTurtle.class, entityID++, "Turtle", () -> new TurtleRenderer(new ModelTurtle(), 0.5f));
 		EntityHelper.createEntity(EntityAllay.class, entityID++, "Allay", () -> new AllayRenderer(new ModelAllay(), 0.2f));
 		EntityHelper.createEntity(EntityArmadillo.class, entityID++, "Armadillo", () -> new ArmadilloRenderer(new ModelArmadillo(), 0.2f));
-
+		EntityHelper.createEntity(EntityPolarBear.class, entityID++, "PolarBear", () -> new PolarBearRenderer(new ModelPolarBear(), 0.2f));
 
 	}
 }
