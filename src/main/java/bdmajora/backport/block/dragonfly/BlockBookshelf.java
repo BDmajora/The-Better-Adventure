@@ -59,22 +59,25 @@ public class BlockBookshelf extends Block {
 		}
 	}
 
-
-	public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
+	@Override
+	public boolean onBlockRightClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xHit, double yHit) {
 		if (world.isClientSide) {
 			return true;
 		}
-		if (player.getHeldItem() != null && player.getHeldItem().getItem() == Item.book){
-			if (addBook(world, x, y, z)){
-				player.getHeldItem().consumeItem(player);
+
+		if (player.getHeldItem() != null && player.getHeldItem().getItem() == Item.book) {
+			if (addBook(world, x, y, z)) {
+				player.getHeldItem().consumeItem(player); // Consume the book if it's added
 			}
 		} else {
-			if (removeBook(world, x, y, z)){
-				player.inventory.insertItem(Item.book.getDefaultStack(), true);
+			if (removeBook(world, x, y, z)) {
+				player.inventory.insertItem(Item.book.getDefaultStack(), true); // Return the book to the player's inventory
 			}
 		}
+
 		return true;
 	}
+
 	private boolean addBook(World world, int x, int y, int z){
 		int meta = world.getBlockMetadata(x, y, z);
 		boolean book0 = (meta & 0b100) == 0b100;

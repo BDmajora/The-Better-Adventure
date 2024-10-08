@@ -2633,7 +2633,7 @@ public class ModBlocks {
 				.setBlockState("brewing_stand.json")
 				.setMetaStateInterpreter(new BrewingMetaState())
 				.build(block))
-		.build(new DragonBlockModel("exampleBrewingStand", UtilIdRegistrar.nextIdBlock(), Material.metal));
+		.build(new BlockBrewingStand("exampleBrewingStand", UtilIdRegistrar.nextIdBlock(), Material.metal));
 
 	public static final Block bookshelf = new BlockBuilder(MOD_ID)
 		.setBlockModel(
