@@ -65,6 +65,17 @@ public class EntityBlaze extends EntityFlying {
 				this.attackCooldown = 100; // Reset cooldown after attack
 			}
 		}
+
+		// Spawn smoke particles around the Blaze entity
+		for (int var1 = 0; var1 < 2; ++var1) {
+			this.world.spawnParticle(
+				"largesmoke",
+				this.x + (this.random.nextDouble() - 0.5) * (double)this.bbWidth,
+				this.y + this.random.nextDouble() * (double)this.bbHeight,
+				this.z + (this.random.nextDouble() - 0.5) * (double)this.bbWidth,
+				0.0, 0.0, 0.0, 0, 256 // Optional extra parameters
+			);
+		}
 	}
 
 	// Custom eye height method for the Blaze entity
