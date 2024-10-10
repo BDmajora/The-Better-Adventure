@@ -94,23 +94,30 @@ public class ModelBlaze extends ModelBase {
 
 	@Override
 	public void setRotationAngles(float limbSwing, float limbYaw, float limbPitch, float headYaw, float headPitch, float scale) {
-		// The blaze doesn't really have animated body parts like legs, but you can rotate the parts slightly for an idle effect
-		float rotation = MathHelper.cos(limbSwing * 0.3F) * 0.1F;
+		// Time-based animation for continuous rotation of the body parts around the head
+		float ticks = (float) (System.currentTimeMillis() % 10000L) / 1000.0F;
 
-		this.upperBodyParts0.rotateAngleY = rotation;
-		this.upperBodyParts1.rotateAngleY = -rotation;
-		this.upperBodyParts2.rotateAngleY = rotation;
-		this.upperBodyParts3.rotateAngleY = -rotation;
-		this.upperBodyParts4.rotateAngleY = rotation;
-		this.upperBodyParts5.rotateAngleY = -rotation;
-		this.upperBodyParts6.rotateAngleY = rotation;
-		this.upperBodyParts7.rotateAngleY = -rotation;
-		this.upperBodyParts8.rotateAngleY = rotation;
-		this.upperBodyParts9.rotateAngleY = -rotation;
-		this.upperBodyParts10.rotateAngleY = rotation;
-		this.upperBodyParts11.rotateAngleY = -rotation;
+		float rotationSpeed = ticks * 10.0F;  // Adjust this value for faster rotation
+		float distanceFromHead = 8.0F;  // Distance of the body parts from the head
 
-		this.head.rotateAngleX = headPitch / 57.29578F;
+		// Rotating bodyPart0 around the head
+		this.upperBodyParts0.rotationPointX = this.head.rotationPointX + MathHelper.cos(rotationSpeed) * distanceFromHead;
+		this.upperBodyParts0.rotationPointZ = this.head.rotationPointZ + MathHelper.sin(rotationSpeed) * distanceFromHead;
+
+		// Rotating bodyPart1 around the head
+		this.upperBodyParts1.rotationPointX = this.head.rotationPointX + MathHelper.cos(rotationSpeed + (float)Math.PI / 2) * distanceFromHead;
+		this.upperBodyParts1.rotationPointZ = this.head.rotationPointZ + MathHelper.sin(rotationSpeed + (float)Math.PI / 2) * distanceFromHead;
+
+		// Rotating bodyPart2 around the head
+		this.upperBodyParts2.rotationPointX = this.head.rotationPointX + MathHelper.cos(rotationSpeed + (float)Math.PI) * distanceFromHead;
+		this.upperBodyParts2.rotationPointZ = this.head.rotationPointZ + MathHelper.sin(rotationSpeed + (float)Math.PI) * distanceFromHead;
+
+		// Rotating bodyPart3 around the head
+		this.upperBodyParts3.rotationPointX = this.head.rotationPointX + MathHelper.cos(rotationSpeed + (3 * (float)Math.PI / 2)) * distanceFromHead;
+		this.upperBodyParts3.rotationPointZ = this.head.rotationPointZ + MathHelper.sin(rotationSpeed + (3 * (float)Math.PI / 2)) * distanceFromHead;
+
+		// Set head rotation
+		this.head.rotateAngleX = headPitch / 57.29578F;  // Convert degrees to radians
 		this.head.rotateAngleY = headYaw / 57.29578F;
 	}
 }
