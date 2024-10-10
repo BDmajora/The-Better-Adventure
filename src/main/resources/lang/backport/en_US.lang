@@ -695,6 +695,7 @@ item.backport.record.Disc.name=Music Disc
 item.backport.item.brick.name=Nether Brick
 item.backport.item.vine.name=Vine
 item.backport.goldNugget.name=Gold Nugget
+item.backport.blazeRod.name=Blaze rod
 
 ###Food
 item.backport.item.glowBerries.name=Glow Berries

@@ -317,6 +317,10 @@ public class ModItems {
 		.setIcon("backport:item/gold_nugget")
 		.build(new Item("goldNugget", UtilIdRegistrar.nextIdItem()));
 
+	public static Item blazeRod= new ItemBuilder(MOD_ID)
+		.setIcon("backport:item/blaze_rod")
+		.build(new Item("blazeRod", UtilIdRegistrar.nextIdItem()));
+
 	public static void register() {
 	}
 }
