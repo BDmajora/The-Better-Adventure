@@ -85,6 +85,7 @@ public class backport implements ModInitializer, GameStartEntrypoint, PreLaunchE
 			b.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(EntityPolarBear.class, 102));
 			b.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(EntityBat.class, 102));
 			b.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(EntityBlaze.class, 102));
+			b.getSpawnableList(EnumCreatureType.monster).add(new SpawnListEntry(EntityBogged.class, 100));
 
 
 		}
