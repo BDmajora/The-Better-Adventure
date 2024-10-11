@@ -31,16 +31,16 @@ public class ModelBogged extends ModelSkeleton {
 		this.mushrooms[3].addBox(-3.0F, -5.0F, 0.0F, 6, 5, 0);
 		this.mushrooms[3].setRotationPoint(5.0F, 6.0F, -3.0F); // Back of the head, mirrored
 
-		// Mushrooms 4 and 5 now on top of the head, flipped upwards and forming X shape
+		// Mushrooms 4 and 5 now on top of the head, forming X shape, flipped upwards and moved higher
 		this.mushrooms[4] = new Cube(50, 22, 64, 32);
 		this.mushrooms[4].addBox(-3.0F, -2.5F, 0.0F, 6, 4, 0);  // Keeping original size
-		this.mushrooms[4].setRotationPoint(-3.0F, -7.5F, -3.0F); // Same position on top
+		this.mushrooms[4].setRotationPoint(-3.0F, -10.0F, -3.0F); // Moved higher (-9.0F on Y)
 		this.mushrooms[4].rotateAngleY = 0.7854F;
 		this.mushrooms[4].rotateAngleZ = (float) Math.PI; // Full 180-degree flip upwards
 
 		this.mushrooms[5] = new Cube(50, 22, 64, 32);
 		this.mushrooms[5].addBox(-3.0F, -2.5F, 0.0F, 6, 4, 0);  // Keeping original size
-		this.mushrooms[5].setRotationPoint(-3.0F, -7.5F, -3.0F); // Same position on top
+		this.mushrooms[5].setRotationPoint(-3.0F, -10.0F, -3.0F); // Moved higher (-9.0F on Y)
 		this.mushrooms[5].rotateAngleY = -0.7854F;
 		this.mushrooms[5].rotateAngleZ = (float) Math.PI; // Full 180-degree flip upwards
 	}
