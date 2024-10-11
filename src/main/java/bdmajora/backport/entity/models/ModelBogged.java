@@ -52,9 +52,11 @@ public class ModelBogged extends ModelSkeleton {
 		// Call render for skeleton body parts
 		super.render(limbSwing, limbYaw, limbPitch, headYaw, headPitch, scale);
 
-		// Render mushrooms
-		for (Cube mushroom : mushrooms) {
-			mushroom.render(scale);
+		// Render mushrooms, except for mushrooms[2] and mushrooms[3]
+		for (int i = 0; i < mushrooms.length; i++) {
+			if (i != 2 && i != 3) {  // Skip mushrooms 2 and 3
+				mushrooms[i].render(scale);
+			}
 		}
 	}
 
