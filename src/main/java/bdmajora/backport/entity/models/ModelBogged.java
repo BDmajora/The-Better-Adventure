@@ -11,7 +11,7 @@ public class ModelBogged extends ModelSkeleton {
 		// Initialize skeleton parts from ModelSkeleton
 		super();
 
-		// Mushrooms initialization (if needed, but won't be rendered)
+		// Mushrooms initialization (not rendered, but available)
 		this.mushrooms[0] = new Cube(50, 16, 64, 32);
 		this.mushrooms[0].addBox(-3.0F, -3.5F, 0.0F, 6, 4, 0);
 		this.mushrooms[0].setRotationPoint(3.0F, -7.5F, 3.0F);
@@ -47,10 +47,13 @@ public class ModelBogged extends ModelSkeleton {
 
 	@Override
 	public void render(float limbSwing, float limbYaw, float limbPitch, float headYaw, float headPitch, float scale) {
-		// Call render for skeleton body parts
+		// Render the skeleton parts from the superclass
 		super.render(limbSwing, limbYaw, limbPitch, headYaw, headPitch, scale);
 
-		// Do not render mushrooms (turned off)
+		// Render additional parts like mushrooms (if needed)
+		for (Cube mushroom : mushrooms) {
+			mushroom.render(scale);  // This line can be commented out if mushrooms aren't needed.
+		}
 	}
 
 	@Override
